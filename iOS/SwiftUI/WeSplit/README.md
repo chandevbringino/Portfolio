@@ -1,2 +1,2 @@
 WeSplit Demo:
-<img src=".iOS/SwiftUI/WeSplit/Demo/WeSplitAppDemo.gif" width=100>
+![](https://github.com/chandevbringino/Portfolio/blob/main/iOS/SwiftUI/WeSplit/Demo/WeSplitAppDemo.gif)
