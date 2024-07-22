@@ -1,5 +1,6 @@
 GuessTheFlag
-It's a guess game where user can guess up to 10 flags and see their score at the end of the game.
+
+A guess game where user can guess up to 10 flags and see their final score at the end of the game.
 
 Demo:
 
