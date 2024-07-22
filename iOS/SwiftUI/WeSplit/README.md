@@ -6,4 +6,4 @@ Demo:
 
 <img src="https://github.com/chandevbringino/Portfolio/blob/main/iOS/SwiftUI/WeSplit/Demo/WeSplitAppDemo.gif" width="250">
 
-Disclaimer: This app idea is from my journey in learning SwiftUI with HackingWithSwift.
+Disclaimer: This app idea is from my journey in learning SwiftUI with [HackingWithSwift](https://www.hackingwithswift.com/).
