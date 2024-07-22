@@ -1,6 +1,6 @@
 # WeSplit 
 
-An app that lets user input and compute their bill if they are with friends and each ones will be paying the divided bill. 
+An app that lets user input and compute bill. If user are with friends and the bill will be divided, this app would be very useful!
 
 Demo:
 
