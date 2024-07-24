@@ -1,6 +1,0 @@
-framework module Pods_ChristianBringino1902Exam_ChristianBringino1902ExamUITests {
-  umbrella header "Pods-ChristianBringino1902Exam-ChristianBringino1902ExamUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
