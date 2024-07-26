@@ -1,6 +1,6 @@
 //
 //  SignupViewModel.swift
-//  ChristianBringino1902Exam
+//  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
 //
@@ -8,12 +8,12 @@
 import Foundation
 
 class SignupViewModel: SignupViewModelProtocol {
-    private let userAPI: UserAPIProtocol
+    private let service: AuthServiceProtocol
     
     init(
-        userAPI: UserAPIProtocol = App.shared.userAPI
+        service: AuthServiceProtocol = App.shared.auth
     ) {
-        self.userAPI = userAPI
+        self.service = service
     }
 }
 
@@ -22,41 +22,63 @@ class SignupViewModel: SignupViewModelProtocol {
 extension SignupViewModel {
     func registerUser(
         name: String,
-        username: String,
+        phoneNumber: String,
         email: String,
         password: String,
         repeatPassword: String,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        if username.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Username"))
-        } else if name.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Full Name"))
-        } else if email.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Email"))
-        } else if password.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Password"))
-        } else if repeatPassword.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Repeat Password"))
-        }
-        
-        if password != repeatPassword {
-            return onError(AppError.passwordAndRepeatPasswordNotMatched)
-        }
-        
         let userParams = UserParams(
-            username: username,
-            email: email,
             name: name,
-            password: password
+            phoneNumber: phoneNumber,
+            email: email,
+            password: password,
+            repeatPassword: repeatPassword
         )
         
-        userAPI.registerUser(
-            userParams: userParams,
-            onSuccess: onSuccess,
+        if let error = validate(userParams: userParams) {
+            return onError(error)
+        }
+        
+        service.registerUser(
+            param: userParams,
+            onSuccess: handleRegisterUserSuccess(thenExecute: onSuccess),
             onError: onError
         )
+    }
+    
+    // TODO: - For improvement. Must be "unit" testable
+    func validate(userParams: UserParams) -> Error? {
+        if userParams.name.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Full name")
+        } else if userParams.phoneNumber.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Phone number")
+        } else if userParams.email.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Email")
+        } else if userParams.password.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Password")
+        } else if userParams.repeatPassword.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Repeat Password")
+        } else if userParams.password != userParams.repeatPassword {
+            return AppError.passwordAndRepeatPasswordNotMatched
+        }
+        
+        return nil
+    }
+}
+
+// MARK: - Handlers
+
+private extension SignupViewModel {
+    func handleRegisterUserSuccess(
+        thenExecute onCompletion: @escaping VoidResult
+    ) -> SingleResult<UserModel> {
+        { [weak self] _ in
+            guard let self else { return }
+            // TODO: - persist user data in realmswift
+            onCompletion()
+        }
     }
 }
 

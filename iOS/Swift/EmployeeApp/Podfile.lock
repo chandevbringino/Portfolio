@@ -1142,6 +1142,7 @@ PODS:
   - GTMSessionFetcher/Core (3.4.1)
   - IQKeyboardManagerSwift (7.0.3)
   - leveldb-library (1.22.5)
+  - lottie-ios (4.4.3)
   - nanopb (2.30910.0):
     - nanopb/decode (= 2.30910.0)
     - nanopb/encode (= 2.30910.0)
@@ -1149,6 +1150,11 @@ PODS:
   - nanopb/encode (2.30910.0)
   - PromisesObjC (2.4.0)
   - R.swift (7.3.2)
+  - Realm (10.52.0):
+    - Realm/Headers (= 10.52.0)
+  - Realm/Headers (10.52.0)
+  - RealmSwift (10.52.0):
+    - Realm (= 10.52.0)
   - RecaptchaInterop (100.0.0)
   - SDWebImage (5.19.4):
     - SDWebImage/Core (= 5.19.4)
@@ -1163,7 +1169,9 @@ DEPENDENCIES:
   - FirebaseAuth (~> 10.29.0)
   - FirebaseFirestore (~> 10.29.0)
   - IQKeyboardManagerSwift (~> 7.0.3)
+  - lottie-ios (~> 4.4.3)
   - R.swift (~> 7.3.2)
+  - RealmSwift (~> 10.52.0)
   - SDWebImage (~> 5.0)
   - SVProgressHUD (~> 2.3.1)
 
@@ -1189,9 +1197,12 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - R.swift
+    - Realm
+    - RealmSwift
     - RecaptchaInterop
     - SDWebImage
     - SVProgressHUD
@@ -1217,13 +1228,16 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 8000756fc1c19d2e5697b90311f7832d2e33f6cd
   IQKeyboardManagerSwift: f9c5dc36cba16ddd2e51fa7d51c34a2e083029b5
   leveldb-library: e8eadf9008a61f9e1dde3978c086d2b6d9b9dc28
+  lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+  Realm: d1903aeb0b3585d810656c2ea04212bc1936ebc7
+  RealmSwift: f7a85c86e61c6da6f6ef334778af3d133b0edf28
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
 
-PODFILE CHECKSUM: cffffd05cf39808392f350ee7a93bdda356e988e
+PODFILE CHECKSUM: 80346e0f813f25d800d37bfe58f0c1080f01283e
 
 COCOAPODS: 1.15.2

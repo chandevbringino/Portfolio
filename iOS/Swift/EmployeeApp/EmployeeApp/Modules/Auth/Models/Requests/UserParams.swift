@@ -9,17 +9,18 @@ import Foundation
 import Alamofire
 
 struct UserParams {
-    var username: String
-    var email: String
     var name: String
+    var phoneNumber: String
+    var email: String
     var password: String
+    var repeatPassword: String
 }
 
 extension UserParams {
     var params: Parameters {
         var params = Parameters()
-        
-        params["username"] = username
+        // TODO: - Remove this and apply codable protocol
+        params["phoneNumber"] = phoneNumber
         params["password"] = password
         params["email"] = email
         params["name"] = name

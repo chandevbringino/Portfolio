@@ -8,6 +8,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import FirebaseCore
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
-        // UISCreen.main soon to be deprecated. Kindly update asap.
+        presentRootVC()
+        
+        return true
+    }
+    
+    func presentRootVC() {
+        // TODO: - UISCreen.main will soon be deprecated. Kindly update asap.
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let vc = R.storyboard.login.loginController()!
@@ -33,17 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc2 = R.storyboard.posts.postsController()!
         vc2.viewModel = PostsViewModel()
         
-        let token = UserDefaults.standard.string(forKey: Constants.accessTokenKey) ?? ""
-        let isLoggedIn = !token.isEmpty
+        let isLoggedIn = Auth.auth().currentUser != nil
         
         let nc = UINavigationController(rootViewController: isLoggedIn ? vc2 : vc)
         nc.modalPresentationStyle = .fullScreen
-
         
         window?.rootViewController = nc
         window?.makeKeyAndVisible()
-        
-        return true
     }
 }
 

@@ -12,7 +12,7 @@ protocol LoginViewModelProtocol {
     var postsVM: PostsViewModelProtocol { get }
     
     func loginUser(
-        username: String,
+        email: String,
         password: String,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult

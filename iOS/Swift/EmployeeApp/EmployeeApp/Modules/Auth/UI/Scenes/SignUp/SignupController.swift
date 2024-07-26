@@ -10,11 +10,11 @@ import UIKit
 class SignupController: ViewController {
     var viewModel: SignupViewModelProtocol!
     
-    @IBOutlet private(set) var fullnameTextField: UITextField!
-    @IBOutlet private(set) var emailTextField: UITextField!
-    @IBOutlet private(set) var usernameTextField: UITextField!
-    @IBOutlet private(set) var passwordTextField: UITextField!
-    @IBOutlet private(set) var repeatTextField: UITextField!
+    @IBOutlet private(set) var fullnameField: UITextField!
+    @IBOutlet private(set) var emailField: UITextField!
+    @IBOutlet private(set) var phoneNumberField: UITextField!
+    @IBOutlet private(set) var passwordField: UITextField!
+    @IBOutlet private(set) var repeatPasswordField: UITextField!
     @IBOutlet private(set) var signupButton: UIButton!
 }
 
@@ -48,11 +48,11 @@ private extension SignupController {
     func signupButtonTapped() {
         showLoader()
         viewModel.registerUser(
-            name: fullnameTextField.text!,
-            username: usernameTextField.text!,
-            email: emailTextField.text!,
-            password: passwordTextField.text!,
-            repeatPassword: repeatTextField.text!,
+            name: fullnameField.text!,
+            phoneNumber: phoneNumberField.text!,
+            email: emailField.text!,
+            password: passwordField.text!,
+            repeatPassword: repeatPasswordField.text!,
             onSuccess: handleSignupSuccess(),
             onError: handleError()
         )

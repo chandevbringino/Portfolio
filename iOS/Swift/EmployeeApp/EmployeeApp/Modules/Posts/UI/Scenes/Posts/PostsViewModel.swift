@@ -11,14 +11,14 @@ class PostsViewModel: PostsViewModelProtocol {
     private var posts: [PostModel] = []
     
     private let postsAPI: PostsAPIProtocol
-    private let userAPI: UserAPIProtocol
+    private let authService: AuthServiceProtocol
     
     init(
         postsAPI: PostsAPIProtocol = App.shared.postsAPI,
-        userAPI: UserAPIProtocol = App.shared.userAPI
+        authService: AuthServiceProtocol = App.shared.auth
     ) {
         self.postsAPI = postsAPI
-        self.userAPI = userAPI
+        self.authService = authService
     }
 }
 
@@ -41,7 +41,7 @@ extension PostsViewModel {
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        userAPI.logoutUser(
+        authService.signoutUser(
             onSuccess: handleLogoutSuccess(thenExecute: onSuccess),
             onError: onError
         )
@@ -89,10 +89,7 @@ private extension PostsViewModel {
         thenExecute onCompletion: @escaping VoidResult
     ) -> VoidResult {
         {
-            UserDefaults.standard.setValue(
-                nil,
-                forKey: Constants.accessTokenKey
-            )
+            // TODO: - Delete persisted user in realmswift
             onCompletion()
         }
     }

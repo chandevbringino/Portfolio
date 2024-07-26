@@ -12,7 +12,7 @@ protocol SignupViewModelProtocol {
     
     func registerUser(
         name: String,
-        username: String,
+        phoneNumber: String,
         email: String,
         password: String,
         repeatPassword: String,

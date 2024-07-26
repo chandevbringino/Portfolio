@@ -19,6 +19,7 @@ struct _R {
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
+  var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
@@ -38,6 +39,9 @@ struct _R {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
+    .init(bundle: bundle)
+  }
+  func file(bundle: Foundation.Bundle) -> file {
     .init(bundle: bundle)
   }
   func nib(bundle: Foundation.Bundle) -> nib {
@@ -81,9 +85,15 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 6 images.
+  /// This `_R.image` struct is generated, and contains static references to 9 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `employee-100`.
+    var employee100: RswiftResources.ImageResource { .init(name: "employee-100", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `employees`.
+    var employees: RswiftResources.ImageResource { .init(name: "employees", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `ic-add`.
     var icAdd: RswiftResources.ImageResource { .init(name: "ic-add", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -102,6 +112,9 @@ struct _R {
 
     /// Image `logo-1902`.
     var logo1902: RswiftResources.ImageResource { .init(name: "logo-1902", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `portfolio-48`.
+    var portfolio48: RswiftResources.ImageResource { .init(name: "portfolio-48", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -120,6 +133,14 @@ struct _R {
 
       var _key: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest"], key: "_key") ?? "UIApplicationSceneManifest" }
     }
+  }
+
+  /// This `_R.file` struct is generated, and contains static references to 1 resource files.
+  struct file {
+    let bundle: Foundation.Bundle
+
+    /// Resource file `GoogleService-Info.plist`.
+    var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
@@ -200,7 +221,7 @@ struct _R {
 
       let name = "LaunchScreen"
       func validate() throws {
-        if UIKit.UIImage(named: "logo-1902", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'logo-1902' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "employees", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'employees' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
     }
 
@@ -215,7 +236,7 @@ struct _R {
       var loginController: RswiftResources.StoryboardViewControllerIdentifier<LoginController> { .init(identifier: "LoginController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if UIKit.UIImage(named: "logo-1902", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'logo-1902' is used in storyboard 'Login', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "employees", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'employees' is used in storyboard 'Login', but couldn't be loaded.") }
         if loginController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'loginController' could not be loaded from storyboard 'Login' as 'LoginController'.") }
       }
     }

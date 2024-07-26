@@ -173,10 +173,13 @@ private extension PostsController {
     func signoutButtonTapped() {
         showLoader()
         closeNavDrawer()
-        viewModel.signoutUser(
-            onSuccess: handleSignoutSuccess(),
-            onError: handleError()
-        )
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // Note: - Added a little delay for loading animation
+            self.viewModel.signoutUser(
+                onSuccess: self.handleSignoutSuccess(),
+                onError: self.handleError()
+            )
+        }
     }
     
     @objc

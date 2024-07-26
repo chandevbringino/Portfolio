@@ -11,8 +11,8 @@ import SVProgressHUD
 class LoginController: ViewController {
     var viewModel: LoginViewModelProtocol!
     
-    @IBOutlet private(set) var usernameTextField: UITextField!
-    @IBOutlet private(set) var passwordTextField: UITextField!
+    @IBOutlet private(set) var emailField: UITextField!
+    @IBOutlet private(set) var passwordField: UITextField!
     @IBOutlet private(set) var loginButton: UIButton!
     @IBOutlet private(set) var signupLabel: UILabel!
 }
@@ -47,8 +47,8 @@ private extension LoginController {
     func loginButtonTapped() {
         showLoader()
         viewModel.loginUser(
-            username: usernameTextField.text!,
-            password: passwordTextField.text!,
+            email: emailField.text!,
+            password: passwordField.text!,
             onSuccess: handleLoginSuccess(),
             onError: handleError()
         )

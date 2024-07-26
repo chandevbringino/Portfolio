@@ -17,6 +17,10 @@ class App {
     private(set) var userAPI: UserAPIProtocol!
     private(set) var postsAPI: PostsAPIProtocol!
     
+    // MARK: - Firebase
+    
+    private(set) var auth: AuthServiceProtocol!
+    
     func bootstrap(
       with application: UIApplication,
       launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -24,6 +28,7 @@ class App {
         config = AppConfig()
         userAPI = UserAPI()
         postsAPI = PostsAPI()
+        auth = AuthService()
     }
 }
 
@@ -31,11 +36,14 @@ enum AppError: Error {
     case mustNotBeEmpty(fieldName: String)
     case passwordAndRepeatPasswordNotMatched
     case error(reason: String)
+    case dataNotFound
 }
 
 extension AppError: LocalizedError {
     var errorDescription: String? {
         switch self {
+        case .dataNotFound:
+            return "Data not found."
         case .mustNotBeEmpty(let fieldName):
             return "\(fieldName) must not be empty"
         case .passwordAndRepeatPasswordNotMatched:

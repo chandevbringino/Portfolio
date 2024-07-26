@@ -8,12 +8,12 @@
 import Foundation
 
 class LoginViewModel: LoginViewModelProtocol {
-    private let userAPI: UserAPIProtocol
+    private let service: AuthServiceProtocol
     
     init(
-        userAPI: UserAPIProtocol = App.shared.userAPI
+        service: AuthServiceProtocol = App.shared.auth
     ) {
-        self.userAPI = userAPI
+        self.service = service
     }
 }
 
@@ -21,23 +21,48 @@ class LoginViewModel: LoginViewModelProtocol {
 
 extension LoginViewModel {
     func loginUser(
-        username: String,
+        email: String,
         password: String,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        if username.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Username"))
-        } else if password.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Password"))
+        if let error = validate(
+            email: email,
+            password: password
+        ) {
+            return onError(error)
         }
         
-        userAPI.loginUser(
-            username: username,
+        service.signInUser(
+            email: email,
             password: password,
-            onSuccess: onSuccess,
+            onSuccess: handleLoginSuccess(thenExecute: onSuccess),
             onError: onError
         )
+    }
+    
+    func validate(email: String, password: String) -> Error? {
+        if email.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Email")
+        } else if password.isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Password")
+        }
+        
+        return nil
+    }
+}
+
+// MARK: - Handlers
+
+private extension LoginViewModel {
+    func handleLoginSuccess(
+        thenExecute onCompletion: @escaping VoidResult
+    ) -> SingleResult<UserModel> {
+        { [weak self] user in
+            guard let self else { return }
+            // TODO: - persist user data with RealmSwift
+            onCompletion()
+        }
     }
 }
 
