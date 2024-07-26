@@ -11,6 +11,9 @@ target 'EmployeeApp' do
   pod 'IQKeyboardManagerSwift', '~> 7.0.3'
   pod 'SVProgressHUD', '~> 2.3.1'
   pod 'SDWebImage', '~> 5.0'
+  pod 'FirebaseAuth', '~> 10.29.0'
+  pod 'FirebaseFirestore', '~> 10.29.0'
+  pod 'FirebaseAnalytics', '~> 10.28.0'
 
   target 'EmployeeAppTests' do
     inherit! :search_paths

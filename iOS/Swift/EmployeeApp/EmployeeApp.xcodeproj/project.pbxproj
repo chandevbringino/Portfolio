@@ -55,6 +55,7 @@
 		6A223EF62C4FBCF000AE37A6 /* PostsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EF52C4FBCF000AE37A6 /* PostsAPIProtocol.swift */; };
 		6A223EF92C4FBEEF00AE37A6 /* PostParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EF82C4FBEEF00AE37A6 /* PostParams.swift */; };
 		6A223EFC2C4FD86E00AE37A6 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EFB2C4FD86D00AE37A6 /* PostModel.swift */; };
+		6AB372FF2C53AB6200BF51EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */; };
 		6DA7789DF0E0726612910932 /* Pods_EmployeeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FF372EC3E6FAED4F9DA1D2 /* Pods_EmployeeAppTests.framework */; };
 		C402353EBD3ACDBDCDE5C549 /* Pods_EmployeeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C90B58CBF701F985CB1846 /* Pods_EmployeeApp.framework */; };
 		E71E7D1CFF36A4BE03F42187 /* Pods_EmployeeApp_EmployeeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE35E24FC283F37CAA4DAF32 /* Pods_EmployeeApp_EmployeeAppUITests.framework */; };
@@ -136,6 +137,7 @@
 		6A223EF52C4FBCF000AE37A6 /* PostsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAPIProtocol.swift; sourceTree = "<group>"; };
 		6A223EF82C4FBEEF00AE37A6 /* PostParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostParams.swift; sourceTree = "<group>"; };
 		6A223EFB2C4FD86D00AE37A6 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		71C6657490FA0EB8819905F4 /* Pods-ChristianBringino1902ExamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristianBringino1902ExamTests.debug.xcconfig"; path = "Target Support Files/Pods-ChristianBringino1902ExamTests/Pods-ChristianBringino1902ExamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74635ABF9417B6FE155A2DD8 /* Pods-EmployeeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeAppTests.debug.xcconfig"; path = "Target Support Files/Pods-EmployeeAppTests/Pods-EmployeeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80BDD76A4D2380FB369197E0 /* Pods-ChristianBringino1902ExamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChristianBringino1902ExamTests.release.xcconfig"; path = "Target Support Files/Pods-ChristianBringino1902ExamTests/Pods-ChristianBringino1902ExamTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 		6A223E802C4F56B700AE37A6 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */,
 				6A223E472C4F4B6D00AE37A6 /* Info.plist */,
 				6A223E902C4F72FE00AE37A6 /* AppConfig.swift */,
 				6A223E922C4F734000AE37A6 /* AppSecrets.swift */,
@@ -694,6 +697,7 @@
 				6A223EBD2C4F814B00AE37A6 /* AddOrEditPost.storyboard in Resources */,
 				6A223E972C4F767600AE37A6 /* SignUp.storyboard in Resources */,
 				6A223E432C4F4B6D00AE37A6 /* Assets.xcassets in Resources */,
+				6AB372FF2C53AB6200BF51EE /* GoogleService-Info.plist in Resources */,
 				6A223E862C4F5D8200AE37A6 /* Localizable.stringsdict in Resources */,
 				6A223E462C4F4B6D00AE37A6 /* Base in Resources */,
 			);
