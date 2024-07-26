@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ChristianBringino1902Exam
+//  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
 //
@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        App.shared.bootstrap(with: application, launchOptions: launchOptions)
-        
         FirebaseApp.configure()
+        
+        App.shared.bootstrap(with: application, launchOptions: launchOptions)
         
         IQKeyboardManager.shared.enable = true
         

@@ -9,4 +9,9 @@ import Foundation
 
 struct Constants {
     static let accessTokenKey = "access_token"
+    
+    struct FirestoreColumns {
+        static let users = "users"
+        static let employees = "employees"
+    }
 }

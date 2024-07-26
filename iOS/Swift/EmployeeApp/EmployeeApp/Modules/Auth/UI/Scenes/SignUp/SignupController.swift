@@ -1,6 +1,6 @@
 //
 //  SignupController.swift
-//  ChristianBringino1902Exam
+//  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
 //
@@ -10,9 +10,14 @@ import UIKit
 class SignupController: ViewController {
     var viewModel: SignupViewModelProtocol!
     
-    @IBOutlet private(set) var fullnameField: UITextField!
+    @IBOutlet private(set) var firstnameField: UITextField!
+    @IBOutlet private(set) var middleNameField: UITextField!
+    @IBOutlet private(set) var lastnameField: UITextField!
     @IBOutlet private(set) var emailField: UITextField!
     @IBOutlet private(set) var phoneNumberField: UITextField!
+    @IBOutlet private(set) var genderField: UITextField!
+    @IBOutlet private(set) var birthdateField: UITextField!
+    @IBOutlet private(set) var roleFIeld: UITextField!
     @IBOutlet private(set) var passwordField: UITextField!
     @IBOutlet private(set) var repeatPasswordField: UITextField!
     @IBOutlet private(set) var signupButton: UIButton!
@@ -47,12 +52,22 @@ private extension SignupController {
     @IBAction
     func signupButtonTapped() {
         showLoader()
-        viewModel.registerUser(
-            name: fullnameField.text!,
+        
+        let userParams = UserParams(
+            firstName: firstnameField.text!,
+            middleName: middleNameField.text!,
+            lastName: lastnameField.text!,
             phoneNumber: phoneNumberField.text!,
+            gender: .male,
+            birthdate: Date(),
             email: emailField.text!,
+            role: roleFIeld.text!,
             password: passwordField.text!,
-            repeatPassword: repeatPasswordField.text!,
+            repeatPassword: repeatPasswordField.text!
+        )
+        
+        viewModel.registerUser(
+            userParams: userParams,
             onSuccess: handleSignupSuccess(),
             onError: handleError()
         )

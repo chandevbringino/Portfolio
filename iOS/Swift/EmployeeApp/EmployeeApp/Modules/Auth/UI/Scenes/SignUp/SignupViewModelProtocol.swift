@@ -1,6 +1,6 @@
 //
 //  SignupViewModelProtocol.swift
-//  ChristianBringino1902Exam
+//  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
 //
@@ -11,11 +11,7 @@ protocol SignupViewModelProtocol {
     var recordsVM: PostsViewModelProtocol { get }
     
     func registerUser(
-        name: String,
-        phoneNumber: String,
-        email: String,
-        password: String,
-        repeatPassword: String,
+        userParams: UserParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     )
