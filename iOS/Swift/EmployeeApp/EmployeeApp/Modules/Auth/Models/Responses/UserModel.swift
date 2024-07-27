@@ -55,7 +55,7 @@ struct UserModel: Codable {
 }
 
 enum Gender: String, Codable {
-    case male
-    case female
-    case other
+    case male = "Male"
+    case female = "Female"
+    case other = "Other"
 }

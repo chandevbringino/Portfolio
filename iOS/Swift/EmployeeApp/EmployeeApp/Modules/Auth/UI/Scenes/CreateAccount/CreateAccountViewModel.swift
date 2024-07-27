@@ -33,6 +33,7 @@ extension CreateAccountViewModel {
             return onError(error)
         }
         
+        // TODO: - To be improved
         self.userParams.role = userParams.role
         self.userParams.phoneNumber = userParams.phoneNumber
         self.userParams.email = userParams.email

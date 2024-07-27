@@ -8,9 +8,12 @@
 import Foundation
 
 protocol PersonalDetailsViewModelProtocol {
-    var genderItems: [String] { get }
+    var genderItems: [Gender] { get }
     
     var createAccountVM: CreateAccountViewModelProtocol? { get }
+    var genderPickerVM: GenericPickerViewModelProtocol { get }
+    
+    func dateText(from date: Date) -> String
     
     func registerUser(
         userParams: UserParams,

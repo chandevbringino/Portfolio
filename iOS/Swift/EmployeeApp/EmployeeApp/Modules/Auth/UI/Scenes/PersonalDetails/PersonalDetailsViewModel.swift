@@ -10,7 +10,7 @@ import Foundation
 class PersonalDetailsViewModel: PersonalDetailsViewModelProtocol {
     private var userParams: UserParams?
     
-    private let genders = ["Male", "Female", "Other"]
+    private let genders: [Gender] = [.male, .female, .other]
 }
 
 // MARK: - Methods
@@ -34,8 +34,6 @@ extension PersonalDetailsViewModel {
     func validate(userParams: UserParams) -> Error? {
         if (userParams.firstName ?? "").isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "First name")
-        } else if (userParams.middleName ?? "").isEmpty {
-            return AppError.mustNotBeEmpty(fieldName: "Middle name")
         } else if (userParams.lastName ?? "").isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Last name")
         } else if userParams.gender == nil {
@@ -46,12 +44,24 @@ extension PersonalDetailsViewModel {
         
         return nil
     }
+    
+    func dateText(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/d/yyyy"
+        return formatter.string(from: date)
+    }
 }
 
 // MARK: - Getters
 
 extension PersonalDetailsViewModel {
-    var genderItems: [String] { genders }
+    var genderItems: [Gender] { genders }
+    
+    var genderPickerVM: GenericPickerViewModelProtocol {
+        GenericPickerViewModel(
+            options: genders.map({ $0.rawValue })
+        )
+    }
     
     var createAccountVM: CreateAccountViewModelProtocol? {
         guard let params = userParams else { return nil }

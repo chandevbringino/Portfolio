@@ -16,6 +16,7 @@ target 'EmployeeApp' do
   pod 'FirebaseAnalytics', '~> 10.28.0'
   pod 'lottie-ios', '~> 4.4.3'
   pod 'RealmSwift', '~> 10.52.0'
+  pod 'PureLayout', '~> 3.1.9'
 
   target 'EmployeeAppTests' do
     inherit! :search_paths

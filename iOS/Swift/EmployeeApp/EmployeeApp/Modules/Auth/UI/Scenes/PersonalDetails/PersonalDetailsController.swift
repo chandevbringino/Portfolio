@@ -16,6 +16,11 @@ class PersonalDetailsController: ViewController {
     @IBOutlet private(set) var genderField: UITextField!
     @IBOutlet private(set) var birthdateField: UITextField!
     @IBOutlet private(set) var continueButton: UIButton!
+    
+    private var genderPicker: GenericPickerView?
+    
+    private var selectedBdayDate: Date?
+    private var selectedGender: Gender?
 }
 
 // MARK: - Lifecycle
@@ -38,6 +43,7 @@ private extension PersonalDetailsController {
     }
     
     func setupNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
     }
     
@@ -47,16 +53,15 @@ private extension PersonalDetailsController {
         continueButton.layer.borderColor = UIColor.darkGray.cgColor
     }
     
-    // TODO: - Create a component for UIPickerView
     func setupPickerView() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        genderPicker = GenericPickerView()
+        genderPicker?.viewModel = viewModel.genderPickerVM
+        genderPicker?.onSelectOption = handleSelectedOption()
+        genderPicker?.onReload?()
         
-        genderField.inputView = pickerView
+        genderPicker?.textField = genderField
     }
     
-    // TODO: - Create a component for UIDatePicker
     func setupDatePicker() {
         let picker = UIDatePicker()
         picker.sizeToFit()
@@ -81,8 +86,8 @@ private extension PersonalDetailsController {
             firstName: firstnameField.text!,
             middleName: middleNameField.text!,
             lastName: lastnameField.text!,
-            gender: .male,
-            birthdate: Date()
+            gender: selectedGender,
+            birthdate: selectedBdayDate
         )
         
         viewModel.registerUser(
@@ -94,9 +99,8 @@ private extension PersonalDetailsController {
     
     @objc
     func didSelectDate(sender: UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/d/yyyy"
-        birthdateField.text = formatter.string(from: sender.date)
+        birthdateField.text = viewModel.dateText(from: sender.date)
+        selectedBdayDate = sender.date
     }
 }
 
@@ -110,6 +114,15 @@ private extension PersonalDetailsController {
             self.navigateToCreateAccountScene()
         }
     }
+    
+    func handleSelectedOption() -> SingleResult<String> {
+        { [weak self] text in
+            guard let self else { return }
+            let gender = Gender(rawValue: text)
+            self.genderField.text = text
+            self.selectedGender = gender
+        }
+    }
 }
 
 // MARK: - Routers
@@ -120,40 +133,5 @@ private extension PersonalDetailsController {
         let vc = R.storyboard.createAccount.createAccountController()!
         vc.viewModel = vm
         navigationController?.pushViewController(vc, animated: true)
-    }
-}
-
-// MARK: - UIPickerViewDataSource
-
-extension PersonalDetailsController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-    
-    func pickerView(
-        _ pickerView: UIPickerView,
-        numberOfRowsInComponent component: Int
-    ) -> Int {
-        viewModel.genderItems.count
-    }
-    
-    func pickerView(
-        _ pickerView: UIPickerView,
-        titleForRow row: Int,
-        forComponent component: Int
-    ) -> String? {
-        viewModel.genderItems[row]
-    }
-}
-
-// MARK: - UIPickerViewDelegate
-
-extension PersonalDetailsController: UIPickerViewDelegate {
-    func pickerView(
-        _ pickerView: UIPickerView,
-        didSelectRow row: Int,
-        inComponent component: Int
-    ) {
-        genderField.text = viewModel.genderItems[row]
     }
 }
