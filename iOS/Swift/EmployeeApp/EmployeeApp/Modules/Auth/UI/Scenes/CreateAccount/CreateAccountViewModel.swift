@@ -1,25 +1,29 @@
 //
-//  SignupViewModel.swift
+//  CreateAccountViewModel.swift
 //  EmployeeApp
 //
-//  Created by Christian Bringino on 7/23/24.
+//  Created by Christian Bringino on 7/27/24.
 //
 
 import Foundation
 
-class SignupViewModel: SignupViewModelProtocol {
+class CreateAccountViewModel: CreateAccountViewModelProtocol {
+    private var userParams: UserParams
+    
     private let service: AuthServiceProtocol
     
     init(
-        service: AuthServiceProtocol = App.shared.auth
+        service: AuthServiceProtocol = App.shared.auth,
+        userParams: UserParams
     ) {
         self.service = service
+        self.userParams = userParams
     }
 }
 
 // MARK: - Methods
 
-extension SignupViewModel {
+extension CreateAccountViewModel {
     func registerUser(
         userParams: UserParams,
         onSuccess: @escaping VoidResult,
@@ -29,8 +33,13 @@ extension SignupViewModel {
             return onError(error)
         }
         
+        self.userParams.role = userParams.role
+        self.userParams.phoneNumber = userParams.phoneNumber
+        self.userParams.email = userParams.email
+        self.userParams.password = userParams.password
+        
         service.registerUser(
-            param: userParams,
+            param: self.userParams,
             onSuccess: handleRegisterUserSuccess(thenExecute: onSuccess),
             onError: onError
         )
@@ -38,21 +47,11 @@ extension SignupViewModel {
     
     // TODO: - For improvement. Must be "unit" testable
     func validate(userParams: UserParams) -> Error? {
-        if userParams.firstName.isEmpty {
-            return AppError.mustNotBeEmpty(fieldName: "First name")
-        } else if (userParams.middleName ?? "").isEmpty {
-            return AppError.mustNotBeEmpty(fieldName: "Middle name")
-        } else if userParams.lastName.isEmpty {
-            return AppError.mustNotBeEmpty(fieldName: "Last name")
-        } else if userParams.phoneNumber.isEmpty {
-            return AppError.mustNotBeEmpty(fieldName: "Phone number")
-        } else if userParams.gender == nil {
-            return AppError.mustNotBeEmpty(fieldName: "Gender")
-        } else if userParams.birthdate == nil {
-            return AppError.mustNotBeEmpty(fieldName: "Birthday")
-        } else if userParams.role.isEmpty {
+        if userParams.role.isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Role")
-        } else if userParams.email.isEmpty {
+        } else if (userParams.phoneNumber ?? "").isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Phone number")
+        } else if (userParams.email ?? "").isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Email")
         } else if userParams.password.isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Password")
@@ -68,7 +67,7 @@ extension SignupViewModel {
 
 // MARK: - Handlers
 
-private extension SignupViewModel {
+private extension CreateAccountViewModel {
     func handleRegisterUserSuccess(
         thenExecute onCompletion: @escaping VoidResult
     ) -> SingleResult<UserModel> {
@@ -80,8 +79,9 @@ private extension SignupViewModel {
     }
 }
 
+
 // MARK: - Getters
 
-extension SignupViewModel {
+extension CreateAccountViewModel {
     var recordsVM: PostsViewModelProtocol { PostsViewModel() }
 }

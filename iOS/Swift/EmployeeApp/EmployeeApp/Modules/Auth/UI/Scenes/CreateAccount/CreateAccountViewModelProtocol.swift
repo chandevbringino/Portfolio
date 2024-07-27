@@ -1,13 +1,13 @@
 //
-//  SignupViewModelProtocol.swift
+//  CreateAccountViewModelProtocol.swift
 //  EmployeeApp
 //
-//  Created by Christian Bringino on 7/23/24.
+//  Created by Christian Bringino on 7/27/24.
 //
 
 import Foundation
 
-protocol SignupViewModelProtocol {
+protocol CreateAccountViewModelProtocol {
     var recordsVM: PostsViewModelProtocol { get }
     
     func registerUser(

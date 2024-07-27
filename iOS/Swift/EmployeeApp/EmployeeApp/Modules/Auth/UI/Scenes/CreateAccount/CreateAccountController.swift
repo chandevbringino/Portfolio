@@ -1,31 +1,26 @@
 //
-//  SignupController.swift
+//  CreateAccountController.swift
 //  EmployeeApp
 //
-//  Created by Christian Bringino on 7/23/24.
+//  Created by Christian Bringino on 7/27/24.
 //
 
 import UIKit
 
-class SignupController: ViewController {
-    var viewModel: SignupViewModelProtocol!
+class CreateAccountController: ViewController {
+    var viewModel: CreateAccountViewModelProtocol!
     
-    @IBOutlet private(set) var firstnameField: UITextField!
-    @IBOutlet private(set) var middleNameField: UITextField!
-    @IBOutlet private(set) var lastnameField: UITextField!
-    @IBOutlet private(set) var emailField: UITextField!
-    @IBOutlet private(set) var phoneNumberField: UITextField!
-    @IBOutlet private(set) var genderField: UITextField!
-    @IBOutlet private(set) var birthdateField: UITextField!
     @IBOutlet private(set) var roleFIeld: UITextField!
+    @IBOutlet private(set) var phoneNumberField: UITextField!
+    @IBOutlet private(set) var emailField: UITextField!
     @IBOutlet private(set) var passwordField: UITextField!
     @IBOutlet private(set) var repeatPasswordField: UITextField!
-    @IBOutlet private(set) var signupButton: UIButton!
+    @IBOutlet private(set) var createAccountButton: UIButton!
 }
 
 // MARK: - Lifecycle
 
-extension SignupController {
+extension CreateAccountController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -34,34 +29,34 @@ extension SignupController {
 
 // MARK: - Setup
 
-private extension SignupController {
+private extension CreateAccountController {
     func setup() {
+        setupNavBar()
         setupButtons()
     }
     
+    func setupNavBar() {
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+    }
+    
     func setupButtons() {
-        signupButton.layer.cornerRadius = 4
-        signupButton.layer.borderWidth = 1
-        signupButton.layer.borderColor = UIColor.darkGray.cgColor
+        createAccountButton.layer.cornerRadius = 4
+        createAccountButton.layer.borderWidth = 1
+        createAccountButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
 // MARK: - Actions
 
-private extension SignupController {
+private extension CreateAccountController {
     @IBAction
     func signupButtonTapped() {
         showLoader()
         
         let userParams = UserParams(
-            firstName: firstnameField.text!,
-            middleName: middleNameField.text!,
-            lastName: lastnameField.text!,
-            phoneNumber: phoneNumberField.text!,
-            gender: .male,
-            birthdate: Date(),
-            email: emailField.text!,
             role: roleFIeld.text!,
+            phoneNumber: phoneNumberField.text!,
+            email: emailField.text!, 
             password: passwordField.text!,
             repeatPassword: repeatPasswordField.text!
         )
@@ -76,7 +71,7 @@ private extension SignupController {
 
 // MARK: - Handlers
 
-private extension SignupController {
+private extension CreateAccountController {
     func handleSignupSuccess() -> VoidResult {
         { [weak self] in
             guard let self else { return }
@@ -88,7 +83,7 @@ private extension SignupController {
 
 // MARK: - Routers
 
-private extension SignupController {
+private extension CreateAccountController {
     func presentRecordsScene() {
         let vc = R.storyboard.posts.postsController()!
         vc.viewModel = viewModel.recordsVM

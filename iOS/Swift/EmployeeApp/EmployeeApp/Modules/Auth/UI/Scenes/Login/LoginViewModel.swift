@@ -69,6 +69,6 @@ private extension LoginViewModel {
 // MARK: - Getters
 
 extension LoginViewModel {
-    var signupVM: SignupViewModelProtocol { SignupViewModel() }
+    var signupVM: PersonalDetailsViewModelProtocol { PersonalDetailsViewModel() }
     var postsVM: PostsViewModelProtocol { PostsViewModel() }
 }

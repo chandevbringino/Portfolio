@@ -76,7 +76,7 @@ private extension LoginController {
 
 private extension LoginController {
     func navigateToSignUpScene() {
-        let vc = R.storyboard.signUp.signupController()!
+        let vc = R.storyboard.personalDetails.personalDetailsController()!
         vc.viewModel = viewModel.signupVM
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)

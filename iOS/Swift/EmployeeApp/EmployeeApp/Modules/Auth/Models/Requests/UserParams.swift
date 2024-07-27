@@ -9,16 +9,16 @@ import Foundation
 import Alamofire
 
 struct UserParams {
-    let firstName: String
-    let middleName: String?
-    let lastName: String
-    let phoneNumber: String
-    let gender: Gender?
-    let birthdate: Date?
-    let email: String
-    let role: String
-    let password: String
-    let repeatPassword: String
+    var firstName: String?
+    var middleName: String?
+    var lastName: String?
+    var gender: Gender?
+    var birthdate: Date?
+    var role: String = ""
+    var phoneNumber: String?
+    var email: String?
+    var password: String = ""
+    var repeatPassword: String = ""
 }
 
 extension UserParams {

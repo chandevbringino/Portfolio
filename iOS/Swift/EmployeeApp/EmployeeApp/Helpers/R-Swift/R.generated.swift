@@ -162,17 +162,21 @@ struct _R {
     let postTableCell: RswiftResources.ReuseIdentifier<PostTableCell> = .init(identifier: "PostTableCell")
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var addOrEditPost: addOrEditPost { .init(bundle: bundle) }
+    var createAccount: createAccount { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
+    var personalDetails: personalDetails { .init(bundle: bundle) }
     var postDetails: postDetails { .init(bundle: bundle) }
     var posts: posts { .init(bundle: bundle) }
-    var signUp: signUp { .init(bundle: bundle) }
 
     func addOrEditPost(bundle: Foundation.Bundle) -> addOrEditPost {
+      .init(bundle: bundle)
+    }
+    func createAccount(bundle: Foundation.Bundle) -> createAccount {
       .init(bundle: bundle)
     }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
@@ -181,22 +185,23 @@ struct _R {
     func login(bundle: Foundation.Bundle) -> login {
       .init(bundle: bundle)
     }
+    func personalDetails(bundle: Foundation.Bundle) -> personalDetails {
+      .init(bundle: bundle)
+    }
     func postDetails(bundle: Foundation.Bundle) -> postDetails {
       .init(bundle: bundle)
     }
     func posts(bundle: Foundation.Bundle) -> posts {
       .init(bundle: bundle)
     }
-    func signUp(bundle: Foundation.Bundle) -> signUp {
-      .init(bundle: bundle)
-    }
     func validate() throws {
       try self.addOrEditPost.validate()
+      try self.createAccount.validate()
       try self.launchScreen.validate()
       try self.login.validate()
+      try self.personalDetails.validate()
       try self.postDetails.validate()
       try self.posts.validate()
-      try self.signUp.validate()
     }
 
 
@@ -210,6 +215,19 @@ struct _R {
 
       func validate() throws {
         if addOrEditPostController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditPostController' could not be loaded from storyboard 'AddOrEditPost' as 'AddOrEditPostController'.") }
+      }
+    }
+
+    /// Storyboard `CreateAccount`.
+    struct createAccount: RswiftResources.StoryboardReference {
+      let bundle: Foundation.Bundle
+
+      let name = "CreateAccount"
+
+      var createAccountController: RswiftResources.StoryboardViewControllerIdentifier<CreateAccountController> { .init(identifier: "CreateAccountController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if createAccountController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'createAccountController' could not be loaded from storyboard 'CreateAccount' as 'CreateAccountController'.") }
       }
     }
 
@@ -241,6 +259,19 @@ struct _R {
       }
     }
 
+    /// Storyboard `PersonalDetails`.
+    struct personalDetails: RswiftResources.StoryboardReference {
+      let bundle: Foundation.Bundle
+
+      let name = "PersonalDetails"
+
+      var personalDetailsController: RswiftResources.StoryboardViewControllerIdentifier<PersonalDetailsController> { .init(identifier: "PersonalDetailsController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if personalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'personalDetailsController' could not be loaded from storyboard 'PersonalDetails' as 'PersonalDetailsController'.") }
+      }
+    }
+
     /// Storyboard `PostDetails`.
     struct postDetails: RswiftResources.StoryboardReference {
       let bundle: Foundation.Bundle
@@ -265,19 +296,6 @@ struct _R {
 
       func validate() throws {
         if postsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'postsController' could not be loaded from storyboard 'Posts' as 'PostsController'.") }
-      }
-    }
-
-    /// Storyboard `SignUp`.
-    struct signUp: RswiftResources.StoryboardReference {
-      let bundle: Foundation.Bundle
-
-      let name = "SignUp"
-
-      var signupController: RswiftResources.StoryboardViewControllerIdentifier<SignupController> { .init(identifier: "SignupController", storyboard: name, bundle: bundle) }
-
-      func validate() throws {
-        if signupController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'signupController' could not be loaded from storyboard 'SignUp' as 'SignupController'.") }
       }
     }
   }

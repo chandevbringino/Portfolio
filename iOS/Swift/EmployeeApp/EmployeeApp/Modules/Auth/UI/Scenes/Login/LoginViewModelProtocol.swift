@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginViewModelProtocol {
-    var signupVM: SignupViewModelProtocol { get }
+    var signupVM: PersonalDetailsViewModelProtocol { get }
     var postsVM: PostsViewModelProtocol { get }
     
     func loginUser(

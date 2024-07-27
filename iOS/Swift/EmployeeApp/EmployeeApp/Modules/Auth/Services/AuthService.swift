@@ -66,7 +66,7 @@ extension AuthService {
         onError: @escaping ErrorResult
     ) {
         Auth.auth().createUser(
-            withEmail: param.email,
+            withEmail: param.email ?? "",
             password: param.password
         ) { [unowned self] dataResult, error in
             if let error {
@@ -80,10 +80,10 @@ extension AuthService {
             let userModel = UserModel(
                 id: user.uid,
                 email: user.email ?? "",
-                firstName: param.firstName,
+                firstName: param.firstName ?? "",
                 middleName: param.middleName,
-                lastName: param.lastName,
-                phoneNumber: param.phoneNumber,
+                lastName: param.lastName ?? "",
+                phoneNumber: param.phoneNumber ?? "",
                 gender: param.gender ?? .other,
                 birthDate: param.birthdate ?? Date(),
                 role: param.role
