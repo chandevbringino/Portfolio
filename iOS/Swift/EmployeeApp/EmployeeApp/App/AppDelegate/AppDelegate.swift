@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = R.storyboard.login.loginController()!
         vc.viewModel = LoginViewModel()
         
-        let vc2 = R.storyboard.posts.postsController()!
-        vc2.viewModel = PostsViewModel()
+        let vc2 = R.storyboard.records.recordsController()!
+        vc2.viewModel = RecordsViewModel()
         
         let isLoggedIn = Auth.auth().currentUser != nil
         

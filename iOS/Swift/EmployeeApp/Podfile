@@ -17,6 +17,20 @@ target 'EmployeeApp' do
   pod 'lottie-ios', '~> 4.4.3'
   pod 'RealmSwift', '~> 10.52.0'
   pod 'PureLayout', '~> 3.1.9'
+  
+  # Combine
+  pod 'CombineCocoa', '~> 0.4.1'
+  pod 'NSObject+Combine', '~> 1.0.1'
+  
+  # Check for JailBroken Devices
+  pod 'IOSSecuritySuite', '1.9.11'
+  
+  # Material Design Components
+  pod 'MaterialComponents/Buttons', '~> 124.2.0'
+  pod 'MaterialComponents/Buttons+Theming', '~> 124.2.0'
+  pod 'MaterialComponents/TextFields', '~> 124.2.0'
+  pod 'MaterialComponents/TextFields+Theming', '~> 124.2.0'
+  pod 'MaterialComponents/Snackbar', '~> 124.2.0'
 
   target 'EmployeeAppTests' do
     inherit! :search_paths

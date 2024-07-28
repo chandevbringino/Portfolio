@@ -11,7 +11,7 @@ class LoginViewModel: LoginViewModelProtocol {
     private let service: AuthServiceProtocol
     
     init(
-        service: AuthServiceProtocol = App.shared.auth
+        service: AuthServiceProtocol
     ) {
         self.service = service
     }
@@ -70,5 +70,5 @@ private extension LoginViewModel {
 
 extension LoginViewModel {
     var signupVM: PersonalDetailsViewModelProtocol { PersonalDetailsViewModel() }
-    var postsVM: PostsViewModelProtocol { PostsViewModel() }
+    var postsVM: RecordsViewModelProtocol { RecordsViewModel() }
 }

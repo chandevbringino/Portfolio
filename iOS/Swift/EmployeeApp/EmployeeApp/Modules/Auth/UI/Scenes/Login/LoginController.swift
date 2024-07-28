@@ -24,6 +24,11 @@ extension LoginController {
         super.viewDidLoad()
         setup()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
 }
 
 // MARK: - Setup
@@ -83,7 +88,7 @@ private extension LoginController {
     }
     
     func presentRecordsScene() {
-        let vc = R.storyboard.posts.postsController()!
+        let vc = R.storyboard.records.recordsController()!
         vc.viewModel = viewModel.postsVM
         let nc = UINavigationController(rootViewController: vc)
         nc.modalPresentationStyle = .fullScreen

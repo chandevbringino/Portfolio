@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CreateAccountViewModelProtocol {
-    var recordsVM: PostsViewModelProtocol { get }
+    var recordsVM: RecordsViewModelProtocol { get }
     
     func registerUser(
         userParams: UserParams,

@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ProximaNova-Regular.ttf</string>
+		<string>ProximaNova-RegularIt.ttf</string>
+		<string>ProximaNova-Semibold.ttf</string>
+		<string>ProximaNova-SemiboldIt.ttf</string>
+		<string>SFProText-Bold.otf</string>
+		<string>SFProText-Medium.otf</string>
+		<string>SFProText-Regular.otf</string>
+		<string>SFProText-Semibold.otf</string>
+		<string>SFProDisplay-Bold.otf</string>
+		<string>SFProDisplay-Medium.otf</string>
+		<string>SFProDisplay-Regular.otf</string>
+		<string>SFProDisplay-Semibold.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

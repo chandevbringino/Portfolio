@@ -85,7 +85,7 @@ private extension CreateAccountController {
 
 private extension CreateAccountController {
     func presentRecordsScene() {
-        let vc = R.storyboard.posts.postsController()!
+        let vc = R.storyboard.records.recordsController()!
         vc.viewModel = viewModel.recordsVM
         let nc = UINavigationController(rootViewController: vc)
         nc.modalPresentationStyle = .fullScreen

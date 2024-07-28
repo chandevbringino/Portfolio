@@ -109,7 +109,7 @@ extension AuthService {
                 .setData(from: userModel)
             // TODO: - Do saving of data in local db in Service layer
             onSuccess(userModel)
-        } catch let error {
+        } catch {
             onError(error)
         }
     }
@@ -121,7 +121,7 @@ extension AuthService {
         do {
             try Auth.auth().signOut()
             onSuccess()
-        } catch let error {
+        } catch {
             onError(error)
         }
     }

@@ -1,0 +1,6 @@
+framework module NSObject_Combine {
+  umbrella header "NSObject+Combine-umbrella.h"
+
+  export *
+  module * { export * }
+}

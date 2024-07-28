@@ -5,3 +5,72 @@
   Created by Christian Bringino on 7/23/24.
   
 */
+
+// MARK: - Shared
+
+any = "Any";
+back = "Back";
+cancel = "Cancel";
+clear = "Clear";
+close = "Close";
+continue = "Continue";
+default = "Default";
+dismiss = "Dismiss";
+distance.in.km = "%dkm";
+done = "Done";
+email = "Email";
+okay = "Okay";
+password = "Password";
+logout = "Log out";
+filters = "Filters";
+first.name = "First Name";
+last.name = "Last Name";
+login = "Log In";
+confirm.password = "Confirm Password";
+skip = "Skip";
+hide = "Hide";
+plural = "%@s";
+reset = "Reset";
+save = "Save";
+unfollow = "Unfollow";
+updating = "Updating";
+creating = "Creating";
+anonymous = "Anonymous";
+edit = "Edit";
+delete = "Delete";
+yes = "Yes";
+no = "No";
+phone-number = "Phone Number";
+error = "Error";
+resend = "Resend";
+resendCodeIn = "Resend Code in %@";
+later = "Later";
+settings = "Settings";
+description = "Description";
+skip = "Skip";
+password = "Password";
+resend = "Resend";
+resendCodeIn = "Resend Code in %@";
+skip = "Skip";
+privacy.policy = "Privacy Policy";
+terms.condition = "Terms and Conditions";
+status.success = "Success";
+report.title = "Report";
+
+// MARK: - Posts
+
+add.description.placeholder = "Add a description";
+create.post.error.image-required = "Please add an image.";
+create.post.error.description-required = "Please add a description.";
+report.post = "Report Post";
+post.block.user = "Block User";
+post.block.user.dialog.title = "Are you sure?";
+post.block.user.dialog.message = "You won't see any posts from this user moving forward";
+post.block = "Block";
+
+// MARK: - Jailbreak Gate
+
+jailBroken.title = "Jail Broken Device Detected";
+jailBroken.message = "Sorry, this app will not run in JailBroken devices";
+
+
