@@ -10,6 +10,7 @@ import SVProgressHUD
 
 class LoginController: ViewController {
     var viewModel: LoginViewModelProtocol!
+    var onLoginSuccess: VoidResult?
     
     @IBOutlet private(set) var emailField: UITextField!
     @IBOutlet private(set) var passwordField: UITextField!
@@ -28,6 +29,7 @@ extension LoginController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -72,7 +74,7 @@ private extension LoginController {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
-            self.presentRecordsScene()
+            self.onLoginSuccess?()
         }
     }
 }
@@ -85,13 +87,5 @@ private extension LoginController {
         vc.viewModel = viewModel.signupVM
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func presentRecordsScene() {
-        let vc = R.storyboard.records.recordsController()!
-        vc.viewModel = viewModel.postsVM
-        let nc = UINavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .fullScreen
-        present(nc, animated: true)
     }
 }

@@ -11,7 +11,7 @@ import XCTest
 final class EmployeeAppTests: XCTestCase {
 
     func test_validation() {
-        let vc = LoginViewModel()
+//        let vc = LoginViewModel()
         
         
     }

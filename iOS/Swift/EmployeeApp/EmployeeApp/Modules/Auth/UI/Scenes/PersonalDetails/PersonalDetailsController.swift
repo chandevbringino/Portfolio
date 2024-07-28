@@ -43,6 +43,7 @@ private extension PersonalDetailsController {
     }
     
     func setupNavBar() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
     }

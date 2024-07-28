@@ -14,6 +14,7 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var appCoordinator: AppCoordinator!
 
     func application(
         _ application: UIApplication,
@@ -31,22 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func presentRootVC() {
-        // TODO: - UISCreen.main will soon be deprecated. Kindly update asap.
-        window = UIWindow(frame: UIScreen.main.bounds)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = T.color.neutralsBackground
+        window.tintColor = T.color.primariesDefault
+
+        self.window = window
+
+        let windowRouter = WindowRouter(window: window)
+        appCoordinator = AppCoordinator(windowRouter: windowRouter)
+        appCoordinator.start()
         
-        let vc = R.storyboard.login.loginController()!
-        vc.viewModel = LoginViewModel()
-        
-        let vc2 = R.storyboard.records.recordsController()!
-        vc2.viewModel = RecordsViewModel()
-        
-        let isLoggedIn = Auth.auth().currentUser != nil
-        
-        let nc = UINavigationController(rootViewController: isLoggedIn ? vc2 : vc)
-        nc.modalPresentationStyle = .fullScreen
-        
-        window?.rootViewController = nc
-        window?.makeKeyAndVisible()
+        window.makeKeyAndVisible()
     }
 }
 

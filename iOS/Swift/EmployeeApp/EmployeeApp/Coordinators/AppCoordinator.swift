@@ -13,8 +13,6 @@ final class AppCoordinator: BaseCoordinator {
   lazy var dialogPresenter: DialogPresenterProtocol = AlertDialogPresenter()
   
   private let windowRouter: WindowRouterProtocol
-//  private let session: SessionServiceProtocol
-//  private let deepLinkService: DeepLinkServiceProtocol
   
   init(
     windowRouter: WindowRouterProtocol
@@ -23,10 +21,10 @@ final class AppCoordinator: BaseCoordinator {
   }
 
   override func start() {
-      if let user = Auth.auth().currentUser {
-          startDashboardCoordinator()
+      if Auth.auth().currentUser != nil {
+          startEmployeesCoordinator()
       } else {
-          startAuthCoordinator()
+          startLoginCoordinator()
       }
     
       delay(0.5, task: trigger(type(of: self).checkJailBroken))
@@ -46,29 +44,22 @@ private extension AppCoordinator {
   }
 }
 
-// MARK: - Auth Coordinator
+// MARK: - Login Coordinator
 
 extension AppCoordinator {
-  func startAuthCoordinator(shouldSkipAppIntro: Bool = false) {
-//    let nc = NavigationController()
-//    windowRouter.setRoot(nc, animated: false)
-//
-//    let navRouter = NavRouter(navigationController: nc)
-//
-//    let coordinator = AuthNavCoordinator(
-//      shouldSkipAppIntro: shouldSkipAppIntro,
-//      navRouter: navRouter
-//    )
-//    coordinator.onOnboardingSuccess = triggerRemoveChild(
-//      coordinator,
-//      then: handleAuthOnboardingSuccess()
-//    )
-//    coordinator.onLoginSuccess = triggerRemoveChild(
-//      coordinator,
-//      then: trigger(type(of: self).start)
-//    )
-//
-//    startChild(coordinator)
+  func startLoginCoordinator() {
+      let nc = NavigationController()
+      windowRouter.setRoot(nc, animated: false)
+      
+      let router = NavRouter(navigationController: nc)
+      let coordinator = LoginCoordinator(navRouter: router)
+      
+      coordinator.onLoginSuccess = triggerRemoveChild(
+        coordinator,
+        then: trigger(type(of: self).start)
+      )
+      
+      startChild(coordinator)
   }
 
   func handleAuthOnboardingSuccess() -> VoidResult {
@@ -83,21 +74,25 @@ extension AppCoordinator {
 // MARK: - Dashboard Coordinator
 
 extension AppCoordinator {
-  func startDashboardCoordinator() {
-//    let coordinator = DashboardTabbarCoordinator(windowRouter: windowRouter)
-//    coordinator.onLogout = triggerRemoveChild(
-//      coordinator,
-//      then: handleDashboardLogout()
-//    )
-//
-//    startChild(coordinator)
+  func startEmployeesCoordinator() {
+      let nc = NavigationController()
+      windowRouter.setRoot(nc, animated: false)
+      
+      let nav = NavRouter(navigationController: nc)
+      let coordinator = EmployeesCoordinator(navRouter: nav)
+      
+      coordinator.onLogoutSuccess = triggerRemoveChild(
+        coordinator,
+        then: trigger(type(of: self).start)
+      )
+      
+      startChild(coordinator)
   }
 
   func handleDashboardLogout() -> VoidResult {
     return { [weak self] in
       guard let self else { return }
-      self.startAuthCoordinator(shouldSkipAppIntro: true)
-    }
+      self.startLoginCoordinator()    }
   }
 }
 

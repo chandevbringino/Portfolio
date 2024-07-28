@@ -20,6 +20,7 @@ class App {
     // MARK: - Firebase
     
     private(set) var auth: AuthServiceProtocol!
+    private(set) var employee: EmployeesServiceProtocol!
     
     func bootstrap(
       with application: UIApplication,
@@ -29,6 +30,7 @@ class App {
         userAPI = UserAPI()
         postsAPI = PostsAPI()
         auth = AuthService()
+        employee = EmployeesService()
     }
 }
 

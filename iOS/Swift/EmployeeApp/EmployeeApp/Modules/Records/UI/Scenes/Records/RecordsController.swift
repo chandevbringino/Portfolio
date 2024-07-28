@@ -9,6 +9,7 @@ import UIKit
 
 class RecordsController: ViewController {
     var viewModel: RecordsViewModelProtocol!
+    var onLogoutSuccess: VoidResult?
     
     @IBOutlet private(set) var navDrawerBGView: UIView!
     @IBOutlet private(set) var tableView: UITableView!
@@ -24,6 +25,12 @@ extension RecordsController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
 
@@ -173,7 +180,8 @@ private extension RecordsController {
     func signoutButtonTapped() {
         showLoader()
         closeNavDrawer()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        
+        delay(0.5) {
             // Note: - Added a little delay for loading animation
             self.viewModel.signoutUser(
                 onSuccess: self.handleSignoutSuccess(),
@@ -213,8 +221,7 @@ private extension RecordsController {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
-            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-            self.setNewRoot()
+            self.onLogoutSuccess?()
         }
     }
     
@@ -230,16 +237,16 @@ private extension RecordsController {
 // MARK: - Routers
 
 private extension RecordsController {
-    func setNewRoot() {
-        let vc = R.storyboard.login.loginController()!
-        vc.viewModel = LoginViewModel()
-        
-        let nc = UINavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .fullScreen
-        
-        self.view.window?.rootViewController = nc
-        self.view.window?.makeKeyAndVisible()
-    }
+//    func setNewRoot() {
+//        let vc = R.storyboard.login.loginController()!
+//        vc.viewModel = LoginViewModel(service: <#any AuthServiceProtocol#>)
+//        
+//        let nc = UINavigationController(rootViewController: vc)
+//        nc.modalPresentationStyle = .fullScreen
+//        
+//        self.view.window?.rootViewController = nc
+//        self.view.window?.makeKeyAndVisible()
+//    }
     
     func navigateToAddPostScene() {
         let vc = R.storyboard.addOrEditPost.addOrEditPostController()!
