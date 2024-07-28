@@ -10,6 +10,8 @@ import UIKit
 class PersonalDetailsController: ViewController {
     var viewModel: PersonalDetailsViewModelProtocol!
     
+    var onContinue: VoidResult?
+    
     @IBOutlet private(set) var firstnameField: UITextField!
     @IBOutlet private(set) var middleNameField: UITextField!
     @IBOutlet private(set) var lastnameField: UITextField!
@@ -81,8 +83,6 @@ private extension PersonalDetailsController {
 private extension PersonalDetailsController {
     @IBAction
     func signupButtonTapped() {
-        showLoader()
-        
         let userParams = UserParams(
             firstName: firstnameField.text!,
             middleName: middleNameField.text!,
@@ -91,9 +91,9 @@ private extension PersonalDetailsController {
             birthdate: selectedBdayDate
         )
         
-        viewModel.registerUser(
+        viewModel.cacheUserParams(
             userParams: userParams,
-            onSuccess: handleSignupSuccess(),
+            onSuccess: trigger(\.onContinue),
             onError: handleError()
         )
     }
@@ -108,14 +108,6 @@ private extension PersonalDetailsController {
 // MARK: - Handlers
 
 private extension PersonalDetailsController {
-    func handleSignupSuccess() -> VoidResult {
-        { [weak self] in
-            guard let self else { return }
-            self.dismissLoader()
-            self.navigateToCreateAccountScene()
-        }
-    }
-    
     func handleSelectedOption() -> SingleResult<String> {
         { [weak self] text in
             guard let self else { return }
@@ -123,16 +115,5 @@ private extension PersonalDetailsController {
             self.genderField.text = text
             self.selectedGender = gender
         }
-    }
-}
-
-// MARK: - Routers
-
-private extension PersonalDetailsController {
-    func navigateToCreateAccountScene() {
-        guard let vm = viewModel.createAccountVM else { return }
-        let vc = R.storyboard.createAccount.createAccountController()!
-        vc.viewModel = vm
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

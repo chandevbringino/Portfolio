@@ -9,7 +9,11 @@ import UIKit
 
 class RecordsController: ViewController {
     var viewModel: RecordsViewModelProtocol!
+    
     var onLogoutSuccess: VoidResult?
+    var onNavigateToAddPost: VoidResult?
+    var onNavigateToDetails: VoidResult?
+    var onEditPost: VoidResult?
     
     @IBOutlet private(set) var navDrawerBGView: UIView!
     @IBOutlet private(set) var tableView: UITableView!
@@ -202,7 +206,7 @@ private extension RecordsController {
     
     @objc
     func addPostTapped() {
-        navigateToAddPostScene()
+        onNavigateToAddPost?()
     }
 }
 
@@ -234,47 +238,6 @@ private extension RecordsController {
     }
 }
 
-// MARK: - Routers
-
-private extension RecordsController {
-//    func setNewRoot() {
-//        let vc = R.storyboard.login.loginController()!
-//        vc.viewModel = LoginViewModel(service: <#any AuthServiceProtocol#>)
-//        
-//        let nc = UINavigationController(rootViewController: vc)
-//        nc.modalPresentationStyle = .fullScreen
-//        
-//        self.view.window?.rootViewController = nc
-//        self.view.window?.makeKeyAndVisible()
-//    }
-    
-    func navigateToAddPostScene() {
-        let vc = R.storyboard.addOrEditPost.addOrEditPostController()!
-        vc.viewModel = viewModel.addPostVM
-        vc.onSaveSuccess = {
-            self.fetchPosts()
-        }
-        let nc = UINavigationController(rootViewController: vc)
-        present(nc, animated: true)
-    }
-    
-    func navigateToPostDetails(at row: Int) {
-        let vc = R.storyboard.postDetails.postDetailsController()!
-        vc.viewModel = viewModel.postDetailsVM(at: row)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func navigateToEditPostScene(at row: Int) {
-        let vc = R.storyboard.addOrEditPost.addOrEditPostController()!
-        vc.viewModel = viewModel.editPostVM(at: row)
-        vc.onSaveSuccess = {
-            self.fetchPosts()
-        }
-        let nc = UINavigationController(rootViewController: vc)
-        present(nc, animated: true)
-    }
-}
-
 // MARK: - UITableViewDelegate
 
 extension RecordsController: UITableViewDelegate {
@@ -282,7 +245,8 @@ extension RecordsController: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        navigateToPostDetails(at: indexPath.row)
+        viewModel.cachePost(at: indexPath.row)
+        onNavigateToDetails?()
     }
 }
 
@@ -317,15 +281,26 @@ extension RecordsController: UITableViewDataSource {
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+        let delete = UIContextualAction(
+            style: .destructive,
+            title: S.delete()
+        ) { [weak self] (action, sourceView, completionHandler) in
+            guard let self else { return }
             self.showDeleteConfirmation(at: indexPath.row)
             completionHandler(true)
         }
-        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
-            self.navigateToEditPostScene(at: indexPath.row)
+        let edit = UIContextualAction(
+            style: .normal,
+            title: S.edit()
+        ) { [weak self] (action, sourceView, completionHandler) in
+            guard let self else { return }
+            self.viewModel.cachePost(at: indexPath.row)
+            self.onEditPost?()
             completionHandler(true)
         }
-        let swipeAction = UISwipeActionsConfiguration(actions: [delete, edit])
+        let swipeAction = UISwipeActionsConfiguration(
+            actions: [delete, edit]
+        )
         swipeAction.performsFirstActionWithFullSwipe = false
         return swipeAction
     }

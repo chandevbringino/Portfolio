@@ -10,7 +10,9 @@ import SVProgressHUD
 
 class LoginController: ViewController {
     var viewModel: LoginViewModelProtocol!
+    
     var onLoginSuccess: VoidResult?
+    var onCreateAccount: VoidResult?
     
     @IBOutlet private(set) var emailField: UITextField!
     @IBOutlet private(set) var passwordField: UITextField!
@@ -63,7 +65,7 @@ private extension LoginController {
     
     @IBAction
     func createAccountButtonTapped() {
-        navigateToSignUpScene()
+        onCreateAccount?()
     }
 }
 
@@ -76,16 +78,5 @@ private extension LoginController {
             self.dismissLoader()
             self.onLoginSuccess?()
         }
-    }
-}
-
-// MARK: - Routers
-
-private extension LoginController {
-    func navigateToSignUpScene() {
-        let vc = R.storyboard.personalDetails.personalDetailsController()!
-        vc.viewModel = viewModel.signupVM
-        vc.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

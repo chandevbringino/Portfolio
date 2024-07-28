@@ -9,6 +9,7 @@ import Foundation
 
 final class LoginCoordinator: NavCoordinator {
     var onLoginSuccess: VoidResult?
+    var onSignupSuccess: VoidResult?
     
     private let config: AppConfigProtocol
     private let authService: AuthServiceProtocol
@@ -29,7 +30,7 @@ final class LoginCoordinator: NavCoordinator {
     }
 }
 
-// MARK: - AppIntro Scene
+// MARK: - Login Scene
 
 extension LoginCoordinator {
   func setRootToLoginScene() {
@@ -38,6 +39,20 @@ extension LoginCoordinator {
         service: authService
       )
       vc.onLoginSuccess = trigger(\.onLoginSuccess)
+      vc.onCreateAccount = trigger(type(of: self).startSignupCoordinator)
       navRouter.setRoot(vc, animated: true)
   }
+}
+
+// MARK: - SignUp Coordinator
+
+extension LoginCoordinator {
+    func startSignupCoordinator() {
+        let coordinator = SignUpCoordinator(
+            navRouter: navRouter
+        )
+        coordinator.onSignupSuccess = trigger(\.onLoginSuccess)
+        
+        startChild(coordinator)
+    }
 }

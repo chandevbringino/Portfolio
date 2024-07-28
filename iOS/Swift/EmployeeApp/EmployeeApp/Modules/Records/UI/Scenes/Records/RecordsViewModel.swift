@@ -8,6 +8,8 @@
 import Foundation
 
 class RecordsViewModel: RecordsViewModelProtocol {
+    var onCacheSelectedPost: SingleResult<PostModel>?
+    
     private var posts: [PostModel] = []
     
     private let postsAPI: PostsAPIProtocol
@@ -25,6 +27,10 @@ class RecordsViewModel: RecordsViewModelProtocol {
 // MARK: - Methods
 
 extension RecordsViewModel {
+    func cachePost(at row: Int) {
+        onCacheSelectedPost?(posts[row])
+    }
+    
     func fetchPosts(
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
@@ -61,10 +67,6 @@ extension RecordsViewModel {
     
     func postCellVM(at row: Int) -> PostTableCellViewModelProtocol {
         PostTableCellViewModel(post: posts[row])
-    }
-    
-    func postDetailsVM(at row: Int) -> PostDetailsViewModelProtocol {
-        PostDetailsViewModel(post: posts[row])
     }
     
     func editPostVM(at row: Int) -> AddOrEditPostViewModelProtocol {

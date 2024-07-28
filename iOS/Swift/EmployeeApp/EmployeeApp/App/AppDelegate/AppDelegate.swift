@@ -26,12 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
-        presentRootVC()
+        startCoordinator()
         
         return true
     }
     
-    func presentRootVC() {
+    func startCoordinator() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = T.color.neutralsBackground
         window.tintColor = T.color.primariesDefault

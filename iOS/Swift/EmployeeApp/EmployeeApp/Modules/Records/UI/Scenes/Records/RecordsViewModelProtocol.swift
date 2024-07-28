@@ -12,7 +12,7 @@ protocol RecordsViewModelProtocol {
     
     var addPostVM: AddOrEditPostViewModelProtocol { get }
     
-    func postDetailsVM(at row: Int) -> PostDetailsViewModelProtocol
+    func cachePost(at row: Int)
     
     func postCellVM(at row: Int) -> PostTableCellViewModelProtocol
     

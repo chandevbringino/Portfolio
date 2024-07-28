@@ -10,6 +10,8 @@ import UIKit
 class CreateAccountController: ViewController {
     var viewModel: CreateAccountViewModelProtocol!
     
+    var onSignupSuccess: VoidResult?
+    
     @IBOutlet private(set) var roleFIeld: UITextField!
     @IBOutlet private(set) var phoneNumberField: UITextField!
     @IBOutlet private(set) var emailField: UITextField!
@@ -76,19 +78,7 @@ private extension CreateAccountController {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
-            self.presentRecordsScene()
+            self.onSignupSuccess?()
         }
-    }
-}
-
-// MARK: - Routers
-
-private extension CreateAccountController {
-    func presentRecordsScene() {
-//        let vc = R.storyboard.records.recordsController()!
-//        vc.viewModel = viewModel.recordsVM
-//        let nc = UINavigationController(rootViewController: vc)
-//        nc.modalPresentationStyle = .fullScreen
-//        present(nc, animated: true)
     }
 }

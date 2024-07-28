@@ -10,12 +10,11 @@ import Foundation
 protocol PersonalDetailsViewModelProtocol {
     var genderItems: [Gender] { get }
     
-    var createAccountVM: CreateAccountViewModelProtocol? { get }
     var genderPickerVM: GenericPickerViewModelProtocol { get }
     
     func dateText(from date: Date) -> String
     
-    func registerUser(
+    func cacheUserParams(
         userParams: UserParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult

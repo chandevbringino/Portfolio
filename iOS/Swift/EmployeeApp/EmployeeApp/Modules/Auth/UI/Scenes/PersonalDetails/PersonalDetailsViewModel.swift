@@ -8,7 +8,7 @@
 import Foundation
 
 class PersonalDetailsViewModel: PersonalDetailsViewModelProtocol {
-    private var userParams: UserParams?
+    var onCacheUserParams: SingleResult<UserParams>?
     
     private let genders: [Gender] = [.male, .female, .other]
 }
@@ -16,7 +16,7 @@ class PersonalDetailsViewModel: PersonalDetailsViewModelProtocol {
 // MARK: - Methods
 
 extension PersonalDetailsViewModel {
-    func registerUser(
+    func cacheUserParams(
         userParams: UserParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
@@ -25,8 +25,7 @@ extension PersonalDetailsViewModel {
             return onError(error)
         }
         
-        self.userParams = userParams
-        
+        onCacheUserParams?(userParams)
         onSuccess()
     }
     
@@ -61,10 +60,5 @@ extension PersonalDetailsViewModel {
         GenericPickerViewModel(
             options: genders.map({ $0.rawValue })
         )
-    }
-    
-    var createAccountVM: CreateAccountViewModelProtocol? {
-        guard let params = userParams else { return nil }
-        return CreateAccountViewModel(userParams: params)
     }
 }

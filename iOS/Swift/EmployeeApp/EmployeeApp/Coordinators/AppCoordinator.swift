@@ -61,17 +61,9 @@ extension AppCoordinator {
       
       startChild(coordinator)
   }
-
-  func handleAuthOnboardingSuccess() -> VoidResult {
-    return { [weak self] in
-      guard let self else { return }
-      self.start()
-      self.startInAppPurchaseCoordinator()
-    }
-  }
 }
 
-// MARK: - Dashboard Coordinator
+// MARK: - Employees Coordinator
 
 extension AppCoordinator {
   func startEmployeesCoordinator() {
@@ -87,29 +79,5 @@ extension AppCoordinator {
       )
       
       startChild(coordinator)
-  }
-
-  func handleDashboardLogout() -> VoidResult {
-    return { [weak self] in
-      guard let self else { return }
-      self.startLoginCoordinator()    }
-  }
-}
-
-// MARK: - MultiPlanInAppPurchass Coordinator
-
-extension AppCoordinator {
-  func startInAppPurchaseCoordinator() {
-//    let nc = NavigationController()
-//    nc.modalPresentationStyle = .fullScreen
-//
-//    let navRouter = NavRouter(navigationController: nc)
-//
-//    let coordinator = MultiPlanInAppPurchaseNavCoordinator(navRouter: navRouter)
-//    coordinator.onComplete = triggerRemoveChild(coordinator)
-//
-//    startChild(coordinator)
-//
-//    windowRouter.presentInRoot(nc, animated: true)
   }
 }
