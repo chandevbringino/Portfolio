@@ -1,5 +1,5 @@
 //
-//  PostsViewModelProtocol.swift
+//  RecordsViewModelProtocol.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PostsViewModelProtocol {
+protocol RecordsViewModelProtocol {
     var postsCount: Int { get }
     
     var addPostVM: AddOrEditPostViewModelProtocol { get }

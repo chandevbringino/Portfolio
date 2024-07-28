@@ -1,5 +1,5 @@
 //
-//  PostsController.swift
+//  RecordsController.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class PostsController: ViewController {
-    var viewModel: PostsViewModelProtocol!
+class RecordsController: ViewController {
+    var viewModel: RecordsViewModelProtocol!
     
     @IBOutlet private(set) var navDrawerBGView: UIView!
     @IBOutlet private(set) var tableView: UITableView!
@@ -20,7 +20,7 @@ class PostsController: ViewController {
 
 // MARK: - Lifecycle
 
-extension PostsController {
+extension RecordsController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -29,7 +29,7 @@ extension PostsController {
 
 // MARK: - Setup
 
-private extension PostsController {
+private extension RecordsController {
     func setup() {
         setupNavBar()
         setupTableView()
@@ -105,7 +105,7 @@ private extension PostsController {
 
 // MARK: - Methods
 
-private extension PostsController {
+private extension RecordsController {
     func fetchPosts() {
         showLoader()
         viewModel.fetchPosts(
@@ -168,7 +168,7 @@ private extension PostsController {
 
 // MARK: - Actions
 
-private extension PostsController {
+private extension RecordsController {
     @IBAction
     func signoutButtonTapped() {
         showLoader()
@@ -200,7 +200,7 @@ private extension PostsController {
 
 // MARK: - Handlers
 
-private extension PostsController {
+private extension RecordsController {
     func handleFetchPostsSuccess() -> VoidResult {
         { [weak self] in
             guard let self else { return }
@@ -229,7 +229,7 @@ private extension PostsController {
 
 // MARK: - Routers
 
-private extension PostsController {
+private extension RecordsController {
     func setNewRoot() {
         let vc = R.storyboard.login.loginController()!
         vc.viewModel = LoginViewModel()
@@ -270,7 +270,7 @@ private extension PostsController {
 
 // MARK: - UITableViewDelegate
 
-extension PostsController: UITableViewDelegate {
+extension RecordsController: UITableViewDelegate {
     func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
@@ -281,7 +281,7 @@ extension PostsController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension PostsController: UITableViewDataSource {
+extension RecordsController: UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int

@@ -1,5 +1,5 @@
 //
-//  PostsViewModel.swift
+//  RecordsViewModel.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostsViewModel: PostsViewModelProtocol {
+class RecordsViewModel: RecordsViewModelProtocol {
     private var posts: [PostModel] = []
     
     private let postsAPI: PostsAPIProtocol
@@ -24,7 +24,7 @@ class PostsViewModel: PostsViewModelProtocol {
 
 // MARK: - Methods
 
-extension PostsViewModel {
+extension RecordsViewModel {
     func fetchPosts(
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
@@ -74,7 +74,7 @@ extension PostsViewModel {
 
 // MARK: - Handlers
 
-private extension PostsViewModel {
+private extension RecordsViewModel {
     func handleGetPostsSuccess(
         thenExecute onCompletion: @escaping VoidResult
     ) -> SingleResult<[PostModel]> {
@@ -97,7 +97,7 @@ private extension PostsViewModel {
 
 // MARK: - Getters
 
-extension PostsViewModel {
+extension RecordsViewModel {
     var postsCount: Int { posts.count }
     
     var addPostVM: AddOrEditPostViewModelProtocol { AddOrEditPostViewModel() }
