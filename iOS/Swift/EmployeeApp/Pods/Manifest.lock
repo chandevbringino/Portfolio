@@ -1286,6 +1286,7 @@ PODS:
   - SVProgressHUD (2.3.1):
     - SVProgressHUD/Core (= 2.3.1)
   - SVProgressHUD/Core (2.3.1)
+  - TagListView (1.4.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.9.1)
@@ -1307,6 +1308,7 @@ DEPENDENCIES:
   - RealmSwift (~> 10.52.0)
   - SDWebImage (~> 5.0)
   - SVProgressHUD (~> 2.3.1)
+  - TagListView (~> 1.4.1)
 
 SPEC REPOS:
   trunk:
@@ -1346,6 +1348,7 @@ SPEC REPOS:
     - RecaptchaInterop
     - SDWebImage
     - SVProgressHUD
+    - TagListView
 
 SPEC CHECKSUMS:
   abseil: d121da9ef7e2ff4cab7666e76c5a3e0915ae08c3
@@ -1384,7 +1387,8 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
 
-PODFILE CHECKSUM: a7cd2f51a0422c04b7229696e3b716a00c67c07a
+PODFILE CHECKSUM: a771ff01c2e991a0973d3a0985e95cc58b77298d
 
 COCOAPODS: 1.15.2

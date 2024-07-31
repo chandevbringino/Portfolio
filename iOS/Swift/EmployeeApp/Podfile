@@ -17,6 +17,7 @@ target 'EmployeeApp' do
   pod 'lottie-ios', '~> 4.4.3'
   pod 'RealmSwift', '~> 10.52.0'
   pod 'PureLayout', '~> 3.1.9'
+  pod 'TagListView', '~> 1.4.1'
   
   # Combine
   pod 'CombineCocoa', '~> 0.4.1'
