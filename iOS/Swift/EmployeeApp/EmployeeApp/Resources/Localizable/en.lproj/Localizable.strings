@@ -76,5 +76,14 @@ jailBroken.title = "Jail Broken Device Detected";
 jailBroken.message = "Sorry, this app will not run in JailBroken devices";
 
 // MARK: - Skills
+
 technical.skills = "Technical Skills";
 personal.skills = "Personal Skills";
+
+// MARK: - Employees
+
+employees.title = "Employees";
+
+// MARK: - Add Employee
+
+add.employee.title = "Add Employee";

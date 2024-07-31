@@ -76,7 +76,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 56 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 58 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -93,6 +93,13 @@ struct _R {
       ///
       /// Locales: en
       var addDescriptionPlaceholder: RswiftResources.StringResource { .init(key: "add.description.placeholder", tableName: "Localizable", source: source, developmentValue: "Add a description", comment: nil) }
+
+      /// en translation: Add Employee
+      ///
+      /// Key: add.employee.title
+      ///
+      /// Locales: en
+      var addEmployeeTitle: RswiftResources.StringResource { .init(key: "add.employee.title", tableName: "Localizable", source: source, developmentValue: "Add Employee", comment: nil) }
 
       /// en translation: Anonymous
       ///
@@ -226,6 +233,13 @@ struct _R {
       ///
       /// Locales: en
       var email: RswiftResources.StringResource { .init(key: "email", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
+
+      /// en translation: Employees
+      ///
+      /// Key: employees.title
+      ///
+      /// Locales: en
+      var employeesTitle: RswiftResources.StringResource { .init(key: "employees.title", tableName: "Localizable", source: source, developmentValue: "Employees", comment: nil) }
 
       /// en translation: Error
       ///
@@ -683,29 +697,23 @@ struct _R {
     var touch: RswiftResources.FileResource { .init(name: "touch", pathExtension: "", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
     /// Nib `EmployeeCollectionCell`.
     var employeeCollectionCell: RswiftResources.NibReferenceReuseIdentifier<EmployeeCollectionCell, EmployeeCollectionCell> { .init(name: "EmployeeCollectionCell", bundle: bundle, identifier: "EmployeeCollectionCell") }
 
-    /// Nib `SkillTableCell`.
-    var skillTableCell: RswiftResources.NibReferenceReuseIdentifier<SkillTableCell, SkillTableCell> { .init(name: "SkillTableCell", bundle: bundle, identifier: "SkillTableCell") }
-
     func validate() throws {
 
     }
   }
 
-  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
 
     /// Reuse identifier `EmployeeCollectionCell`.
     let employeeCollectionCell: RswiftResources.ReuseIdentifier<EmployeeCollectionCell> = .init(identifier: "EmployeeCollectionCell")
-
-    /// Reuse identifier `SkillTableCell`.
-    let skillTableCell: RswiftResources.ReuseIdentifier<SkillTableCell> = .init(identifier: "SkillTableCell")
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
@@ -757,10 +765,18 @@ struct _R {
 
       let name = "AddOrEditEmployee"
 
-      var addOrEditEmployeeController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditEmployeeController> { .init(identifier: "AddOrEditEmployeeController", storyboard: name, bundle: bundle) }
+      var addOrEditEmployeeController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditEmployeePersonalDetailsController> { .init(identifier: "AddOrEditEmployeeController", storyboard: name, bundle: bundle) }
+      var addOrEditProfessionalDetailsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditProfessionalDetailsController> { .init(identifier: "AddOrEditProfessionalDetailsController", storyboard: name, bundle: bundle) }
+      var addOrEditProfilePictureController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditProfilePictureController> { .init(identifier: "AddOrEditProfilePictureController", storyboard: name, bundle: bundle) }
+      var addOrEditResumeAndSkillsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditResumeAndSkillsController> { .init(identifier: "AddOrEditResumeAndSkillsController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if addOrEditEmployeeController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeeController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeeController'.") }
+        if UIKit.UIImage(named: "ic-add", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic-add' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
+        if addOrEditEmployeeController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeeController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeePersonalDetailsController'.") }
+        if addOrEditProfessionalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfessionalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfessionalDetailsController'.") }
+        if addOrEditProfilePictureController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfilePictureController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfilePictureController'.") }
+        if addOrEditResumeAndSkillsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditResumeAndSkillsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditResumeAndSkillsController'.") }
       }
     }
 

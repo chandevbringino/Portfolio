@@ -60,7 +60,7 @@ extension EmployeesCoordinator {
     func presentAddEmployee() {
         let vc = R.storyboard.addOrEditEmployee.addOrEditEmployeeController()!
         
-        vc.viewModel = AddOrEditEmployeeViewModel()
+        vc.viewModel = AddOrEditEmployeePersonalDetailsViewModel()
         vc.onSaveSuccess = triggerDismiss()
         
         let nc = NavigationController(rootViewController: vc)

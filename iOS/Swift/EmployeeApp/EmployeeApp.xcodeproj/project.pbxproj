@@ -33,14 +33,10 @@
 		6A223EA72C4F7A3E00AE37A6 /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EA62C4F7A3E00AE37A6 /* EmployeesController.swift */; };
 		6A223EB92C4F806900AE37A6 /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EB82C4F806900AE37A6 /* EmployeesViewModel.swift */; };
 		6A223EBB2C4F807000AE37A6 /* EmployeesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EBA2C4F807000AE37A6 /* EmployeesViewModelProtocol.swift */; };
-		6A223EBD2C4F814B00AE37A6 /* AddOrEditEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A223EBC2C4F814B00AE37A6 /* AddOrEditEmployee.storyboard */; };
 		6A223EBF2C4F815A00AE37A6 /* EmployeeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EBE2C4F815A00AE37A6 /* EmployeeDetailsController.swift */; };
 		6A223EC12C4F829300AE37A6 /* EmployeeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A223EC02C4F829300AE37A6 /* EmployeeDetails.storyboard */; };
-		6A223EC32C4F850B00AE37A6 /* AddOrEditEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EC22C4F850B00AE37A6 /* AddOrEditEmployeeController.swift */; };
 		6A223EC52C4F851900AE37A6 /* EmployeeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EC42C4F851900AE37A6 /* EmployeeDetailsViewModel.swift */; };
 		6A223EC72C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EC62C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift */; };
-		6A223EC92C4F852E00AE37A6 /* AddOrEditEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EC82C4F852E00AE37A6 /* AddOrEditEmployeeViewModel.swift */; };
-		6A223ECB2C4F853600AE37A6 /* AddOrEditEmployeeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223ECA2C4F853600AE37A6 /* AddOrEditEmployeeViewModelProtocol.swift */; };
 		6A223ECE2C4F878600AE37A6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223ECD2C4F878600AE37A6 /* UserModel.swift */; };
 		6A223ED12C4F882600AE37A6 /* UserParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223ED02C4F882600AE37A6 /* UserParams.swift */; };
 		6A223EE12C4F8FEF00AE37A6 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EE02C4F8FEF00AE37A6 /* UserAPI.swift */; };
@@ -130,6 +126,19 @@
 		6A3A80082C561F66009BA3F9 /* EmployeesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A80072C561F66009BA3F9 /* EmployeesCoordinator.swift */; };
 		6A3A800B2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */; };
 		6A3A800D2C561FE5009BA3F9 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */; };
+		6AA4AAF62C59FCD2001C3613 /* AddOrEditEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */; };
+		6AA4AAF72C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */; };
+		6AA4AAF82C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */; };
+		6AA4AAF92C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF42C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModelProtocol.swift */; };
+		6AA4AB002C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAFD2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift */; };
+		6AA4AB012C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAFE2C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift */; };
+		6AA4AB022C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAFF2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift */; };
+		6AA4AB0B2C59FECD001C3613 /* AddOrEditProfilePictureViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB082C59FECD001C3613 /* AddOrEditProfilePictureViewModelProtocol.swift */; };
+		6AA4AB0C2C59FECD001C3613 /* AddOrEditProfilePictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB092C59FECD001C3613 /* AddOrEditProfilePictureController.swift */; };
+		6AA4AB0D2C59FECD001C3613 /* AddOrEditProfilePictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB0A2C59FECD001C3613 /* AddOrEditProfilePictureViewModel.swift */; };
+		6AA4AB142C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB112C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModelProtocol.swift */; };
+		6AA4AB152C5A0287001C3613 /* AddOrEditResumeAndSkillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB122C5A0287001C3613 /* AddOrEditResumeAndSkillsController.swift */; };
+		6AA4AB162C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AB132C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModel.swift */; };
 		6AA4C9FC2C548A0500EAD80B /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4C9FB2C548A0500EAD80B /* CreateAccount.storyboard */; };
 		6AA4C9FE2C548A1300EAD80B /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4C9FD2C548A1300EAD80B /* CreateAccountController.swift */; };
 		6AA4CA002C548A3D00EAD80B /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4C9FF2C548A3D00EAD80B /* CreateAccountViewModel.swift */; };
@@ -214,14 +223,10 @@
 		6A223EA62C4F7A3E00AE37A6 /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
 		6A223EB82C4F806900AE37A6 /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
 		6A223EBA2C4F807000AE37A6 /* EmployeesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModelProtocol.swift; sourceTree = "<group>"; };
-		6A223EBC2C4F814B00AE37A6 /* AddOrEditEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddOrEditEmployee.storyboard; sourceTree = "<group>"; };
 		6A223EBE2C4F815A00AE37A6 /* EmployeeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsController.swift; sourceTree = "<group>"; };
 		6A223EC02C4F829300AE37A6 /* EmployeeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeDetails.storyboard; sourceTree = "<group>"; };
-		6A223EC22C4F850B00AE37A6 /* AddOrEditEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeeController.swift; sourceTree = "<group>"; };
 		6A223EC42C4F851900AE37A6 /* EmployeeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewModel.swift; sourceTree = "<group>"; };
 		6A223EC62C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
-		6A223EC82C4F852E00AE37A6 /* AddOrEditEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeeViewModel.swift; sourceTree = "<group>"; };
-		6A223ECA2C4F853600AE37A6 /* AddOrEditEmployeeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeeViewModelProtocol.swift; sourceTree = "<group>"; };
 		6A223ECD2C4F878600AE37A6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6A223ED02C4F882600AE37A6 /* UserParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParams.swift; sourceTree = "<group>"; };
 		6A223EE02C4F8FEF00AE37A6 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -311,6 +316,19 @@
 		6A3A80072C561F66009BA3F9 /* EmployeesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCoordinator.swift; sourceTree = "<group>"; };
 		6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesServiceProtocol.swift; sourceTree = "<group>"; };
 		6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
+		6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddOrEditEmployee.storyboard; sourceTree = "<group>"; };
+		6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsController.swift; sourceTree = "<group>"; };
+		6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsViewModel.swift; sourceTree = "<group>"; };
+		6AA4AAF42C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		6AA4AAFD2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfessionalDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		6AA4AAFE2C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfessionalDetailsController.swift; sourceTree = "<group>"; };
+		6AA4AAFF2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfessionalDetailsViewModel.swift; sourceTree = "<group>"; };
+		6AA4AB082C59FECD001C3613 /* AddOrEditProfilePictureViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfilePictureViewModelProtocol.swift; sourceTree = "<group>"; };
+		6AA4AB092C59FECD001C3613 /* AddOrEditProfilePictureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfilePictureController.swift; sourceTree = "<group>"; };
+		6AA4AB0A2C59FECD001C3613 /* AddOrEditProfilePictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditProfilePictureViewModel.swift; sourceTree = "<group>"; };
+		6AA4AB112C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditResumeAndSkillsViewModelProtocol.swift; sourceTree = "<group>"; };
+		6AA4AB122C5A0287001C3613 /* AddOrEditResumeAndSkillsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditResumeAndSkillsController.swift; sourceTree = "<group>"; };
+		6AA4AB132C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrEditResumeAndSkillsViewModel.swift; sourceTree = "<group>"; };
 		6AA4C9FB2C548A0500EAD80B /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		6AA4C9FD2C548A1300EAD80B /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		6AA4C9FF2C548A3D00EAD80B /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
@@ -394,6 +412,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6A1D54342C59F90900B89D16 /* AddEmployee */ = {
+			isa = PBXGroup;
+			children = (
+				6A1D54352C59F91300B89D16 /* UI */,
+			);
+			path = AddEmployee;
+			sourceTree = "<group>";
+		};
+		6A1D54352C59F91300B89D16 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A1D54362C59F91800B89D16 /* Scenes */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6A1D54362C59F91800B89D16 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */,
+				6AA4AAF52C59FCD2001C3613 /* AddOrEdit */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		6A223E2D2C4F4B6C00AE37A6 = {
 			isa = PBXGroup;
 			children = (
@@ -453,7 +496,8 @@
 				6A223E7E2C4F568500AE37A6 /* LaunchScreen */,
 				6ACC61E62C53BF2E003A2CC8 /* Core */,
 				6A223E6D2C4F4D1F00AE37A6 /* Auth */,
-				6A223E9E2C4F79E300AE37A6 /* Records */,
+				6A223E9E2C4F79E300AE37A6 /* Employees */,
+				6A1D54342C59F90900B89D16 /* AddEmployee */,
 				6ABCCC502C54DB8A003262D1 /* Shared */,
 			);
 			path = Modules;
@@ -613,7 +657,7 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		6A223E9E2C4F79E300AE37A6 /* Records */ = {
+		6A223E9E2C4F79E300AE37A6 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
 				6A223E9F2C4F79F900AE37A6 /* Models */,
@@ -621,7 +665,7 @@
 				6A3A80092C561FA7009BA3F9 /* Services */,
 				6A223EA12C4F7A0800AE37A6 /* UI */,
 			);
-			path = Records;
+			path = Employees;
 			sourceTree = "<group>";
 		};
 		6A223E9F2C4F79F900AE37A6 /* Models */ = {
@@ -647,7 +691,6 @@
 			children = (
 				6A223EA32C4F7A1500AE37A6 /* Employees */,
 				6A223EB62C4F803B00AE37A6 /* EmployeeDetails */,
-				6A223EB72C4F804C00AE37A6 /* AddOrEditEmployee */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -680,17 +723,6 @@
 				6ACF66F32C5909210094AAA5 /* Skills */,
 			);
 			path = EmployeeDetails;
-			sourceTree = "<group>";
-		};
-		6A223EB72C4F804C00AE37A6 /* AddOrEditEmployee */ = {
-			isa = PBXGroup;
-			children = (
-				6A223EBC2C4F814B00AE37A6 /* AddOrEditEmployee.storyboard */,
-				6A223EC22C4F850B00AE37A6 /* AddOrEditEmployeeController.swift */,
-				6A223EC82C4F852E00AE37A6 /* AddOrEditEmployeeViewModel.swift */,
-				6A223ECA2C4F853600AE37A6 /* AddOrEditEmployeeViewModelProtocol.swift */,
-			);
-			path = AddOrEditEmployee;
 			sourceTree = "<group>";
 		};
 		6A223ECC2C4F877900AE37A6 /* Responses */ = {
@@ -1179,6 +1211,57 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		6AA4AAF52C59FCD2001C3613 /* AddOrEdit */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AB042C59FE97001C3613 /* PersonalDetails */,
+				6AA4AB052C59FEA1001C3613 /* ProfessionalDetails */,
+				6AA4AB0F2C5A026B001C3613 /* ResumeAndSkills */,
+				6AA4AB062C59FEA8001C3613 /* ProfilePicture */,
+			);
+			path = AddOrEdit;
+			sourceTree = "<group>";
+		};
+		6AA4AB042C59FE97001C3613 /* PersonalDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */,
+				6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */,
+				6AA4AAF42C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModelProtocol.swift */,
+			);
+			path = PersonalDetails;
+			sourceTree = "<group>";
+		};
+		6AA4AB052C59FEA1001C3613 /* ProfessionalDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AAFE2C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift */,
+				6AA4AAFF2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift */,
+				6AA4AAFD2C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift */,
+			);
+			path = ProfessionalDetails;
+			sourceTree = "<group>";
+		};
+		6AA4AB062C59FEA8001C3613 /* ProfilePicture */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AB092C59FECD001C3613 /* AddOrEditProfilePictureController.swift */,
+				6AA4AB0A2C59FECD001C3613 /* AddOrEditProfilePictureViewModel.swift */,
+				6AA4AB082C59FECD001C3613 /* AddOrEditProfilePictureViewModelProtocol.swift */,
+			);
+			path = ProfilePicture;
+			sourceTree = "<group>";
+		};
+		6AA4AB0F2C5A026B001C3613 /* ResumeAndSkills */ = {
+			isa = PBXGroup;
+			children = (
+				6AA4AB122C5A0287001C3613 /* AddOrEditResumeAndSkillsController.swift */,
+				6AA4AB132C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModel.swift */,
+				6AA4AB112C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModelProtocol.swift */,
+			);
+			path = ResumeAndSkills;
+			sourceTree = "<group>";
+		};
 		6AA4C9FA2C5489EA00EAD80B /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
@@ -1502,7 +1585,6 @@
 				6A3A7F9D2C56009F009BA3F9 /* ProximaNova-Semibold.ttf in Resources */,
 				6A223EC12C4F829300AE37A6 /* EmployeeDetails.storyboard in Resources */,
 				6A3A7FA52C56009F009BA3F9 /* SFProText-Regular.otf in Resources */,
-				6A223EBD2C4F814B00AE37A6 /* AddOrEditEmployee.storyboard in Resources */,
 				6A223E972C4F767600AE37A6 /* PersonalDetails.storyboard in Resources */,
 				6A223E432C4F4B6D00AE37A6 /* Assets.xcassets in Resources */,
 				6A3A7F9C2C56009F009BA3F9 /* ProximaNova-RegularIt.ttf in Resources */,
@@ -1512,6 +1594,7 @@
 				6A3A7FA62C56009F009BA3F9 /* SFProText-Semibold.otf in Resources */,
 				6AB372FF2C53AB6200BF51EE /* GoogleService-Info.plist in Resources */,
 				6A223E862C4F5D8200AE37A6 /* Localizable.stringsdict in Resources */,
+				6AA4AAF62C59FCD2001C3613 /* AddOrEditEmployee.storyboard in Resources */,
 				6ACF66EC2C58C06E0094AAA5 /* EmployeeCollectionCell.xib in Resources */,
 				6A3A7FA32C56009F009BA3F9 /* SFProText-Bold.otf in Resources */,
 				6A3A7FA12C56009F009BA3F9 /* SFProDisplay-Regular.otf in Resources */,
@@ -1668,6 +1751,9 @@
 				6AA4CA022C548A4400EAD80B /* CreateAccountViewModelProtocol.swift in Sources */,
 				6A3A7FCD2C560B3A009BA3F9 /* AppDocumentPresenter.swift in Sources */,
 				6A3A7FD12C560B3A009BA3F9 /* JailBrokenDialog.swift in Sources */,
+				6AA4AB142C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModelProtocol.swift in Sources */,
+				6AA4AB152C5A0287001C3613 /* AddOrEditResumeAndSkillsController.swift in Sources */,
+				6AA4AB162C5A0287001C3613 /* AddOrEditResumeAndSkillsViewModel.swift in Sources */,
 				6A223ECE2C4F878600AE37A6 /* UserModel.swift in Sources */,
 				6A3A80042C561D5C009BA3F9 /* SessionService.swift in Sources */,
 				6A3A7FF02C5616D4009BA3F9 /* Helpers.swift in Sources */,
@@ -1676,20 +1762,21 @@
 				6AA685102C56553D00BBEBBD /* SignUpCoordinator.swift in Sources */,
 				6A3A7F6A2C55FC3A009BA3F9 /* ProcessController.swift in Sources */,
 				6AA4CA102C54AD8200EAD80B /* NibLoadable.swift in Sources */,
-				6A223EC32C4F850B00AE37A6 /* AddOrEditEmployeeController.swift in Sources */,
 				6A3A7FF92C5617C3009BA3F9 /* Date+Relative.swift in Sources */,
 				6A3A7FD62C560B3A009BA3F9 /* DefaultSnackbarErrorInfo.swift in Sources */,
 				6A223EBF2C4F815A00AE37A6 /* EmployeeDetailsController.swift in Sources */,
 				6AA4CA0A2C54A8C600EAD80B /* GenericPickerViewModel.swift in Sources */,
 				6A223E782C4F4DBD00AE37A6 /* LoginViewModelProtocol.swift in Sources */,
 				6ACF66F12C58C0820094AAA5 /* EmployeeModel.swift in Sources */,
+				6AA4AB002C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift in Sources */,
+				6AA4AB012C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift in Sources */,
+				6AA4AB022C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift in Sources */,
 				6AA4C9FE2C548A1300EAD80B /* CreateAccountController.swift in Sources */,
 				6A223E912C4F72FE00AE37A6 /* AppConfig.swift in Sources */,
 				6A3A7F682C55FC3A009BA3F9 /* NavigationControllerThemable.swift in Sources */,
 				6A3A7FD92C560B3A009BA3F9 /* SnackbarInfoPresenter.swift in Sources */,
 				6A3A7FEC2C56115B009BA3F9 /* WKWebView+Utils.swift in Sources */,
 				6A223EE92C4F94F600AE37A6 /* UserAPIProtocol.swift in Sources */,
-				6A223ECB2C4F853600AE37A6 /* AddOrEditEmployeeViewModelProtocol.swift in Sources */,
 				6A3A7FE32C560B3A009BA3F9 /* SheetProtocol.swift in Sources */,
 				6A223EEF2C4FB7F900AE37A6 /* Constants.swift in Sources */,
 				6A3A7F4A2C55F917009BA3F9 /* CoordinatorProtocol.swift in Sources */,
@@ -1697,6 +1784,7 @@
 				6A223EB92C4F806900AE37A6 /* EmployeesViewModel.swift in Sources */,
 				6A3A7F462C55F917009BA3F9 /* WindowRouterProtocol.swift in Sources */,
 				6A223E932C4F734100AE37A6 /* AppSecrets.swift in Sources */,
+				6AA4AAF82C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift in Sources */,
 				6A3A7F482C55F917009BA3F9 /* TabbarCoordinator.swift in Sources */,
 				6ACF66F82C59095B0094AAA5 /* SkillsViewModelProtocol.swift in Sources */,
 				6ACF66F92C59095B0094AAA5 /* SkillsController.swift in Sources */,
@@ -1708,6 +1796,7 @@
 				6A3A7FE42C560B3A009BA3F9 /* WebPagePresenterProtocol.swift in Sources */,
 				6A3A7F442C55F917009BA3F9 /* NavRouterProtocol.swift in Sources */,
 				6A223EC52C4F851900AE37A6 /* EmployeeDetailsViewModel.swift in Sources */,
+				6AA4AAF72C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift in Sources */,
 				6A3A7F432C55F917009BA3F9 /* NavRouter.swift in Sources */,
 				6A223EC72C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift in Sources */,
 				6A223EE12C4F8FEF00AE37A6 /* UserAPI.swift in Sources */,
@@ -1719,13 +1808,15 @@
 				6ACC61EF2C53BFC8003A2CC8 /* AuthService.swift in Sources */,
 				6A3A80082C561F66009BA3F9 /* EmployeesCoordinator.swift in Sources */,
 				6A3A7F852C55FFD1009BA3F9 /* Theme+Color.swift in Sources */,
+				6AA4AB0B2C59FECD001C3613 /* AddOrEditProfilePictureViewModelProtocol.swift in Sources */,
+				6AA4AB0C2C59FECD001C3613 /* AddOrEditProfilePictureController.swift in Sources */,
+				6AA4AB0D2C59FECD001C3613 /* AddOrEditProfilePictureViewModel.swift in Sources */,
 				6ACF67032C590B070094AAA5 /* SkillTableCellViewModel.swift in Sources */,
 				6ACF67042C590B070094AAA5 /* SkillTableCell.swift in Sources */,
 				6ACF67052C590B070094AAA5 /* SkillTableCellViewModelProtocol.swift in Sources */,
 				6ACC61ED2C53BFC2003A2CC8 /* AuthServiceProtocol.swift in Sources */,
 				6A3A7FD02C560B3A009BA3F9 /* BlockAuthorDialog.swift in Sources */,
 				6A223E9B2C4F76A200AE37A6 /* PersonalDetailsViewModel.swift in Sources */,
-				6A223EC92C4F852E00AE37A6 /* AddOrEditEmployeeViewModel.swift in Sources */,
 				6A3A7F762C55FF57009BA3F9 /* UIWindow+RootController.swift in Sources */,
 				6A3A7FDF2C560B3A009BA3F9 /* AlertSheetPresenter.swift in Sources */,
 				6A223E742C4F4DAB00AE37A6 /* LoginController.swift in Sources */,
@@ -1740,6 +1831,7 @@
 				6A223EED2C4F967500AE37A6 /* APIClientProtocol.swift in Sources */,
 				6A3A7F872C55FFD1009BA3F9 /* Theme+TextStyle.swift in Sources */,
 				6A3A7FFD2C561813009BA3F9 /* TimeZone+Static.swift in Sources */,
+				6AA4AAF92C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModelProtocol.swift in Sources */,
 				6A3A7F722C55FF0E009BA3F9 /* UINavigationController+PopCompletion.swift in Sources */,
 				6A223E9D2C4F76AB00AE37A6 /* PersonalDetailsViewModelProtocol.swift in Sources */,
 				6A3A7FE72C5610D4009BA3F9 /* UIAlertAction+Static.swift in Sources */,
