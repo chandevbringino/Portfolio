@@ -2,10 +2,10 @@
 
 So far, this repo has three iOS Application. I will indicate them below:
 
-App with Swift & Storyboard
+## App with Swift & Storyboard
 1. [EmployeeApp](https://github.com/chandevbringino/Portfolio/tree/main/iOS/Swift/EmployeeApp)
 
-App with SwiftUI
+## App with SwiftUI
 1. [WeSplit](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/WeSplit)
 2. [GuessTheFlag](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/GuessTheFlag)
 
