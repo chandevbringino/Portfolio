@@ -9,6 +9,10 @@
 import Foundation
 
 protocol AddOrEditProfilePictureViewModelProtocol {
+    var imageURL: URL? { get }
+    
+    func setImage(data: Data)
+    
     func createEmployee(
         employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,

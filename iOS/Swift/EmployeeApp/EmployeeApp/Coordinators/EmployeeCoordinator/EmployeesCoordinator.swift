@@ -70,7 +70,7 @@ extension EmployeesCoordinator {
     func handleFinishAddOrEditEmployee() -> VoidResult {
         { [weak self] in
             guard let self else { return }
-            // TODO: - Refresh employee list
+            self.navRouter.popToRoot(animated: true)
         }
     }
 }

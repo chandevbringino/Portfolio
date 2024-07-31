@@ -11,6 +11,7 @@ import Foundation
 class AddOrEditProfilePictureViewModel: AddOrEditProfilePictureViewModelProtocol {
     private var params: EmployeeParams
     private var employee: EmployeeModel?
+    private var imageData: Data?
     
     private let service: EmployeesServiceProtocol
     
@@ -28,6 +29,10 @@ class AddOrEditProfilePictureViewModel: AddOrEditProfilePictureViewModelProtocol
 // MARK: - Methods
 
 extension AddOrEditProfilePictureViewModel {
+    func setImage(data: Data) {
+        imageData = data
+    }
+    
     func createEmployee(
         employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
@@ -40,4 +45,5 @@ extension AddOrEditProfilePictureViewModel {
 // MARK: - Getters
 
 extension AddOrEditProfilePictureViewModel {
+    var imageURL: URL? { URL(string: employee?.imageURL ?? "") }
 }

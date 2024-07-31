@@ -87,3 +87,9 @@ employees.title = "Employees";
 // MARK: - Add Employee
 
 add.employee.title = "Add Employee";
+
+// MARK: - Resume and Skills
+
+update.resume = "Update Resume";
+open.camera = "Open Camera";
+open.gallery = "Open Gallery";

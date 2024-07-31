@@ -5,6 +5,7 @@
 //  Created by Christian Bringino on 7/23/24.
 //
 
+import PhotosUI
 import UIKit
 
 class EmployeesController: ViewController {
@@ -175,7 +176,7 @@ private extension EmployeesController {
 
 // MARK: - Actions
 
-private extension EmployeesController {
+extension EmployeesController {
     @IBAction
     func signoutButtonTapped() {
         showLoader()

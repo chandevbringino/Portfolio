@@ -76,7 +76,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 58 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 61 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -325,6 +325,20 @@ struct _R {
       /// Locales: en
       var okay: RswiftResources.StringResource { .init(key: "okay", tableName: "Localizable", source: source, developmentValue: "Okay", comment: nil) }
 
+      /// en translation: Open Camera
+      ///
+      /// Key: open.camera
+      ///
+      /// Locales: en
+      var openCamera: RswiftResources.StringResource { .init(key: "open.camera", tableName: "Localizable", source: source, developmentValue: "Open Camera", comment: nil) }
+
+      /// en translation: Open Gallery
+      ///
+      /// Key: open.gallery
+      ///
+      /// Locales: en
+      var openGallery: RswiftResources.StringResource { .init(key: "open.gallery", tableName: "Localizable", source: source, developmentValue: "Open Gallery", comment: nil) }
+
       /// en translation: Password
       ///
       /// Key: password
@@ -472,6 +486,13 @@ struct _R {
       /// Locales: en
       var unfollow: RswiftResources.StringResource { .init(key: "unfollow", tableName: "Localizable", source: source, developmentValue: "Unfollow", comment: nil) }
 
+      /// en translation: Update Resume
+      ///
+      /// Key: update.resume
+      ///
+      /// Locales: en
+      var updateResume: RswiftResources.StringResource { .init(key: "update.resume", tableName: "Localizable", source: source, developmentValue: "Update Resume", comment: nil) }
+
       /// en translation: Updating
       ///
       /// Key: updating
@@ -550,7 +571,7 @@ struct _R {
     var textWhite: RswiftResources.ColorResource { .init(name: "Text White", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 10 images.
+  /// This `_R.image` struct is generated, and contains static references to 11 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -571,6 +592,9 @@ struct _R {
 
     /// Image `ic-list-options`.
     var icListOptions: RswiftResources.ImageResource { .init(name: "ic-list-options", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `ic-pencil`.
+    var icPencil: RswiftResources.ImageResource { .init(name: "ic-pencil", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `info-overlay-profpic`.
     var infoOverlayProfpic: RswiftResources.ImageResource { .init(name: "info-overlay-profpic", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -780,7 +804,7 @@ struct _R {
       var addOrEditResumeAndSkillsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditResumeAndSkillsController> { .init(identifier: "AddOrEditResumeAndSkillsController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if UIKit.UIImage(named: "ic-add", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic-add' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic-pencil", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic-pencil' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
         if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
         if addOrEditEmployeePersonalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeePersonalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeePersonalDetailsController'.") }
         if addOrEditProfessionalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfessionalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfessionalDetailsController'.") }

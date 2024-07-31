@@ -14,6 +14,11 @@ class AddOrEditResumeAndSkillsViewModel: AddOrEditResumeAndSkillsViewModelProtoc
     private var params: EmployeeParams
     private var employee: EmployeeModel?
     
+    private var resumeURL: URL?
+    private var resumeData: Data?
+    private var toBeSavedTechSkills: [String] = []
+    private var toBeSavedPersonalSkills: [String] = []
+    
     private let service: EmployeesServiceProtocol
     
     init(
@@ -24,6 +29,10 @@ class AddOrEditResumeAndSkillsViewModel: AddOrEditResumeAndSkillsViewModelProtoc
         self.params = params
         self.service = service
         self.employee = employee
+        
+        toBeSavedTechSkills.append(contentsOf: employee?.technicalSkills ?? [])
+        toBeSavedPersonalSkills.append(contentsOf: employee?.personalSkills ?? [])
+        resumeURL = URL(string: employee?.resume ?? "")
     }
 }
 
@@ -31,23 +40,43 @@ class AddOrEditResumeAndSkillsViewModel: AddOrEditResumeAndSkillsViewModelProtoc
 
 extension AddOrEditResumeAndSkillsViewModel {
     func addTechnicalSkill(skill: String) {
-        
+        toBeSavedTechSkills.append(skill)
+    }
+    
+    func removeTechnicalSkill(skill: String) {
+        guard let index = toBeSavedTechSkills.firstIndex(of: skill) else { return }
+        toBeSavedTechSkills.remove(at: index)
     }
     
     func addPersonalSkill(skill: String) {
-        
+        toBeSavedPersonalSkills.append(skill)
+    }
+    
+    func removePersonalSkill(skill: String) {
+        guard let index = toBeSavedPersonalSkills.firstIndex(of: skill) else { return }
+        toBeSavedPersonalSkills.remove(at: index)
+    }
+    
+    func setResume(url: URL) {
+        resumeURL = url
+        resumeData = url.dataRepresentation
     }
     
     func cacheEmployeeDetails(
-        employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        if let error = validate(params: employeeParam) {
+        let param = EmployeeParams(
+            technicalSkills: toBeSavedTechSkills,
+            personalSkills: toBeSavedPersonalSkills,
+            resumeData: resumeData
+        )
+        
+        if let error = validate(params: param) {
             return onError(error)
         }
         
-        onCacheEmployee?(employeeParam)
+        onCacheEmployee?(param)
         onSuccess()
     }
     
@@ -57,7 +86,7 @@ extension AddOrEditResumeAndSkillsViewModel {
             return AppError.mustNotBeEmpty(fieldName: "Technical skills")
         } else if (params.personalSkills ?? []).isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Personal skills")
-        } else if (params.resumeURL ?? "").isEmpty {
+        } else if params.resumeData == nil {
             return AppError.mustNotBeEmpty(fieldName: "Resume")
         }
         
@@ -70,5 +99,9 @@ extension AddOrEditResumeAndSkillsViewModel {
 extension AddOrEditResumeAndSkillsViewModel {
     var technicalSkills: [String] { employee?.technicalSkills ?? [] }
     var personalSkills: [String] { employee?.personalSkills ?? [] }
-    var resumeURLText: String { employee?.resume ?? "" }
+    var resumeText: String {
+        guard let resumeURL else { return "" }
+        let strings = resumeURL.absoluteString.components(separatedBy: "/")
+        return strings.last ?? ""
+    }
 }

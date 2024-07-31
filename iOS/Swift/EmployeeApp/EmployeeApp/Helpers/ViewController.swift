@@ -10,6 +10,11 @@ import UIKit
 import SVProgressHUD
 
 class ViewController: UIViewController {
+    lazy var progressPresenter: ProgressPresenterProtocol = HUDProgressPresenter()
+    lazy var dialogPresenter: DialogPresenterProtocol = AlertDialogPresenter()
+    lazy var sheetPresenter: SheetPresenterProtocol = AlertSheetPresenter()
+    lazy var infoPresenter: InfoPresenterProtocol = SnackbarInfoPresenter()
+    
     var isPresentedModally: Bool {
       return presentingViewController != nil ||
         navigationController?.presentingViewController?.presentedViewController === navigationController ||

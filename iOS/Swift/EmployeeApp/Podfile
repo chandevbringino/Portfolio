@@ -18,6 +18,7 @@ target 'EmployeeApp' do
   pod 'RealmSwift', '~> 10.52.0'
   pod 'PureLayout', '~> 3.1.9'
   pod 'TagListView', '~> 1.4.1'
+  pod 'StorageManager', '~> 0.1.7'
   
   # Combine
   pod 'CombineCocoa', '~> 0.4.1'
