@@ -12,6 +12,12 @@ protocol EmployeesViewModelProtocol {
     
     var addPostVM: AddOrEditEmployeeViewModelProtocol { get }
     
+    func clearFilter()
+    
+    func filterEmployees(
+        with text: String
+    )
+    
     func cacheEmployee(at row: Int)
     
     func employeeCellVM(at row: Int) -> EmployeeCollectionCellViewModelProtocol

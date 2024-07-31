@@ -10,6 +10,7 @@ import Foundation
 class EmployeesViewModel: EmployeesViewModelProtocol {
     var onCacheSelectedEmployee: SingleResult<EmployeeModel>?
     
+    private var baseEmployees: [EmployeeModel] = []
     private var employees: [EmployeeModel] = []
     
     private let employeesService: EmployeesServiceProtocol
@@ -27,8 +28,21 @@ class EmployeesViewModel: EmployeesViewModelProtocol {
 // MARK: - Methods
 
 extension EmployeesViewModel {
+    func clearFilter() {
+        employees = baseEmployees
+    }
+    
     func cacheEmployee(at row: Int) {
         onCacheSelectedEmployee?(employees[row])
+    }
+    
+    func filterEmployees(
+        with text: String
+    ) {
+        let lowerCasedText = text.lowercased()
+        let filteredEmployees = baseEmployees.filter(
+            { $0.fullName.lowercased().contains(lowerCasedText) || $0.role.contains(lowerCasedText) })
+        employees = filteredEmployees
     }
     
     func fetchEmployees(
@@ -64,15 +78,8 @@ private extension EmployeesViewModel {
     ) -> SingleResult<[EmployeeModel]> {
         { [weak self] employees in
             guard let self else { return }
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
-            self.employees.append(employees[0])
+            self.baseEmployees = employees
+            self.employees = baseEmployees
             onCompletion()
         }
     }

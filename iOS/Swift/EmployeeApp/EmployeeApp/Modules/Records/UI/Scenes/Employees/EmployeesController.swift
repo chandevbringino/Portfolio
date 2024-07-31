@@ -43,6 +43,8 @@ extension EmployeesController {
 private extension EmployeesController {
     func setup() {
         setupNavBar()
+        setupSearchbar()
+        setupRefresher()
         setupCollectionView()
         setupButton()
         setupNavDrawer()
@@ -62,6 +64,19 @@ private extension EmployeesController {
         rightButton.tintColor = .black
         
         navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func setupSearchbar() {
+        searchBar.delegate = self
+    }
+    
+    func setupRefresher() {
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self,
+            action: #selector(pullToRefersh),
+            for: .valueChanged
+        )
+        collectionView.refreshControl = refresher
     }
     
     func setupButton() {
@@ -114,8 +129,11 @@ private extension EmployeesController {
 // MARK: - Methods
 
 private extension EmployeesController {
-    func fetchEmployees() {
-        showLoader()
+    func fetchEmployees(isPullToRefresh: Bool = false) {
+        if !isPullToRefresh {
+            showLoader()
+        }
+        
         viewModel.fetchEmployees(
             onSuccess: handleFetchEmployeesSuccess(),
             onError: handleError()
@@ -170,6 +188,11 @@ private extension EmployeesController {
     }
     
     @objc
+    func pullToRefersh() {
+        fetchEmployees(isPullToRefresh: true)
+    }
+    
+    @objc
     func closeNavDrawerButtonTapped() {
         closeNavDrawer()
     }
@@ -192,6 +215,7 @@ private extension EmployeesController {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
+            self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.reloadData()
         }
     }
@@ -202,6 +226,25 @@ private extension EmployeesController {
             self.dismissLoader()
             self.onLogoutSuccess?()
         }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension EmployeesController: UISearchBarDelegate {
+    func searchBar(
+        _ searchBar: UISearchBar,
+        textDidChange searchText: String
+    ) {
+        if searchText.count > 2 {
+            viewModel.filterEmployees(
+                with: searchText
+            )
+        } else if searchText.isEmpty {
+            viewModel.clearFilter()
+        }
+        
+        collectionView.reloadData()
     }
 }
 
