@@ -1,6 +1,7 @@
 ### This is my portfolio, showcasing my expertise in iOS and Android.
 
-So far, this repo has three iOS Application. I will indicate them below:
+So far, this repo has three iOS Applications. But more will be made with other platforms soon.<br>
+I will indicate what's available for now below:
 
 ## App with Swift & Storyboard
 1. [EmployeeApp](https://github.com/chandevbringino/Portfolio/tree/main/iOS/Swift/EmployeeApp)
