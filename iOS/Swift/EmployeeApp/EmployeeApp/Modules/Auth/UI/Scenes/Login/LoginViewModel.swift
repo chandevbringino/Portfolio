@@ -70,5 +70,5 @@ private extension LoginViewModel {
 
 extension LoginViewModel {
     var signupVM: PersonalDetailsViewModelProtocol { PersonalDetailsViewModel() }
-    var postsVM: RecordsViewModelProtocol { RecordsViewModel() }
+    var postsVM: EmployeesViewModelProtocol { EmployeesViewModel() }
 }

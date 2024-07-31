@@ -76,9 +76,16 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 53 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 56 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
+
+      /// en translation: Add
+      ///
+      /// Key: add
+      ///
+      /// Locales: en
+      var add: RswiftResources.StringResource { .init(key: "add", tableName: "Localizable", source: source, developmentValue: "Add", comment: nil) }
 
       /// en translation: Add a description
       ///
@@ -311,6 +318,13 @@ struct _R {
       /// Locales: en
       var password: RswiftResources.StringResource { .init(key: "password", tableName: "Localizable", source: source, developmentValue: "Password", comment: nil) }
 
+      /// en translation: Personal Skills
+      ///
+      /// Key: personal.skills
+      ///
+      /// Locales: en
+      var personalSkills: RswiftResources.StringResource { .init(key: "personal.skills", tableName: "Localizable", source: source, developmentValue: "Personal Skills", comment: nil) }
+
       /// en translation: Phone Number
       ///
       /// Key: phone-number
@@ -422,6 +436,13 @@ struct _R {
       ///
       /// Locales: en
       var statusSuccess: RswiftResources.StringResource { .init(key: "status.success", tableName: "Localizable", source: source, developmentValue: "Success", comment: nil) }
+
+      /// en translation: Technical Skills
+      ///
+      /// Key: technical.skills
+      ///
+      /// Locales: en
+      var technicalSkills: RswiftResources.StringResource { .init(key: "technical.skills", tableName: "Localizable", source: source, developmentValue: "Technical Skills", comment: nil) }
 
       /// en translation: Terms and Conditions
       ///
@@ -662,40 +683,52 @@ struct _R {
     var touch: RswiftResources.FileResource { .init(name: "touch", pathExtension: "", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
-    /// Nib `PostTableCell`.
-    var postTableCell: RswiftResources.NibReferenceReuseIdentifier<PostTableCell, PostTableCell> { .init(name: "PostTableCell", bundle: bundle, identifier: "PostTableCell") }
+    /// Nib `EmployeeCollectionCell`.
+    var employeeCollectionCell: RswiftResources.NibReferenceReuseIdentifier<EmployeeCollectionCell, EmployeeCollectionCell> { .init(name: "EmployeeCollectionCell", bundle: bundle, identifier: "EmployeeCollectionCell") }
+
+    /// Nib `SkillTableCell`.
+    var skillTableCell: RswiftResources.NibReferenceReuseIdentifier<SkillTableCell, SkillTableCell> { .init(name: "SkillTableCell", bundle: bundle, identifier: "SkillTableCell") }
 
     func validate() throws {
-      if UIKit.UIImage(named: "listing-img-1", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'listing-img-1' is used in nib 'PostTableCell', but couldn't be loaded.") }
+
     }
   }
 
-  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
 
-    /// Reuse identifier `PostTableCell`.
-    let postTableCell: RswiftResources.ReuseIdentifier<PostTableCell> = .init(identifier: "PostTableCell")
+    /// Reuse identifier `EmployeeCollectionCell`.
+    let employeeCollectionCell: RswiftResources.ReuseIdentifier<EmployeeCollectionCell> = .init(identifier: "EmployeeCollectionCell")
+
+    /// Reuse identifier `SkillTableCell`.
+    let skillTableCell: RswiftResources.ReuseIdentifier<SkillTableCell> = .init(identifier: "SkillTableCell")
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
-    var addOrEditPost: addOrEditPost { .init(bundle: bundle) }
+    var addOrEditEmployee: addOrEditEmployee { .init(bundle: bundle) }
     var createAccount: createAccount { .init(bundle: bundle) }
+    var employeeDetails: employeeDetails { .init(bundle: bundle) }
+    var employees: employees { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
     var personalDetails: personalDetails { .init(bundle: bundle) }
-    var postDetails: postDetails { .init(bundle: bundle) }
-    var records: records { .init(bundle: bundle) }
 
-    func addOrEditPost(bundle: Foundation.Bundle) -> addOrEditPost {
+    func addOrEditEmployee(bundle: Foundation.Bundle) -> addOrEditEmployee {
       .init(bundle: bundle)
     }
     func createAccount(bundle: Foundation.Bundle) -> createAccount {
+      .init(bundle: bundle)
+    }
+    func employeeDetails(bundle: Foundation.Bundle) -> employeeDetails {
+      .init(bundle: bundle)
+    }
+    func employees(bundle: Foundation.Bundle) -> employees {
       .init(bundle: bundle)
     }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
@@ -707,33 +740,27 @@ struct _R {
     func personalDetails(bundle: Foundation.Bundle) -> personalDetails {
       .init(bundle: bundle)
     }
-    func postDetails(bundle: Foundation.Bundle) -> postDetails {
-      .init(bundle: bundle)
-    }
-    func records(bundle: Foundation.Bundle) -> records {
-      .init(bundle: bundle)
-    }
     func validate() throws {
-      try self.addOrEditPost.validate()
+      try self.addOrEditEmployee.validate()
       try self.createAccount.validate()
+      try self.employeeDetails.validate()
+      try self.employees.validate()
       try self.launchScreen.validate()
       try self.login.validate()
       try self.personalDetails.validate()
-      try self.postDetails.validate()
-      try self.records.validate()
     }
 
 
-    /// Storyboard `AddOrEditPost`.
-    struct addOrEditPost: RswiftResources.StoryboardReference {
+    /// Storyboard `AddOrEditEmployee`.
+    struct addOrEditEmployee: RswiftResources.StoryboardReference {
       let bundle: Foundation.Bundle
 
-      let name = "AddOrEditPost"
+      let name = "AddOrEditEmployee"
 
-      var addOrEditPostController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditPostController> { .init(identifier: "AddOrEditPostController", storyboard: name, bundle: bundle) }
+      var addOrEditEmployeeController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditEmployeeController> { .init(identifier: "AddOrEditEmployeeController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if addOrEditPostController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditPostController' could not be loaded from storyboard 'AddOrEditPost' as 'AddOrEditPostController'.") }
+        if addOrEditEmployeeController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeeController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeeController'.") }
       }
     }
 
@@ -747,6 +774,35 @@ struct _R {
 
       func validate() throws {
         if createAccountController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'createAccountController' could not be loaded from storyboard 'CreateAccount' as 'CreateAccountController'.") }
+      }
+    }
+
+    /// Storyboard `EmployeeDetails`.
+    struct employeeDetails: RswiftResources.StoryboardReference {
+      let bundle: Foundation.Bundle
+
+      let name = "EmployeeDetails"
+
+      var employeeDetailsController: RswiftResources.StoryboardViewControllerIdentifier<EmployeeDetailsController> { .init(identifier: "EmployeeDetailsController", storyboard: name, bundle: bundle) }
+      var skillsController: RswiftResources.StoryboardViewControllerIdentifier<SkillsController> { .init(identifier: "SkillsController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'EmployeeDetails', but couldn't be loaded.") }
+        if employeeDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'employeeDetailsController' could not be loaded from storyboard 'EmployeeDetails' as 'EmployeeDetailsController'.") }
+        if skillsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'skillsController' could not be loaded from storyboard 'EmployeeDetails' as 'SkillsController'.") }
+      }
+    }
+
+    /// Storyboard `Employees`.
+    struct employees: RswiftResources.StoryboardReference {
+      let bundle: Foundation.Bundle
+
+      let name = "Employees"
+
+      var employeesController: RswiftResources.StoryboardViewControllerIdentifier<EmployeesController> { .init(identifier: "EmployeesController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if employeesController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'employeesController' could not be loaded from storyboard 'Employees' as 'EmployeesController'.") }
       }
     }
 
@@ -788,33 +844,6 @@ struct _R {
 
       func validate() throws {
         if personalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'personalDetailsController' could not be loaded from storyboard 'PersonalDetails' as 'PersonalDetailsController'.") }
-      }
-    }
-
-    /// Storyboard `PostDetails`.
-    struct postDetails: RswiftResources.StoryboardReference {
-      let bundle: Foundation.Bundle
-
-      let name = "PostDetails"
-
-      var postDetailsController: RswiftResources.StoryboardViewControllerIdentifier<PostDetailsController> { .init(identifier: "PostDetailsController", storyboard: name, bundle: bundle) }
-
-      func validate() throws {
-        if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'PostDetails', but couldn't be loaded.") }
-        if postDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'postDetailsController' could not be loaded from storyboard 'PostDetails' as 'PostDetailsController'.") }
-      }
-    }
-
-    /// Storyboard `Records`.
-    struct records: RswiftResources.StoryboardReference {
-      let bundle: Foundation.Bundle
-
-      let name = "Records"
-
-      var recordsController: RswiftResources.StoryboardViewControllerIdentifier<RecordsController> { .init(identifier: "RecordsController", storyboard: name, bundle: bundle) }
-
-      func validate() throws {
-        if recordsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'recordsController' could not be loaded from storyboard 'Records' as 'RecordsController'.") }
       }
     }
   }

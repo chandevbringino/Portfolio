@@ -84,5 +84,5 @@ private extension CreateAccountViewModel {
 // MARK: - Getters
 
 extension CreateAccountViewModel {
-    var recordsVM: RecordsViewModelProtocol { RecordsViewModel() }
+    var recordsVM: EmployeesViewModelProtocol { EmployeesViewModel() }
 }

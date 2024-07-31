@@ -1,5 +1,5 @@
 //
-//  AddOrEditPostController.swift
+//  AddOrEditEmployeeController.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AddOrEditPostController: ViewController {
-    var viewModel: AddOrEditPostViewModelProtocol!
+class AddOrEditEmployeeController: ViewController {
+    var viewModel: AddOrEditEmployeeViewModelProtocol!
     var onSaveSuccess: VoidResult?
     
     @IBOutlet var fullnameField: UITextField!
@@ -17,7 +17,7 @@ class AddOrEditPostController: ViewController {
 
 // MARK: - Lifecycle
 
-extension AddOrEditPostController {
+extension AddOrEditEmployeeController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -26,14 +26,14 @@ extension AddOrEditPostController {
 
 // MARK: - Setup
 
-private extension AddOrEditPostController {
+private extension AddOrEditEmployeeController {
     func setup() {
         setupNavBar()
         setupFields()
     }
     
     func setupNavBar() {
-        title = viewModel.isEditPost ? "Edit" : "Add"
+        title = viewModel.isEditPost ? S.edit() : S.add()
         
         let leftButton = UIBarButtonItem(
             title: "Cancel",
@@ -61,7 +61,7 @@ private extension AddOrEditPostController {
 
 // MARK: - Methods
 
-private extension AddOrEditPostController {
+private extension AddOrEditEmployeeController {
     func savePost() {
         showLoader()
         viewModel.savePost(
@@ -75,7 +75,7 @@ private extension AddOrEditPostController {
 
 // MARK: - Actions
 
-private extension AddOrEditPostController {
+private extension AddOrEditEmployeeController {
     @objc
     func saveButtonTapped() {
         savePost()
@@ -89,7 +89,7 @@ private extension AddOrEditPostController {
 
 // MARK: - Handlers
 
-private extension AddOrEditPostController {
+private extension AddOrEditEmployeeController {
     func handleSavePostSuccess() -> VoidResult {
         { [weak self] in
             guard let self else { return }

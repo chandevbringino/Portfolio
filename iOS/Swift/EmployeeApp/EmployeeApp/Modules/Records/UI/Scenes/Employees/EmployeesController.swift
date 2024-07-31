@@ -1,5 +1,5 @@
 //
-//  RecordsController.swift
+//  EmployeesController.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,25 +7,25 @@
 
 import UIKit
 
-class RecordsController: ViewController {
-    var viewModel: RecordsViewModelProtocol!
+class EmployeesController: ViewController {
+    var viewModel: EmployeesViewModelProtocol!
     
     var onLogoutSuccess: VoidResult?
     var onNavigateToAddPost: VoidResult?
     var onNavigateToDetails: VoidResult?
-    var onEditPost: VoidResult?
     
     @IBOutlet private(set) var navDrawerBGView: UIView!
-    @IBOutlet private(set) var tableView: UITableView!
+    @IBOutlet private(set) var collectionView: UICollectionView!
     @IBOutlet private(set) var navDrawerViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private(set) var signoutButtonWidthConst: NSLayoutConstraint!
+    @IBOutlet private(set) var searchBar: UISearchBar!
     
     private var isNavDrawerOpen: Bool = false
 }
 
 // MARK: - Lifecycle
 
-extension RecordsController {
+extension EmployeesController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -40,19 +40,17 @@ extension RecordsController {
 
 // MARK: - Setup
 
-private extension RecordsController {
+private extension EmployeesController {
     func setup() {
         setupNavBar()
-        setupTableView()
+        setupCollectionView()
         setupButton()
         setupNavDrawer()
         
-        fetchPosts()
+        fetchEmployees()
     }
     
     func setupNavBar() {
-        title = "Posts"
-        
         setupOpenNavDrawerButton()
         
         let rightButton = UIBarButtonItem(
@@ -93,11 +91,10 @@ private extension RecordsController {
         navigationItem.leftBarButtonItem = leftButton
     }
     
-    func setupTableView() {
-        tableView.register(R.nib.postTableCell)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = 80
+    func setupCollectionView() {
+        collectionView.register(R.nib.employeeCollectionCell)
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     func setupNavDrawer() {
@@ -116,11 +113,11 @@ private extension RecordsController {
 
 // MARK: - Methods
 
-private extension RecordsController {
-    func fetchPosts() {
+private extension EmployeesController {
+    func fetchEmployees() {
         showLoader()
-        viewModel.fetchPosts(
-            onSuccess: handleFetchPostsSuccess(),
+        viewModel.fetchEmployees(
+            onSuccess: handleFetchEmployeesSuccess(),
             onError: handleError()
         )
     }
@@ -153,33 +150,11 @@ private extension RecordsController {
             self.setupOpenNavDrawerButton()
         }
     }
-    
-    func deletePost(at row: Int) {
-        showLoader()
-        viewModel.deletePost(
-            at: row,
-            onSuccess: handleDeletePostSuccess(),
-            onError: handleError()
-        )
-    }
-    
-    func showDeleteConfirmation(at row: Int) {
-        let alert = UIAlertController(
-            title: "Delete",
-            message: "Are you sure you want to delete this row?",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive) {_ in
-            self.deletePost(at: row)
-        })
-        alert.addAction(UIAlertAction(title: "No", style: .cancel))
-        present(alert, animated: true)
-    }
 }
 
 // MARK: - Actions
 
-private extension RecordsController {
+private extension EmployeesController {
     @IBAction
     func signoutButtonTapped() {
         showLoader()
@@ -212,12 +187,12 @@ private extension RecordsController {
 
 // MARK: - Handlers
 
-private extension RecordsController {
-    func handleFetchPostsSuccess() -> VoidResult {
+private extension EmployeesController {
+    func handleFetchEmployeesSuccess() -> VoidResult {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
@@ -228,80 +203,55 @@ private extension RecordsController {
             self.onLogoutSuccess?()
         }
     }
-    
-    func handleDeletePostSuccess() -> VoidResult {
-        { [weak self] in
-            guard let self else { return }
-            self.dismissLoader()
-            self.fetchPosts()
-        }
-    }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UICollectionViewDelegate
 
-extension RecordsController: UITableViewDelegate {
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
+extension EmployeesController: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
     ) {
-        viewModel.cachePost(at: indexPath.row)
+        viewModel.cacheEmployee(at: indexPath.row)
         onNavigateToDetails?()
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UICollectionViewDataSource
 
-extension RecordsController: UITableViewDataSource {
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
+extension EmployeesController: UICollectionViewDataSource {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
     ) -> Int {
-        viewModel.postsCount
+        viewModel.employeesCount
     }
     
-    func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: R.nib.postTableCell.name,
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: R.nib.employeeCollectionCell.identifier,
             for: indexPath
-        ) as? PostTableCell
-        else {
-            return PostTableCell()
-        }
+        ) as? EmployeeCollectionCell
+        else { return EmployeeCollectionCell() }
         
-        cell.viewModel = viewModel.postCellVM(at: indexPath.row)
+        cell.viewModel = viewModel.employeeCellVM(at: indexPath.row)
         
         return cell
     }
-    
-    func tableView(
-        _ tableView: UITableView,
-        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
-    ) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(
-            style: .destructive,
-            title: S.delete()
-        ) { [weak self] (action, sourceView, completionHandler) in
-            guard let self else { return }
-            self.showDeleteConfirmation(at: indexPath.row)
-            completionHandler(true)
-        }
-        let edit = UIContextualAction(
-            style: .normal,
-            title: S.edit()
-        ) { [weak self] (action, sourceView, completionHandler) in
-            guard let self else { return }
-            self.viewModel.cachePost(at: indexPath.row)
-            self.onEditPost?()
-            completionHandler(true)
-        }
-        let swipeAction = UISwipeActionsConfiguration(
-            actions: [delete, edit]
-        )
-        swipeAction.performsFirstActionWithFullSwipe = false
-        return swipeAction
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension EmployeesController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let width = (collectionView.frame.width / 2) - 13
+        return CGSize(width: width, height: 265)
     }
 }

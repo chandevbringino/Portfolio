@@ -8,5 +8,8 @@
 import Foundation
 
 protocol EmployeesServiceProtocol {
-    
+    func getEmployees(
+        onSuccess: @escaping SingleResult<[EmployeeModel]>,
+        onError: @escaping ErrorResult
+    )
 }

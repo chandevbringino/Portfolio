@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Employee Details Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EmployeeDetailsController" id="Y6W-OH-hqX" customClass="EmployeeDetailsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCI-9K-OIA">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-QQ-9EJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="721.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yxI-a8-jL6">
+                                                <rect key="frame" x="40" y="0.0" width="313" height="721.33333333333337"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKe-rH-j71">
+                                                        <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="VRF-Pp-9zt"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-Ps-CWz">
+                                                        <rect key="frame" x="0.0" y="30" width="313" height="140"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info-overlay-profpic" translatesAutoresizingMaskIntoConstraints="NO" id="3VV-EA-bAV">
+                                                                <rect key="frame" x="86.666666666666686" y="0.0" width="140" height="140"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="3VV-EA-bAV" secondAttribute="height" multiplier="1:1" id="iVP-0h-cfZ"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="3VV-EA-bAV" firstAttribute="centerX" secondItem="5ET-Ps-CWz" secondAttribute="centerX" id="5Wb-yf-3gG"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3VV-EA-bAV" secondAttribute="bottom" id="IYy-Jy-gxZ"/>
+                                                            <constraint firstItem="3VV-EA-bAV" firstAttribute="top" secondItem="5ET-Ps-CWz" secondAttribute="top" id="MvH-KC-e8G"/>
+                                                            <constraint firstAttribute="height" constant="140" id="z6o-8t-vTe"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zam-Zy-7fd">
+                                                        <rect key="frame" x="0.0" y="170" width="313" height="20"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="DOe-ja-W9I"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="F1n-uc-1SL">
+                                                        <rect key="frame" x="0.0" y="190" width="313" height="66.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7n-hp-HpN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="36.666666666666664"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="22"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88f-qZ-U4V">
+                                                                <rect key="frame" x="0.0" y="36.666666666666686" width="313" height="30"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Light" family="Mukta Mahee" pointSize="18"/>
+                                                                <color key="textColor" red="0.3650464553808429" green="0.3650464553808429" blue="0.3650464553808429" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agr-nJ-oHA">
+                                                        <rect key="frame" x="0.0" y="256.66666666666669" width="313" height="26"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="26" id="vks-8h-WH1"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9H-ap-4Xs" userLabel="Email">
+                                                        <rect key="frame" x="0.0" y="282.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeT-rC-Z0t">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="45" id="DSW-RE-q5o"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="example@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7L-Ce-gXf">
+                                                                <rect key="frame" x="45" y="0.0" width="268" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="UeT-rC-Z0t" firstAttribute="leading" secondItem="N9H-ap-4Xs" secondAttribute="leading" id="3WJ-ua-58s"/>
+                                                            <constraint firstAttribute="bottom" secondItem="u7L-Ce-gXf" secondAttribute="bottom" constant="0.33000000000000002" id="4V5-WK-UzD"/>
+                                                            <constraint firstItem="UeT-rC-Z0t" firstAttribute="top" secondItem="N9H-ap-4Xs" secondAttribute="top" id="5gX-oN-bNy"/>
+                                                            <constraint firstItem="u7L-Ce-gXf" firstAttribute="top" secondItem="N9H-ap-4Xs" secondAttribute="top" id="JuP-4W-2wM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="u7L-Ce-gXf" secondAttribute="trailing" id="WYd-TD-LzR"/>
+                                                            <constraint firstItem="u7L-Ce-gXf" firstAttribute="leading" secondItem="UeT-rC-Z0t" secondAttribute="trailing" id="nkZ-NL-PfR"/>
+                                                            <constraint firstAttribute="height" constant="27" id="rU3-Kk-y6g"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDV-Ad-1u3" userLabel="Contact">
+                                                        <rect key="frame" x="0.0" y="309.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact number: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZY-96-BhM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="UZ9-O7-TSV"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09878392837" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPV-ow-vEZ">
+                                                                <rect key="frame" x="120" y="0.0" width="193" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="sPV-ow-vEZ" firstAttribute="top" secondItem="gDV-Ad-1u3" secondAttribute="top" id="7vP-8M-3kT"/>
+                                                            <constraint firstAttribute="height" constant="27" id="HSK-XI-uFX"/>
+                                                            <constraint firstAttribute="bottom" secondItem="sPV-ow-vEZ" secondAttribute="bottom" constant="0.33000000000000002" id="Mkr-OG-oXs"/>
+                                                            <constraint firstItem="sPV-ow-vEZ" firstAttribute="leading" secondItem="2ZY-96-BhM" secondAttribute="trailing" id="V7n-xc-5Cl"/>
+                                                            <constraint firstItem="2ZY-96-BhM" firstAttribute="leading" secondItem="gDV-Ad-1u3" secondAttribute="leading" id="Zy2-xP-9S1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="sPV-ow-vEZ" secondAttribute="trailing" id="n4Q-dg-pvY"/>
+                                                            <constraint firstItem="2ZY-96-BhM" firstAttribute="top" secondItem="gDV-Ad-1u3" secondAttribute="top" id="tBV-F2-AGw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VST-Ty-gCY" userLabel="Gender">
+                                                        <rect key="frame" x="0.0" y="336.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTX-KV-6hG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="C7y-qQ-h5r"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CZ-SD-Ld5">
+                                                                <rect key="frame" x="60" y="0.0" width="253" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="2CZ-SD-Ld5" secondAttribute="trailing" id="3BU-U4-UMd"/>
+                                                            <constraint firstItem="ZTX-KV-6hG" firstAttribute="leading" secondItem="VST-Ty-gCY" secondAttribute="leading" id="MLv-7e-yB6"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2CZ-SD-Ld5" secondAttribute="bottom" constant="0.33000000000000002" id="XMz-B5-dw0"/>
+                                                            <constraint firstItem="2CZ-SD-Ld5" firstAttribute="top" secondItem="VST-Ty-gCY" secondAttribute="top" id="ZTu-ZU-Q53"/>
+                                                            <constraint firstItem="ZTX-KV-6hG" firstAttribute="top" secondItem="VST-Ty-gCY" secondAttribute="top" id="Zb1-YK-iDf"/>
+                                                            <constraint firstAttribute="height" constant="27" id="ddu-GP-Bs3"/>
+                                                            <constraint firstItem="2CZ-SD-Ld5" firstAttribute="leading" secondItem="ZTX-KV-6hG" secondAttribute="trailing" id="jKQ-tD-XyR"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSh-sd-Eds" userLabel="Birthdate">
+                                                        <rect key="frame" x="0.0" y="363.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkX-z0-Xoi">
+                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="65" id="Sy6-HD-Bta"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September, 22, 1990" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-W1-QJe">
+                                                                <rect key="frame" x="65" y="0.0" width="248" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="MkX-z0-Xoi" firstAttribute="top" secondItem="YSh-sd-Eds" secondAttribute="top" id="371-I0-6iw"/>
+                                                            <constraint firstAttribute="bottom" secondItem="RHX-W1-QJe" secondAttribute="bottom" constant="0.33000000000000002" id="3Yd-dm-5Ka"/>
+                                                            <constraint firstAttribute="trailing" secondItem="RHX-W1-QJe" secondAttribute="trailing" id="CqJ-v1-A8Y"/>
+                                                            <constraint firstItem="MkX-z0-Xoi" firstAttribute="leading" secondItem="YSh-sd-Eds" secondAttribute="leading" id="DiT-7H-Uzg"/>
+                                                            <constraint firstItem="RHX-W1-QJe" firstAttribute="top" secondItem="YSh-sd-Eds" secondAttribute="top" id="JV3-oG-5Z9"/>
+                                                            <constraint firstItem="RHX-W1-QJe" firstAttribute="leading" secondItem="MkX-z0-Xoi" secondAttribute="trailing" id="d5z-o4-0pj"/>
+                                                            <constraint firstAttribute="height" constant="27" id="vth-Re-ztJ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8M-Ym-BnL" userLabel="Startdate">
+                                                        <rect key="frame" x="0.0" y="390.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdQ-FZ-60s">
+                                                                <rect key="frame" x="0.0" y="0.0" width="76" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="76" id="U3Q-Lm-0ym"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 09, 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-TA-GKz">
+                                                                <rect key="frame" x="76" y="0.0" width="237" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="27" id="6OR-0t-XEM"/>
+                                                            <constraint firstItem="tdQ-FZ-60s" firstAttribute="leading" secondItem="J8M-Ym-BnL" secondAttribute="leading" id="D2O-gy-ZLZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UaI-TA-GKz" secondAttribute="trailing" id="D4s-4l-QUL"/>
+                                                            <constraint firstItem="UaI-TA-GKz" firstAttribute="leading" secondItem="tdQ-FZ-60s" secondAttribute="trailing" id="J5m-6s-KqG"/>
+                                                            <constraint firstItem="tdQ-FZ-60s" firstAttribute="top" secondItem="J8M-Ym-BnL" secondAttribute="top" id="Mlz-9e-7kk"/>
+                                                            <constraint firstItem="UaI-TA-GKz" firstAttribute="top" secondItem="J8M-Ym-BnL" secondAttribute="top" id="OCn-j6-Fuw"/>
+                                                            <constraint firstAttribute="bottom" secondItem="UaI-TA-GKz" secondAttribute="bottom" constant="0.33000000000000002" id="SQ8-Aw-F6L"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbR-v2-JO9" userLabel="Enddate">
+                                                        <rect key="frame" x="0.0" y="417.66666666666669" width="313" height="27"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEE-UL-VJc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="66" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="66" id="WS0-Ra-cbQ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 09, 2022" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PE7-nW-L2O">
+                                                                <rect key="frame" x="66" y="0.0" width="247" height="26.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="PE7-nW-L2O" firstAttribute="leading" secondItem="zEE-UL-VJc" secondAttribute="trailing" id="Pjg-Zv-TrY"/>
+                                                            <constraint firstAttribute="bottom" secondItem="PE7-nW-L2O" secondAttribute="bottom" constant="0.33000000000000002" id="SOv-C4-Yug"/>
+                                                            <constraint firstAttribute="height" constant="27" id="b4i-Oe-Yrz"/>
+                                                            <constraint firstItem="zEE-UL-VJc" firstAttribute="leading" secondItem="hbR-v2-JO9" secondAttribute="leading" id="cOh-6G-E08"/>
+                                                            <constraint firstItem="zEE-UL-VJc" firstAttribute="top" secondItem="hbR-v2-JO9" secondAttribute="top" id="tBN-h5-33c"/>
+                                                            <constraint firstItem="PE7-nW-L2O" firstAttribute="top" secondItem="hbR-v2-JO9" secondAttribute="top" id="wBl-uW-J4e"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PE7-nW-L2O" secondAttribute="trailing" id="zBQ-Wf-4Cq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgY-XT-BBr" userLabel="ReasonForLeaving">
+                                                        <rect key="frame" x="0.0" y="444.66666666666669" width="313" height="53.333333333333314"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason for leaving: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQz-Mh-2vU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="132" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="132" id="9z3-c6-qzj"/>
+                                                                    <constraint firstAttribute="height" constant="26.670000000000002" id="MrG-kz-jDH"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-XJ-UXG">
+                                                                <rect key="frame" x="0.0" y="26.666666666666686" width="313" height="26.666666666666671"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="xyA-XJ-UXG" firstAttribute="top" secondItem="NQz-Mh-2vU" secondAttribute="bottom" id="0Ji-Gp-yK3"/>
+                                                            <constraint firstItem="NQz-Mh-2vU" firstAttribute="top" secondItem="ZgY-XT-BBr" secondAttribute="top" id="4Pi-Xk-rKk"/>
+                                                            <constraint firstItem="NQz-Mh-2vU" firstAttribute="leading" secondItem="ZgY-XT-BBr" secondAttribute="leading" id="Bwh-aK-BvU"/>
+                                                            <constraint firstItem="xyA-XJ-UXG" firstAttribute="leading" secondItem="ZgY-XT-BBr" secondAttribute="leading" id="Etl-6J-70Z"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xyA-XJ-UXG" secondAttribute="trailing" id="hDY-dY-Vl9"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xyA-XJ-UXG" secondAttribute="bottom" id="mzY-1X-lqo"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UpR-Nl-FsC">
+                                                        <rect key="frame" x="0.0" y="498" width="313" height="20"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="NSI-pf-9ys"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9HN-lK-Xi4">
+                                                        <rect key="frame" x="0.0" y="518" width="313" height="173.33333333333337"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Skills:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGL-JM-HzJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="313" height="26.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="26.670000000000002" id="bXx-4g-Yvj"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBM-R1-gah">
+                                                                <rect key="frame" x="0.0" y="26.666666666666629" width="313" height="5"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="ixg-Pc-k2g"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AF-qF-EnF">
+                                                                <rect key="frame" x="0.0" y="31.666666666666629" width="313" height="30"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Show Personal Skills">
+                                                                    <color key="titleColor" name="Text Tertiary"/>
+                                                                </state>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jy-9n-f1D">
+                                                                <rect key="frame" x="0.0" y="61.666666666666629" width="313" height="20"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="5Wu-zR-PCR"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technical Skills:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGs-fP-nkl">
+                                                                <rect key="frame" x="0.0" y="81.666666666666629" width="313" height="26.666666666666671"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="26.670000000000002" id="803-sr-1Zb"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-r4-foA">
+                                                                <rect key="frame" x="0.0" y="108.33333333333337" width="313" height="5"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="nzF-A1-unO"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt1-mY-aMi">
+                                                                <rect key="frame" x="0.0" y="113.33333333333337" width="313" height="30"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Show Technical Skills">
+                                                                    <color key="titleColor" name="Text Tertiary"/>
+                                                                </state>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-R1-KFF">
+                                                                <rect key="frame" x="0.0" y="143.33333333333337" width="313" height="30"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="f9z-7I-6Ln"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-zk-XQs">
+                                                        <rect key="frame" x="0.0" y="691.33333333333337" width="313" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="sZu-NN-vYG"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="yxI-a8-jL6" firstAttribute="top" secondItem="EkT-QQ-9EJ" secondAttribute="top" id="294-yo-B7o"/>
+                                            <constraint firstAttribute="trailing" secondItem="yxI-a8-jL6" secondAttribute="trailing" constant="40" id="Fi9-ab-jhF"/>
+                                            <constraint firstItem="yxI-a8-jL6" firstAttribute="leading" secondItem="EkT-QQ-9EJ" secondAttribute="leading" constant="40" id="RYG-aw-6VE"/>
+                                            <constraint firstAttribute="bottom" secondItem="yxI-a8-jL6" secondAttribute="bottom" id="XoV-hV-6tL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EkT-QQ-9EJ" firstAttribute="leading" secondItem="lCI-9K-OIA" secondAttribute="leading" id="Gb8-hO-Cpy"/>
+                                    <constraint firstAttribute="bottom" secondItem="EkT-QQ-9EJ" secondAttribute="bottom" id="VRi-Z1-phb"/>
+                                    <constraint firstAttribute="trailing" secondItem="EkT-QQ-9EJ" secondAttribute="trailing" id="u3J-hC-clP"/>
+                                    <constraint firstItem="EkT-QQ-9EJ" firstAttribute="top" secondItem="lCI-9K-OIA" secondAttribute="top" id="uOg-se-Pfo"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EkT-QQ-9EJ" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="Dub-er-Qhe"/>
+                            <constraint firstItem="lCI-9K-OIA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JTS-Ev-eWs"/>
+                            <constraint firstItem="lCI-9K-OIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="hgs-7a-Fu0"/>
+                            <constraint firstItem="lCI-9K-OIA" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="t8z-Bt-2PB"/>
+                            <constraint firstAttribute="bottom" secondItem="lCI-9K-OIA" secondAttribute="bottom" id="xEW-TV-H14"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="RHX-W1-QJe" id="lru-U3-T0g"/>
+                        <outlet property="contactLabel" destination="sPV-ow-vEZ" id="r4b-md-c7f"/>
+                        <outlet property="emailLabel" destination="u7L-Ce-gXf" id="ClB-yb-tvv"/>
+                        <outlet property="endDateLabel" destination="PE7-nW-L2O" id="fFu-ak-vHH"/>
+                        <outlet property="fullnameLabel" destination="J7n-hp-HpN" id="3wz-dj-OtG"/>
+                        <outlet property="genderLabel" destination="2CZ-SD-Ld5" id="e9i-s5-oIL"/>
+                        <outlet property="pictureImageView" destination="3VV-EA-bAV" id="bqq-us-Lde"/>
+                        <outlet property="reasonForLeavingLabel" destination="xyA-XJ-UXG" id="Civ-p0-arH"/>
+                        <outlet property="roleLabel" destination="88f-qZ-U4V" id="RdP-wv-oZ8"/>
+                        <outlet property="startDateLabel" destination="UaI-TA-GKz" id="5RR-Ea-F3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107.63358778625954" y="-34.507042253521128"/>
+        </scene>
+        <!--Skills Controller-->
+        <scene sceneID="aNG-cl-uMK">
+            <objects>
+                <viewController storyboardIdentifier="SkillsController" id="ydo-CU-Ktt" customClass="SkillsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M2H-D3-WGO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-u5-4il">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qvp-2C-f6l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I5K-u5-4il" firstAttribute="leading" secondItem="qvp-2C-f6l" secondAttribute="leading" id="32t-Pl-HdY"/>
+                            <constraint firstAttribute="bottom" secondItem="I5K-u5-4il" secondAttribute="bottom" id="3kJ-HI-VvK"/>
+                            <constraint firstItem="I5K-u5-4il" firstAttribute="trailing" secondItem="qvp-2C-f6l" secondAttribute="trailing" id="Rce-7Q-HZ9"/>
+                            <constraint firstItem="I5K-u5-4il" firstAttribute="top" secondItem="qvp-2C-f6l" secondAttribute="top" id="T03-3y-3EN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="I5K-u5-4il" id="fpl-L2-7gL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsO-NJ-d8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.25954198473278" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info-overlay-profpic" width="135" height="135"/>
+        <namedColor name="Text Tertiary">
+            <color red="0.51800000667572021" green="0.51800000667572021" blue="0.51800000667572021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

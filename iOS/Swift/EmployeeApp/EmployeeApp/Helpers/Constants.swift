@@ -8,6 +8,7 @@
 import Foundation
 
 typealias JSONDictionary = [String: Any]
+typealias IsTechnicalSkill = Bool
 
 let S = R.string.localizable
 
@@ -29,7 +30,7 @@ struct Constants {
       
       static let birthdateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "MM dd, yyyy"
         return formatter
       }()
     }

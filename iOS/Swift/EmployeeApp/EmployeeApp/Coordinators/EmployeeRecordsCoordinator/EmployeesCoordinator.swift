@@ -10,7 +10,8 @@ import Foundation
 final class EmployeesCoordinator: NavCoordinator {
     var onLogoutSuccess: VoidResult?
     
-    private var cachedPost: PostModel?
+    private var cachedEmployee: EmployeeModel?
+    private var cachedSkills: [String]?
     
     private let service: EmployeesServiceProtocol
     
@@ -32,34 +33,34 @@ final class EmployeesCoordinator: NavCoordinator {
 
 extension EmployeesCoordinator {
     func setRootToEmployeesScene() {
-        let vm = RecordsViewModel()
-        vm.onCacheSelectedPost = handleCachePost()
+        let vm = EmployeesViewModel()
+        vm.onCacheSelectedEmployee = handleCacheEmployee()
         
-        let vc = R.storyboard.records.recordsController()!
+        let vc = R.storyboard.employees.employeesController()!
         vc.viewModel = vm
         vc.onLogoutSuccess = trigger(\.onLogoutSuccess)
         vc.onNavigateToDetails = trigger(type(of: self).navigateToEmployeeDetailsScene)
-        vc.onNavigateToAddPost = trigger(type(of: self).presentAddPost)
-        vc.onEditPost = trigger(type(of: self).presentEditPost)
+        vc.onNavigateToAddPost = trigger(type(of: self).presentAddEmployee)
+//        vc.onEditPost = trigger(type(of: self).presentEditPost)
         
         navRouter.setRoot(vc, animated: true)
     }
     
-    func handleCachePost() -> SingleResult<PostModel> {
-        { [weak self] post in
+    func handleCacheEmployee() -> SingleResult<EmployeeModel> {
+        { [weak self] employee in
             guard let self else { return }
-            self.cachedPost = post
+            self.cachedEmployee = employee
         }
     }
 }
 
-// MARK: - AddPost Scene
+// MARK: - Add Employee Scene
 
 extension EmployeesCoordinator {
-    func presentAddPost() {
-        let vc = R.storyboard.addOrEditPost.addOrEditPostController()!
+    func presentAddEmployee() {
+        let vc = R.storyboard.addOrEditEmployee.addOrEditEmployeeController()!
         
-        vc.viewModel = AddOrEditPostViewModel()
+        vc.viewModel = AddOrEditEmployeeViewModel()
         vc.onSaveSuccess = triggerDismiss()
         
         let nc = NavigationController(rootViewController: vc)
@@ -68,10 +69,9 @@ extension EmployeesCoordinator {
     }
     
     func presentEditPost() {
-        guard let cachedPost else { return }
-        let vc = R.storyboard.addOrEditPost.addOrEditPostController()!
-        
-        vc.viewModel = AddOrEditPostViewModel(post: cachedPost)
+        guard let cachedEmployee else { return }
+        let vc = R.storyboard.addOrEditEmployee.addOrEditEmployeeController()!
+//        vc.viewModel = AddOrEditPostViewModel(post: cachedPost)
         vc.onSaveSuccess = triggerDismiss()
         
         let nc = NavigationController(rootViewController: vc)
@@ -84,10 +84,33 @@ extension EmployeesCoordinator {
 
 extension EmployeesCoordinator {
     func navigateToEmployeeDetailsScene() {
-        guard let cachedPost else { return }
+        guard let cachedEmployee else { return }
         
-        let vc = R.storyboard.postDetails.postDetailsController()!
-        vc.viewModel = PostDetailsViewModel(post: cachedPost)
+        let vc = R.storyboard.employeeDetails.employeeDetailsController()!
+        vc.viewModel = EmployeeDetailsViewModel(employee: cachedEmployee)
+        vc.onNavigateToSkills = handleNavigateToSkills()
+        navRouter.push(vc, animated: true)
+    }
+    
+    func handleNavigateToSkills() -> SingleResult<IsTechnicalSkill> {
+        { [weak self] isTechSkills in
+            guard let self else { return }
+            self.navigateToEmployeeSkillsScene(isTechSkill: isTechSkills)
+        }
+    }
+}
+
+// MARK: - EmployeeSkills Scene
+
+extension EmployeesCoordinator {
+    func navigateToEmployeeSkillsScene(isTechSkill: Bool) {
+        guard let cachedSkills else { return }
+        
+        let vc = R.storyboard.employeeDetails.skillsController()!
+        vc.viewModel = SkillsViewModel(
+            skills: cachedSkills,
+            isTechnicalSkills: isTechSkill
+        )
         navRouter.push(vc, animated: true)
     }
 }

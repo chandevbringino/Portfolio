@@ -9,18 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Records Controller-->
+        <!--Employees Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="RecordsController" id="Y6W-OH-hqX" customClass="RecordsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeesController" id="Y6W-OH-hqX" customClass="EmployeesController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ruE-Y5-nrw">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="w0m-b6-vnG">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Moi-2l-Akl"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="oMV-Fc-hq7"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o9B-qy-adT">
+                                <rect key="frame" x="0.0" y="115" width="393" height="737"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bES-DY-WHz">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPg-Pg-Zy3">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,24 +80,28 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ruE-Y5-nrw" secondAttribute="bottom" id="2FD-Te-IfH"/>
-                            <constraint firstItem="ruE-Y5-nrw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="A6P-dy-SsS"/>
+                            <constraint firstAttribute="bottom" secondItem="o9B-qy-adT" secondAttribute="bottom" id="0lK-lt-fRc"/>
+                            <constraint firstItem="o9B-qy-adT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Aye-T8-OMs"/>
                             <constraint firstAttribute="bottom" secondItem="xPg-Pg-Zy3" secondAttribute="bottom" id="GoK-L9-d7W"/>
                             <constraint firstItem="xPg-Pg-Zy3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JAe-NY-w7n"/>
                             <constraint firstItem="vHd-Pk-4bE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JbM-h4-0h6"/>
                             <constraint firstItem="xPg-Pg-Zy3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="O9u-6Q-gXN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xPg-Pg-Zy3" secondAttribute="trailing" id="TQt-o1-vA2"/>
-                            <constraint firstItem="ruE-Y5-nrw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UCe-Xn-Kgh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="w0m-b6-vnG" secondAttribute="trailing" id="Yir-rP-5zb"/>
+                            <constraint firstItem="w0m-b6-vnG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dPG-UO-nsl"/>
                             <constraint firstItem="vHd-Pk-4bE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lTx-Pn-gPo"/>
                             <constraint firstAttribute="bottom" secondItem="vHd-Pk-4bE" secondAttribute="bottom" id="nn7-jQ-uMr"/>
-                            <constraint firstItem="ruE-Y5-nrw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wY7-7M-kFQ"/>
+                            <constraint firstItem="o9B-qy-adT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qw9-wb-zCT"/>
+                            <constraint firstItem="o9B-qy-adT" firstAttribute="top" secondItem="w0m-b6-vnG" secondAttribute="bottom" id="ug5-zF-tZI"/>
+                            <constraint firstItem="w0m-b6-vnG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="y34-JU-2fv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="o9B-qy-adT" id="SvN-ay-boZ"/>
                         <outlet property="navDrawerBGView" destination="xPg-Pg-Zy3" id="42A-Tn-dVA"/>
                         <outlet property="navDrawerViewWidthConstraint" destination="sZ7-A0-XmT" id="QQr-Vs-fB1"/>
+                        <outlet property="searchBar" destination="w0m-b6-vnG" id="8hj-7S-nME"/>
                         <outlet property="signoutButtonWidthConst" destination="wkw-Dp-cGL" id="4yR-PV-iNh"/>
-                        <outlet property="tableView" destination="ruE-Y5-nrw" id="6RE-o1-o4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

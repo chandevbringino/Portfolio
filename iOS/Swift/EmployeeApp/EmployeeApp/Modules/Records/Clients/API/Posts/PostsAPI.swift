@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 
+// MARK: - Will be keeping this file for example work of JSON Consumption
+
 class PostsAPI: PostsAPIProtocol {
     var baseURL: URL { URL(string: App.shared.config.apiUrl)! }
     

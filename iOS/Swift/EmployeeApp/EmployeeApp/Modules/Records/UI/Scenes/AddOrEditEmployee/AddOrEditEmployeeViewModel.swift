@@ -1,5 +1,5 @@
 //
-//  AddPostViewModel.swift
+//  AddOrEditEmployeeViewModel.swift
 //  EmployeeApp
 //
 //  Created by Christian Bringino on 7/23/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddOrEditPostViewModel: AddOrEditPostViewModelProtocol {
+class AddOrEditEmployeeViewModel: AddOrEditEmployeeViewModelProtocol {
     private let postsAPI: PostsAPIProtocol
     private let post: PostModel?
     
@@ -22,7 +22,7 @@ class AddOrEditPostViewModel: AddOrEditPostViewModelProtocol {
 
 // MARK: - Methods
 
-extension AddOrEditPostViewModel {
+extension AddOrEditEmployeeViewModel {
     func savePost(
         title: String,
         body: String,
@@ -59,7 +59,7 @@ extension AddOrEditPostViewModel {
 
 // MARK: - Getters
 
-extension AddOrEditPostViewModel {
+extension AddOrEditEmployeeViewModel {
     var title: String { post?.title ?? "" }
     var body: String { post?.body ?? "" }
     

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - Will be keeping this file for example work of JSON Consumption
+
 protocol PostsAPIProtocol: APIClientProtocol {
     func createPost(
         params: PostParams,
