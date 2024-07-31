@@ -86,10 +86,21 @@ extension EmployeesCoordinator {
     func navigateToEmployeeDetailsScene() {
         guard let cachedEmployee else { return }
         
+        let vm = EmployeeDetailsViewModel(employee: cachedEmployee)
+        vm.onCacheSkills = handleCacheSkills()
+        
         let vc = R.storyboard.employeeDetails.employeeDetailsController()!
-        vc.viewModel = EmployeeDetailsViewModel(employee: cachedEmployee)
+        vc.viewModel = vm
         vc.onNavigateToSkills = handleNavigateToSkills()
+        
         navRouter.push(vc, animated: true)
+    }
+    
+    func handleCacheSkills() -> SingleResult<[String]> {
+        { [weak self] skills in
+            guard let self else { return }
+            self.cachedSkills = skills
+        }
     }
     
     func handleNavigateToSkills() -> SingleResult<IsTechnicalSkill> {

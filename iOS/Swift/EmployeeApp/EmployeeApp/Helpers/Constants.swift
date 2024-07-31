@@ -30,7 +30,7 @@ struct Constants {
       
       static let birthdateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM dd, yyyy"
+        formatter.dateFormat = "MMMM dd, yyyy"
         return formatter
       }()
     }

@@ -34,7 +34,7 @@ private extension SkillsController {
     }
     
     func setupNavBar() {
-//        title = viewModel.isTechnicalSkills ? 
+        title = viewModel.isTechnicalSkills ? S.technicalSkills() : S.personalSkills()
     }
     
     func setupTableView() {

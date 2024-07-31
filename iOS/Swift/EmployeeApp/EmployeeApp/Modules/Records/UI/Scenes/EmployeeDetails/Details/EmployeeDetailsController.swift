@@ -68,11 +68,13 @@ private extension EmployeeDetailsController {
 private extension EmployeeDetailsController {
     @IBAction
     func showPersonalSkills() {
+        viewModel.cacheSkill(isTechnical: false)
         onNavigateToSkills?(false)
     }
     
     @IBAction
     func showTechnicalSkills() {
+        viewModel.cacheSkill(isTechnical: true)
         onNavigateToSkills?(true)
     }
 }
@@ -80,5 +82,4 @@ private extension EmployeeDetailsController {
 // MARK: - Handlers
 
 private extension EmployeeDetailsController {
-    
 }

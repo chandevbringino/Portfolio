@@ -788,6 +788,7 @@ struct _R {
 
       func validate() throws {
         if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'EmployeeDetails', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Text Tertiary", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Text Tertiary' is used in storyboard 'EmployeeDetails', but couldn't be loaded.") }
         if employeeDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'employeeDetailsController' could not be loaded from storyboard 'EmployeeDetails' as 'EmployeeDetailsController'.") }
         if skillsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'skillsController' could not be loaded from storyboard 'EmployeeDetails' as 'SkillsController'.") }
       }
