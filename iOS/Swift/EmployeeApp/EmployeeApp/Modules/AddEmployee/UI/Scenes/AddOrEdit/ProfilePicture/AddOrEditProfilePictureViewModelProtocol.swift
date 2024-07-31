@@ -9,4 +9,9 @@
 import Foundation
 
 protocol AddOrEditProfilePictureViewModelProtocol {
+    func createEmployee(
+        employeeParam: EmployeeParams,
+        onSuccess: @escaping VoidResult,
+        onError: @escaping ErrorResult
+    )
 }

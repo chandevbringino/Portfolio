@@ -12,9 +12,12 @@ import UIKit
 
 class AddOrEditResumeAndSkillsController: ViewController {
     var viewModel: AddOrEditResumeAndSkillsViewModelProtocol!
+    var onContinue: VoidResult?
     
     @IBOutlet private(set) var technicalSkillsField: UITextField!
     @IBOutlet private(set) var personalSkillsField: UITextField!
+    @IBOutlet private(set) var resumeField: UITextField!
+    @IBOutlet private(set) var continueButton: UIButton!
 }
 
 // MARK: - Lifecycle
@@ -26,16 +29,17 @@ extension AddOrEditResumeAndSkillsController {
     }
 }
 
-// MARK: - Bind
-
-private extension AddOrEditResumeAndSkillsController {
-}
-
 // MARK: - Setup
 
 private extension AddOrEditResumeAndSkillsController {
     func setup() {
-        // Do setup here
+        setupButtons()
+    }
+    
+    func setupButtons() {
+        continueButton.layer.cornerRadius = 4
+        continueButton.layer.borderWidth = 1
+        continueButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
@@ -52,4 +56,18 @@ private extension AddOrEditResumeAndSkillsController {
 // MARK: - Actions
 
 private extension AddOrEditResumeAndSkillsController {
+    @IBAction
+    func continueButtonTapped() {
+        let param = EmployeeParams(
+            technicalSkills: [],
+            personalSkills: [],
+            resumeURL: ""
+        )
+        
+        viewModel.cacheEmployeeDetails(
+            employeeParam: param,
+            onSuccess: trigger(\.onContinue),
+            onError: handleError()
+        )
+    }
 }

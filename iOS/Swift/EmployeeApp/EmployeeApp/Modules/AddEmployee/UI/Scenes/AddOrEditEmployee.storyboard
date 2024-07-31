@@ -12,7 +12,7 @@
         <!--Personal Details-->
         <scene sceneID="eqn-QU-IYe">
             <objects>
-                <viewController storyboardIdentifier="AddOrEditEmployeeController" title="Personal Details" id="kGj-CK-pb3" customClass="AddOrEditEmployeePersonalDetailsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddOrEditEmployeePersonalDetailsController" title="Personal Details" id="kGj-CK-pb3" customClass="AddOrEditEmployeePersonalDetailsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JNE-ex-hX2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mex-El-cSZ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="646"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-Bi-DNm">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="556"/>
@@ -603,6 +603,9 @@
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueButtonTapped" destination="0he-Ep-HNu" eventType="touchUpInside" id="DlD-M3-HfZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MTz-gz-RFY"/>
@@ -612,15 +615,15 @@
                             <constraint firstItem="mex-El-cSZ" firstAttribute="top" secondItem="MTz-gz-RFY" secondAttribute="top" id="8l2-cQ-ZaM"/>
                             <constraint firstItem="mex-El-cSZ" firstAttribute="trailing" secondItem="MTz-gz-RFY" secondAttribute="trailing" id="GQe-4l-tym"/>
                             <constraint firstItem="hgb-bO-9Hb" firstAttribute="leading" secondItem="MTz-gz-RFY" secondAttribute="leading" constant="50" id="Ioy-0L-aVN"/>
-                            <constraint firstAttribute="bottom" secondItem="mex-El-cSZ" secondAttribute="bottom" id="dc5-4T-Lr4"/>
+                            <constraint firstItem="MTz-gz-RFY" firstAttribute="bottom" secondItem="mex-El-cSZ" secondAttribute="bottom" constant="113" id="Xf6-PC-svg"/>
                             <constraint firstItem="MTz-gz-RFY" firstAttribute="bottom" secondItem="hgb-bO-9Hb" secondAttribute="bottom" constant="40" id="dhy-gK-nzg"/>
                             <constraint firstItem="mex-El-cSZ" firstAttribute="leading" secondItem="MTz-gz-RFY" secondAttribute="leading" id="u5w-hi-giq"/>
                             <constraint firstItem="MTz-gz-RFY" firstAttribute="trailing" secondItem="hgb-bO-9Hb" secondAttribute="trailing" constant="50" id="vuC-OQ-4IO"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="continueField" destination="hgb-bO-9Hb" id="kBP-FC-uzj"/>
-                        <outlet property="emailField" destination="WVN-BX-ewK" id="9V0-CO-C1d"/>
+                        <outlet property="continueButton" destination="hgb-bO-9Hb" id="T4y-dy-yJe"/>
+                        <outlet property="emailField" destination="EfN-hZ-gUM" id="vhi-Kt-RNT"/>
                         <outlet property="endDateField" destination="IzN-Zd-vSb" id="P5k-rL-evl"/>
                         <outlet property="phoneNumberField" destination="isp-cl-GWu" id="uzc-NI-wQn"/>
                         <outlet property="reasonForLeavingField" destination="aQe-gM-8mZ" id="5UV-iu-g86"/>
@@ -630,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOQ-Vj-tBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="-42"/>
+            <point key="canvasLocation" x="768.70229007633588" y="-42.253521126760567"/>
         </scene>
         <!--Resume & Skills-->
         <scene sceneID="Rzw-G7-8jj">
@@ -641,7 +644,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAl-en-CWZ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="646"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-RT-7ox">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="312"/>
@@ -813,6 +816,9 @@
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueButtonTapped" destination="pmR-ZB-Rrr" eventType="touchUpInside" id="a8b-Cf-VqE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nuZ-YR-s6p"/>
@@ -824,18 +830,20 @@
                             <constraint firstItem="g4J-RT-7ox" firstAttribute="width" secondItem="iFB-DK-gWh" secondAttribute="width" id="Qhx-CO-7ST"/>
                             <constraint firstItem="hp5-qD-pdz" firstAttribute="leading" secondItem="nuZ-YR-s6p" secondAttribute="leading" constant="50" id="XZU-Xn-2Eb"/>
                             <constraint firstItem="nuZ-YR-s6p" firstAttribute="bottom" secondItem="hp5-qD-pdz" secondAttribute="bottom" constant="40" id="eKg-ef-5CS"/>
-                            <constraint firstAttribute="bottom" secondItem="JAl-en-CWZ" secondAttribute="bottom" id="nvd-Fo-H4w"/>
+                            <constraint firstItem="nuZ-YR-s6p" firstAttribute="bottom" secondItem="JAl-en-CWZ" secondAttribute="bottom" constant="113" id="gaT-m0-QlV"/>
                             <constraint firstItem="nuZ-YR-s6p" firstAttribute="trailing" secondItem="hp5-qD-pdz" secondAttribute="trailing" constant="50" id="tx2-gm-Sno"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="hp5-qD-pdz" id="nSP-RU-JhX"/>
                         <outlet property="personalSkillsField" destination="gwI-Gy-OZN" id="kwX-rV-5vo"/>
+                        <outlet property="resumeField" destination="0Q9-sd-Dfs" id="uXD-PC-d3G"/>
                         <outlet property="technicalSkillsField" destination="zhU-BX-nGK" id="Nt9-42-XUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlW-Uo-T19" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="-42"/>
+            <point key="canvasLocation" x="1542.7480916030534" y="-42.253521126760567"/>
         </scene>
         <!--Profile Picture-->
         <scene sceneID="gyc-BZ-FkT">
@@ -846,7 +854,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJo-WD-607">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="646"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhx-Dc-03e">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="220"/>
@@ -943,6 +951,9 @@
                                 <state key="normal" title="FINISH">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishButtonTapped" destination="Nsi-Nl-GnM" eventType="touchUpInside" id="JWJ-GJ-ViJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3dB-V7-gsa"/>
@@ -952,20 +963,21 @@
                             <constraint firstItem="jhx-Dc-03e" firstAttribute="width" secondItem="6kQ-4t-NkC" secondAttribute="width" id="AZq-fn-i4X"/>
                             <constraint firstItem="SJo-WD-607" firstAttribute="leading" secondItem="3dB-V7-gsa" secondAttribute="leading" id="HR5-Vc-Ss9"/>
                             <constraint firstItem="3dB-V7-gsa" firstAttribute="bottom" secondItem="80E-U2-w6r" secondAttribute="bottom" constant="40" id="I2Q-Rx-o42"/>
-                            <constraint firstAttribute="bottom" secondItem="SJo-WD-607" secondAttribute="bottom" id="RVi-4r-ueJ"/>
+                            <constraint firstItem="3dB-V7-gsa" firstAttribute="bottom" secondItem="SJo-WD-607" secondAttribute="bottom" constant="113" id="UeD-VQ-UeZ"/>
                             <constraint firstItem="SJo-WD-607" firstAttribute="trailing" secondItem="3dB-V7-gsa" secondAttribute="trailing" id="hnz-Dc-bAd"/>
                             <constraint firstItem="80E-U2-w6r" firstAttribute="leading" secondItem="3dB-V7-gsa" secondAttribute="leading" constant="40" id="pDo-Km-Kko"/>
                             <constraint firstItem="3dB-V7-gsa" firstAttribute="trailing" secondItem="80E-U2-w6r" secondAttribute="trailing" constant="50" id="rYi-uG-s6z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="finishButton" destination="80E-U2-w6r" id="fRj-yb-yo0"/>
                         <outlet property="imageView" destination="c0f-3G-CYH" id="5U3-d5-oIn"/>
                         <outlet property="pictureImageView" destination="c0f-3G-CYH" id="9IC-cV-FfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bb-Mr-G6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285" y="-42"/>
+            <point key="canvasLocation" x="2284.7328244274809" y="-42.253521126760567"/>
         </scene>
     </scenes>
     <resources>

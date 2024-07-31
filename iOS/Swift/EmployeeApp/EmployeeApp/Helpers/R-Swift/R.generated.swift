@@ -550,9 +550,12 @@ struct _R {
     var textWhite: RswiftResources.ColorResource { .init(name: "Text White", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 9 images.
+  /// This `_R.image` struct is generated, and contains static references to 10 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `close-black`.
+    var closeBlack: RswiftResources.ImageResource { .init(name: "close-black", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `employee-100`.
     var employee100: RswiftResources.ImageResource { .init(name: "employee-100", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -697,23 +700,29 @@ struct _R {
     var touch: RswiftResources.FileResource { .init(name: "touch", pathExtension: "", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
     /// Nib `EmployeeCollectionCell`.
     var employeeCollectionCell: RswiftResources.NibReferenceReuseIdentifier<EmployeeCollectionCell, EmployeeCollectionCell> { .init(name: "EmployeeCollectionCell", bundle: bundle, identifier: "EmployeeCollectionCell") }
 
+    /// Nib `SkillTableCell`.
+    var skillTableCell: RswiftResources.NibReferenceReuseIdentifier<SkillTableCell, SkillTableCell> { .init(name: "SkillTableCell", bundle: bundle, identifier: "SkillTableCell") }
+
     func validate() throws {
 
     }
   }
 
-  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `_R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
 
     /// Reuse identifier `EmployeeCollectionCell`.
     let employeeCollectionCell: RswiftResources.ReuseIdentifier<EmployeeCollectionCell> = .init(identifier: "EmployeeCollectionCell")
+
+    /// Reuse identifier `SkillTableCell`.
+    let skillTableCell: RswiftResources.ReuseIdentifier<SkillTableCell> = .init(identifier: "SkillTableCell")
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
@@ -765,7 +774,7 @@ struct _R {
 
       let name = "AddOrEditEmployee"
 
-      var addOrEditEmployeeController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditEmployeePersonalDetailsController> { .init(identifier: "AddOrEditEmployeeController", storyboard: name, bundle: bundle) }
+      var addOrEditEmployeePersonalDetailsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditEmployeePersonalDetailsController> { .init(identifier: "AddOrEditEmployeePersonalDetailsController", storyboard: name, bundle: bundle) }
       var addOrEditProfessionalDetailsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditProfessionalDetailsController> { .init(identifier: "AddOrEditProfessionalDetailsController", storyboard: name, bundle: bundle) }
       var addOrEditProfilePictureController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditProfilePictureController> { .init(identifier: "AddOrEditProfilePictureController", storyboard: name, bundle: bundle) }
       var addOrEditResumeAndSkillsController: RswiftResources.StoryboardViewControllerIdentifier<AddOrEditResumeAndSkillsController> { .init(identifier: "AddOrEditResumeAndSkillsController", storyboard: name, bundle: bundle) }
@@ -773,7 +782,7 @@ struct _R {
       func validate() throws {
         if UIKit.UIImage(named: "ic-add", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic-add' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
         if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
-        if addOrEditEmployeeController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeeController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeePersonalDetailsController'.") }
+        if addOrEditEmployeePersonalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeePersonalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeePersonalDetailsController'.") }
         if addOrEditProfessionalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfessionalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfessionalDetailsController'.") }
         if addOrEditProfilePictureController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfilePictureController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfilePictureController'.") }
         if addOrEditResumeAndSkillsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditResumeAndSkillsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditResumeAndSkillsController'.") }

@@ -98,6 +98,4 @@ private extension EmployeesViewModel {
 
 extension EmployeesViewModel {
     var employeesCount: Int { employees.count }
-    
-    var addPostVM: AddOrEditEmployeePersonalDetailsViewModelProtocol { AddOrEditEmployeePersonalDetailsViewModel() }
 }

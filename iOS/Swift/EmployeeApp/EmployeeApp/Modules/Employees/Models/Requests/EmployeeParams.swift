@@ -17,7 +17,7 @@ struct EmployeeParams {
     var phoneNumber: String?
     var role: String?
     var startDate: Date?
-    var endDate: String?
+    var endDate: Date?
     var reasonForLeaving: String?
     var technicalSkills: [String]?
     var personalSkills: [String]?

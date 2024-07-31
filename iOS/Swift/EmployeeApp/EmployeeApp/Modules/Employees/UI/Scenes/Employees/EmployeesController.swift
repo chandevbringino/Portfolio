@@ -11,7 +11,7 @@ class EmployeesController: ViewController {
     var viewModel: EmployeesViewModelProtocol!
     
     var onLogoutSuccess: VoidResult?
-    var onNavigateToAddPost: VoidResult?
+    var onNavigateToAddEmployee: VoidResult?
     var onNavigateToDetails: VoidResult?
     
     @IBOutlet private(set) var navDrawerBGView: UIView!
@@ -34,6 +34,7 @@ extension EmployeesController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
@@ -61,7 +62,7 @@ private extension EmployeesController {
             image: R.image.icAdd(),
             style: .plain,
             target: self,
-            action: #selector(addPostTapped)
+            action: #selector(addEmployeeTapped)
         )
         rightButton.tintColor = .black
         
@@ -205,8 +206,8 @@ private extension EmployeesController {
     }
     
     @objc
-    func addPostTapped() {
-        onNavigateToAddPost?()
+    func addEmployeeTapped() {
+        onNavigateToAddEmployee?()
     }
 }
 

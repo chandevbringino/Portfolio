@@ -8,14 +8,24 @@
 import Foundation
 
 protocol AddOrEditEmployeePersonalDetailsViewModelProtocol {
-    var title: String { get }
-    var body: String { get }
+    var firstname: String { get }
+    var middlename: String? { get }
+    var lastname: String { get }
+    var gender: String { get }
+    var birthday: String { get }
     
-    var isEditPost: Bool { get }
+    func dateText(from date: Date) -> String
     
-    func savePost(
-        title: String,
-        body: String,
+    var genderPickerVM: GenericPickerViewModelProtocol { get }
+    
+    func cacheEmployeeDetails(
+        employeeParam: EmployeeParams,
+        onSuccess: @escaping VoidResult,
+        onError: @escaping ErrorResult
+    )
+    
+    func saveDetails(
+        employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     )

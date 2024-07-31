@@ -10,8 +10,6 @@ import Foundation
 protocol EmployeesViewModelProtocol {
     var employeesCount: Int { get }
     
-    var addPostVM: AddOrEditEmployeePersonalDetailsViewModelProtocol { get }
-    
     func clearFilter()
     
     func filterEmployees(

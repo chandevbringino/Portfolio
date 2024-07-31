@@ -8,60 +8,87 @@
 import Foundation
 
 class AddOrEditEmployeePersonalDetailsViewModel: AddOrEditEmployeePersonalDetailsViewModelProtocol {
-    private let postsAPI: PostsAPIProtocol
-    private let post: PostModel?
+    var onCacheEmployee: SingleResult<EmployeeParams>?
+    
+    private let service: EmployeesServiceProtocol
+    private let employee: EmployeeModel?
+    
+    private let genders: [Gender] = [.male, .female, .other]
     
     init(
-        postsAPI: PostsAPIProtocol = App.shared.postsAPI,
-        post: PostModel? = nil
+        service: EmployeesServiceProtocol,
+        employee: EmployeeModel? = nil
     ) {
-        self.postsAPI = postsAPI
-        self.post = post
+        self.service = service
+        self.employee = employee
     }
 }
 
 // MARK: - Methods
 
 extension AddOrEditEmployeePersonalDetailsViewModel {
-    func savePost(
-        title: String,
-        body: String,
+    func saveDetails(
+        employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        if title.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Full name"))
-        } else if body.isEmpty {
-            return onError(AppError.mustNotBeEmpty(fieldName: "Designation"))
+        if let error = validate(params: employeeParam) {
+            return onError(error)
         }
         
-        let param = PostParams(
-            title: title,
-            body: body
-        )
-        
-        if isEditPost {
-            postsAPI.editPost(
-                postId: post?.id ?? "",
-                param: param,
-                onSuccess: onSuccess,
-                onError: onError
-            )
-        } else {
-            postsAPI.createPost(
-                params: param,
-                onSuccess: onSuccess,
-                onError: onError
-            )
+        // TODO: - Update employee details in DB
+    }
+    
+    func cacheEmployeeDetails(
+        employeeParam: EmployeeParams,
+        onSuccess: @escaping VoidResult,
+        onError: @escaping ErrorResult
+    ) {
+        if let error = validate(params: employeeParam) {
+            return onError(error)
         }
+        
+        onCacheEmployee?(employeeParam)
+        onSuccess()
+    }
+    
+    // TODO: - For improvement. Must be "unit" testable
+    func validate(params: EmployeeParams) -> Error? {
+        if (params.firstname ?? "").isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "First name")
+        } else if (params.lastname ?? "").isEmpty {
+            return AppError.mustNotBeEmpty(fieldName: "Last name")
+        } else if params.gender == nil {
+            return AppError.mustNotBeEmpty(fieldName: "Gender")
+        } else if params.birthdate == nil {
+            return AppError.mustNotBeEmpty(fieldName: "Birthday")
+        }
+        
+        return nil
+    }
+    
+    func dateText(from date: Date) -> String {
+        let formatter = Constants.Formatters.birthdateFormatter
+        return formatter.string(from: date)
     }
 }
 
 // MARK: - Getters
 
 extension AddOrEditEmployeePersonalDetailsViewModel {
-    var title: String { post?.title ?? "" }
-    var body: String { post?.body ?? "" }
+    var firstname: String { employee?.firstName ?? "" }
+    var middlename: String? { employee?.middleName }
+    var lastname: String { employee?.lastName ?? "" }
+    var gender: String { employee?.gender.rawValue ?? "" }
+    var birthday: String {
+        guard let employee else { return "" }
+        let formatter = Constants.Formatters.birthdateFormatter
+        return formatter.string(from: employee.birthDate)
+    }
     
-    var isEditPost: Bool { post != nil }
+    var genderPickerVM: GenericPickerViewModelProtocol {
+        GenericPickerViewModel(
+            options: genders.map({ $0.rawValue })
+        )
+    }
 }

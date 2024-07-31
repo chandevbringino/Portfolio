@@ -15,6 +15,7 @@ class AddOrEditProfilePictureController: ViewController {
     var onFinish: VoidResult?
     
     @IBOutlet private(set) var imageView: UIImageView!
+    @IBOutlet var finishButton: UIButton!
 }
 
 // MARK: - Lifecycle
@@ -30,7 +31,13 @@ extension AddOrEditProfilePictureController {
 
 private extension AddOrEditProfilePictureController {
     func setup() {
-        // Do setup here
+        setupButtons()
+    }
+    
+    func setupButtons() {
+        finishButton.layer.cornerRadius = 4
+        finishButton.layer.borderWidth = 1
+        finishButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
@@ -50,5 +57,10 @@ private extension AddOrEditProfilePictureController {
     @IBAction
     func addPictureButtonTapped() {
         // Present add by camera or by gallery
+    }
+    
+    @IBAction
+    func finishButtonTapped() {
+        // TODO: - Finish
     }
 }
