@@ -40,6 +40,7 @@ class WebViewController: ViewController, WKUIDelegate {
     let webConfiguration = WKWebViewConfiguration()
     webView = WKWebView(frame: .zero, configuration: webConfiguration)
     webView.uiDelegate = self
+    webView.navigationDelegate = self
     view = webView
 
     setupProgressView()
@@ -106,4 +107,12 @@ extension WebViewController: WKNavigationDelegate {
   func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     progressView.isHidden = false
   }
+    
+  func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+    print("Webview Error: \(error.localizedDescription)")
+  }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
+        print("Webview Error: \(error.localizedDescription)")
+    }
 }

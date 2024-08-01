@@ -46,4 +46,19 @@ extension AppDocumentPresenter {
       fromController: controller
     )
   }
+    
+  func presentResumePage(
+    urlString: String,
+    fromController controller: UIViewController
+  ) {
+    let metadata = WebPageMetadata(
+      title: S.resume(),
+      urlString: urlString
+    )
+    
+    presentWebPage(
+      withMetadata: metadata,
+      fromController: controller
+    )
+  }
 }

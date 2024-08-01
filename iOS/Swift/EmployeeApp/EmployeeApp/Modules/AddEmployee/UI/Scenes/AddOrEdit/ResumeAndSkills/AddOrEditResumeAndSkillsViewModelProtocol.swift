@@ -13,6 +13,8 @@ protocol AddOrEditResumeAndSkillsViewModelProtocol {
     var personalSkills: [String] { get }
     var resumeText: String { get }
     
+    var resumeURL: URL? { get }
+    
     func addTechnicalSkill(skill: String)
     func removeTechnicalSkill(skill: String)
     

@@ -13,12 +13,15 @@ final class EmployeesCoordinator: NavCoordinator {
     private var cachedEmployee: EmployeeModel?
     private var cachedSkills: [String]?
     
+    private let config: AppConfigProtocol
     private let service: EmployeesServiceProtocol
     
     init(
+        config: AppConfigProtocol = App.shared.config,
         service: EmployeesServiceProtocol = App.shared.employee,
         navRouter: any NavRouterProtocol
     ) {
+        self.config = config
         self.service = service
         
         super.init(navRouter: navRouter)
@@ -86,7 +89,9 @@ extension EmployeesCoordinator {
         
         let vc = R.storyboard.employeeDetails.employeeDetailsController()!
         vc.viewModel = vm
+        vc.appDocumentPresenter = AppDocumentPresenter(config: config)
         vc.onNavigateToSkills = handleNavigateToSkills()
+        vc.onNavigateToPDFViewer = trigger(type(of: self).navigateToEmployeeResumeScene)
         
         navRouter.push(vc, animated: true)
     }
@@ -117,6 +122,16 @@ extension EmployeesCoordinator {
             skills: cachedSkills,
             isTechnicalSkills: isTechSkill
         )
+        navRouter.push(vc, animated: true)
+    }
+}
+
+// MARK: - EmployeeResume Scene
+
+extension EmployeesCoordinator {
+    func navigateToEmployeeResumeScene(url: URL) {
+        let vc = R.storyboard.pdfViewer.pdfViewerController()!
+        vc.viewModel = PDFViewModel(isLocalURL: false, url: url)
         navRouter.push(vc, animated: true)
     }
 }

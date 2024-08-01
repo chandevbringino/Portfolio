@@ -57,6 +57,7 @@ privacy.policy = "Privacy Policy";
 terms.condition = "Terms and Conditions";
 status.success = "Success";
 report.title = "Report";
+resume = "Resume";
 
 
 // MARK: - Posts

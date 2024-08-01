@@ -76,7 +76,7 @@ struct _R {
     }
 
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 61 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 62 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -437,6 +437,13 @@ struct _R {
       /// Locales: en
       var reset: RswiftResources.StringResource { .init(key: "reset", tableName: "Localizable", source: source, developmentValue: "Reset", comment: nil) }
 
+      /// en translation: Resume
+      ///
+      /// Key: resume
+      ///
+      /// Locales: en
+      var resume: RswiftResources.StringResource { .init(key: "resume", tableName: "Localizable", source: source, developmentValue: "Resume", comment: nil) }
+
       /// en translation: Save
       ///
       /// Key: save
@@ -749,7 +756,7 @@ struct _R {
     let skillTableCell: RswiftResources.ReuseIdentifier<SkillTableCell> = .init(identifier: "SkillTableCell")
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var addOrEditEmployee: addOrEditEmployee { .init(bundle: bundle) }
@@ -758,6 +765,7 @@ struct _R {
     var employees: employees { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var login: login { .init(bundle: bundle) }
+    var pdfViewer: pdfViewer { .init(bundle: bundle) }
     var personalDetails: personalDetails { .init(bundle: bundle) }
 
     func addOrEditEmployee(bundle: Foundation.Bundle) -> addOrEditEmployee {
@@ -778,6 +786,9 @@ struct _R {
     func login(bundle: Foundation.Bundle) -> login {
       .init(bundle: bundle)
     }
+    func pdfViewer(bundle: Foundation.Bundle) -> pdfViewer {
+      .init(bundle: bundle)
+    }
     func personalDetails(bundle: Foundation.Bundle) -> personalDetails {
       .init(bundle: bundle)
     }
@@ -788,6 +799,7 @@ struct _R {
       try self.employees.validate()
       try self.launchScreen.validate()
       try self.login.validate()
+      try self.pdfViewer.validate()
       try self.personalDetails.validate()
     }
 
@@ -881,6 +893,19 @@ struct _R {
       func validate() throws {
         if UIKit.UIImage(named: "employees", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'employees' is used in storyboard 'Login', but couldn't be loaded.") }
         if loginController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'loginController' could not be loaded from storyboard 'Login' as 'LoginController'.") }
+      }
+    }
+
+    /// Storyboard `PDFViewer`.
+    struct pdfViewer: RswiftResources.StoryboardReference {
+      let bundle: Foundation.Bundle
+
+      let name = "PDFViewer"
+
+      var pdfViewerController: RswiftResources.StoryboardViewControllerIdentifier<PDFViewerController> { .init(identifier: "PDFViewerController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if pdfViewerController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'pdfViewerController' could not be loaded from storyboard 'PDFViewer' as 'PDFViewerController'.") }
       }
     }
 

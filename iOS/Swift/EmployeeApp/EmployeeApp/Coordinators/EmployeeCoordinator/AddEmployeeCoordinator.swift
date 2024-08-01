@@ -83,6 +83,7 @@ extension AddEmployeeCoordinator {
         let vc = R.storyboard.addOrEditEmployee.addOrEditResumeAndSkillsController()!
         vc.viewModel = vm
         vc.onContinue = trigger(type(of: self).navigateToAddOrEditProfilePicture)
+        vc.onNavigateToPDFViewer = trigger(type(of: self).navigateToEmployeeResumeScene)
         
         navRouter.push(vc, animated: true)
     }
@@ -101,6 +102,16 @@ extension AddEmployeeCoordinator {
         )
         vc.onFinish = trigger(\.onFinish)
         
+        navRouter.push(vc, animated: true)
+    }
+}
+
+// MARK: - EmployeeResume Scene
+
+extension AddEmployeeCoordinator {
+    func navigateToEmployeeResumeScene(url: URL) {
+        let vc = R.storyboard.pdfViewer.pdfViewerController()!
+        vc.viewModel = PDFViewModel(isLocalURL: true, url: url)
         navRouter.push(vc, animated: true)
     }
 }

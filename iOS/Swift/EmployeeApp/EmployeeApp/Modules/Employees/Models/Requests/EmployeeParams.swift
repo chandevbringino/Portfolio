@@ -21,6 +21,6 @@ struct EmployeeParams {
     var reasonForLeaving: String?
     var technicalSkills: [String]?
     var personalSkills: [String]?
-    var resumeData: Data?
+    var resumeLocalURL: URL?
     var imageData: Data?
 }

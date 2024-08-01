@@ -21,5 +21,7 @@ protocol EmployeeDetailsViewModelProtocol {
     
     var isCurrentEmployedHere: Bool { get }
     
+    var resumeURL: URL? { get }
+    
     func cacheSkill(isTechnical: Bool)
 }

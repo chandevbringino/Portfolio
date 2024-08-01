@@ -10,11 +10,12 @@ import Foundation
 
 class AddOrEditResumeAndSkillsViewModel: AddOrEditResumeAndSkillsViewModelProtocol {
     var onCacheEmployee: SingleResult<EmployeeParams>?
+    var onCacheResumeURL: SingleResult<URL>?
     
     private var params: EmployeeParams
     private var employee: EmployeeModel?
     
-    private var resumeURL: URL?
+    private var _resumeURL: URL?
     private var resumeData: Data?
     private var toBeSavedTechSkills: [String] = []
     private var toBeSavedPersonalSkills: [String] = []
@@ -32,7 +33,7 @@ class AddOrEditResumeAndSkillsViewModel: AddOrEditResumeAndSkillsViewModelProtoc
         
         toBeSavedTechSkills.append(contentsOf: employee?.technicalSkills ?? [])
         toBeSavedPersonalSkills.append(contentsOf: employee?.personalSkills ?? [])
-        resumeURL = URL(string: employee?.resume ?? "")
+        _resumeURL = URL(string: employee?.resume ?? "")
     }
 }
 
@@ -58,8 +59,8 @@ extension AddOrEditResumeAndSkillsViewModel {
     }
     
     func setResume(url: URL) {
-        resumeURL = url
-        resumeData = url.dataRepresentation
+        _resumeURL = url
+        onCacheResumeURL?(url)
     }
     
     func cacheEmployeeDetails(
@@ -68,7 +69,7 @@ extension AddOrEditResumeAndSkillsViewModel {
     ) {
         params.technicalSkills = toBeSavedTechSkills
         params.personalSkills = toBeSavedPersonalSkills
-        params.resumeData = resumeData
+        params.resumeLocalURL = _resumeURL
         
         if let error = validate(params: params) {
             return onError(error)
@@ -84,7 +85,7 @@ extension AddOrEditResumeAndSkillsViewModel {
             return AppError.mustNotBeEmpty(fieldName: "Technical skills")
         } else if (params.personalSkills ?? []).isEmpty {
             return AppError.mustNotBeEmpty(fieldName: "Personal skills")
-        } else if params.resumeData == nil {
+        } else if params.resumeLocalURL == nil {
             return AppError.mustNotBeEmpty(fieldName: "Resume")
         }
         
@@ -98,8 +99,10 @@ extension AddOrEditResumeAndSkillsViewModel {
     var technicalSkills: [String] { employee?.technicalSkills ?? [] }
     var personalSkills: [String] { employee?.personalSkills ?? [] }
     var resumeText: String {
-        guard let resumeURL else { return "" }
+        guard let resumeURL = _resumeURL else { return "" }
         let strings = resumeURL.absoluteString.components(separatedBy: "/")
         return strings.last ?? ""
     }
+    
+    var resumeURL: URL? { _resumeURL }
 }

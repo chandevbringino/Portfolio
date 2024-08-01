@@ -11,7 +11,9 @@ import SDWebImage
 class EmployeeDetailsController: ViewController {
     var viewModel: EmployeeDetailsViewModelProtocol!
     var onNavigateToSkills: SingleResult<IsTechnicalSkill>?
-    var onNavigateToPDFViewer: VoidResult?
+    var onNavigateToPDFViewer: SingleResult<URL>?
+    
+    var appDocumentPresenter: AppDocumentPresenterProtocol!
     
     @IBOutlet private(set) var pictureImageView: UIImageView!
     @IBOutlet private(set) var fullnameLabel: UILabel!
@@ -84,7 +86,12 @@ private extension EmployeeDetailsController {
     
     @IBAction
     func showResume() {
-        onNavigateToPDFViewer?()
+        guard let url = viewModel.resumeURL else { return }
+        onNavigateToPDFViewer?(url)
+//        appDocumentPresenter.presentResumePage(
+//            urlString: url.absoluteString,
+//            fromController: self
+//        )
     }
 }
 

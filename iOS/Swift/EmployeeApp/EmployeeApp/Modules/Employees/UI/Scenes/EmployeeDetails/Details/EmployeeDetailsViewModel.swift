@@ -58,4 +58,6 @@ extension EmployeeDetailsViewModel {
     }
     
     var isCurrentEmployedHere: Bool { employee.isCurrentEmployedHere }
+    
+    var resumeURL: URL? { URL(string: employee.resume) }
 }

@@ -16,4 +16,9 @@ protocol AppDocumentPresenterProtocol {
   func presentPrivacyPolicyPage(
     fromController controller: UIViewController
   )
+    
+  func presentResumePage(
+    urlString: String,
+    fromController controller: UIViewController
+  )
 }

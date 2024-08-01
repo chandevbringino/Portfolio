@@ -15,6 +15,9 @@ import StorageManager
 class AddOrEditResumeAndSkillsController: ViewController {
     var viewModel: AddOrEditResumeAndSkillsViewModelProtocol!
     var onContinue: VoidResult?
+    var onNavigateToPDFViewer: SingleResult<URL>?
+    
+    var testUrl: URL?
     
     @IBOutlet private(set) var technicalSkillsField: UITextField!
     @IBOutlet private(set) var techSkillsTagListView: TagListView!
@@ -23,6 +26,7 @@ class AddOrEditResumeAndSkillsController: ViewController {
     @IBOutlet private(set) var resumeLabel: UILabel!
     @IBOutlet private(set) var selectFileButton: UIButton!
     @IBOutlet private(set) var continueButton: UIButton!
+    @IBOutlet private(set) var clickPreviewButton: UIButton!
 }
 
 // MARK: - Lifecycle
@@ -72,6 +76,7 @@ private extension AddOrEditResumeAndSkillsController {
         
         if !viewModel.resumeText.isEmpty {
             selectFileButton.setTitle(S.updateResume(), for: .normal)
+            clickPreviewButton.isHidden = false
         }
     }
 }
@@ -90,11 +95,6 @@ private extension AddOrEditResumeAndSkillsController {
     }
 }
 
-// MARK: - Handlers
-
-private extension AddOrEditResumeAndSkillsController {
-}
-
 // MARK: - Actions
 
 private extension AddOrEditResumeAndSkillsController {
@@ -110,6 +110,12 @@ private extension AddOrEditResumeAndSkillsController {
     func selectFileButtonTapped() {
         presentDocumentPicker()
     }
+    
+    @IBAction
+    func showResumeButtonTapped() {
+        guard let resumeUrl = viewModel.resumeURL else { return }
+        onNavigateToPDFViewer?(resumeUrl)
+    }
 }
 
 // MARK: - UIDocumentPickerDelegate
@@ -119,10 +125,12 @@ extension AddOrEditResumeAndSkillsController: UIDocumentPickerDelegate {
         _ controller: UIDocumentPickerViewController,
         didPickDocumentsAt urls: [URL]
     ) {
-        guard let url = urls.first else { return }
+        guard  let url = urls.first else { return }
+        
         viewModel.setResume(url: url)
         resumeLabel.text = viewModel.resumeText
         selectFileButton.setTitle(S.updateResume(), for: .normal)
+        clickPreviewButton.isHidden = false
     }
 }
 

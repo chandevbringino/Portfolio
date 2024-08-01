@@ -128,6 +128,10 @@
 		6A3A800B2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */; };
 		6A3A800D2C561FE5009BA3F9 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */; };
 		6A5BB14B2C5B343200BC7E0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5BB14A2C5B343200BC7E0C /* GoogleService-Info.plist */; };
+		6A5BB1522C5B4BE300BC7E0C /* PDFViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BB14F2C5B4BE300BC7E0C /* PDFViewerController.swift */; };
+		6A5BB1542C5B4BE300BC7E0C /* PDFViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5BB14D2C5B4BE300BC7E0C /* PDFViewer.storyboard */; };
+		6A5BB15C2C5BA6D500BC7E0C /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BB15B2C5BA6D500BC7E0C /* PDFViewModel.swift */; };
+		6A5BB15E2C5BA6DD00BC7E0C /* PDFViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BB15D2C5BA6DD00BC7E0C /* PDFViewModelProtocol.swift */; };
 		6AA4AAF62C59FCD2001C3613 /* AddOrEditEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */; };
 		6AA4AAF72C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */; };
 		6AA4AAF82C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */; };
@@ -321,6 +325,10 @@
 		6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesServiceProtocol.swift; sourceTree = "<group>"; };
 		6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
 		6A5BB14A2C5B343200BC7E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6A5BB14D2C5B4BE300BC7E0C /* PDFViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PDFViewer.storyboard; sourceTree = "<group>"; };
+		6A5BB14F2C5B4BE300BC7E0C /* PDFViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerController.swift; sourceTree = "<group>"; };
+		6A5BB15B2C5BA6D500BC7E0C /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
+		6A5BB15D2C5BA6DD00BC7E0C /* PDFViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModelProtocol.swift; sourceTree = "<group>"; };
 		6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddOrEditEmployee.storyboard; sourceTree = "<group>"; };
 		6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsController.swift; sourceTree = "<group>"; };
 		6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -1204,6 +1212,25 @@
 			path = EmployeeCoordinator;
 			sourceTree = "<group>";
 		};
+		6A5BB14C2C5B4BCC00BC7E0C /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				6A5BB14D2C5B4BE300BC7E0C /* PDFViewer.storyboard */,
+				6A5BB14F2C5B4BE300BC7E0C /* PDFViewerController.swift */,
+				6A5BB15B2C5BA6D500BC7E0C /* PDFViewModel.swift */,
+				6A5BB15D2C5BA6DD00BC7E0C /* PDFViewModelProtocol.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		6A5BB1552C5B8F8A00BC7E0C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6A5BB14C2C5B4BCC00BC7E0C /* PDF */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		6A6136652C587FE400FBA0DC /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1347,6 +1374,7 @@
 			isa = PBXGroup;
 			children = (
 				6AA4CA032C54984E00EAD80B /* Components */,
+				6A5BB1552C5B8F8A00BC7E0C /* Scenes */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1609,6 +1637,7 @@
 				6A3A7FA12C56009F009BA3F9 /* SFProDisplay-Regular.otf in Resources */,
 				6A3A7FA22C56009F009BA3F9 /* SFProDisplay-Semibold.otf in Resources */,
 				6A223E462C4F4B6D00AE37A6 /* Base in Resources */,
+				6A5BB1542C5B4BE300BC7E0C /* PDFViewer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1781,6 +1810,7 @@
 				6AA4AB192C5A0E94001C3613 /* EmployeeParams.swift in Sources */,
 				6ACF66F12C58C0820094AAA5 /* EmployeeModel.swift in Sources */,
 				6AA4AB002C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModelProtocol.swift in Sources */,
+				6A5BB15E2C5BA6DD00BC7E0C /* PDFViewModelProtocol.swift in Sources */,
 				6AA4AB012C59FE7F001C3613 /* AddOrEditProfessionalDetailsController.swift in Sources */,
 				6AA4AB022C59FE7F001C3613 /* AddOrEditProfessionalDetailsViewModel.swift in Sources */,
 				6AA4C9FE2C548A1300EAD80B /* CreateAccountController.swift in Sources */,
@@ -1789,6 +1819,7 @@
 				6A3A7FD92C560B3A009BA3F9 /* SnackbarInfoPresenter.swift in Sources */,
 				6A3A7FEC2C56115B009BA3F9 /* WKWebView+Utils.swift in Sources */,
 				6A223EE92C4F94F600AE37A6 /* UserAPIProtocol.swift in Sources */,
+				6A5BB1522C5B4BE300BC7E0C /* PDFViewerController.swift in Sources */,
 				6A3A7FE32C560B3A009BA3F9 /* SheetProtocol.swift in Sources */,
 				6A223EEF2C4FB7F900AE37A6 /* Constants.swift in Sources */,
 				6A3A7F4A2C55F917009BA3F9 /* CoordinatorProtocol.swift in Sources */,
@@ -1803,6 +1834,7 @@
 				6ACF66FA2C59095B0094AAA5 /* SkillsViewModel.swift in Sources */,
 				6A3A7F7C2C55FF91009BA3F9 /* UIApplication+KeyWindow.swift in Sources */,
 				6A223E952C4F74F600AE37A6 /* App.swift in Sources */,
+				6A5BB15C2C5BA6D500BC7E0C /* PDFViewModel.swift in Sources */,
 				6A223E992C4F769900AE37A6 /* PersonalDetailsController.swift in Sources */,
 				6A223E7D2C4F565600AE37A6 /* R.generated.swift in Sources */,
 				6AA4AB1F2C5A0FE7001C3613 /* SkillTableCell.swift in Sources */,
@@ -2078,6 +2110,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = URPNFKD737;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmployeeApp/Config/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will be using your camera for employee information";
@@ -2110,6 +2145,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = URPNFKD737;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmployeeApp/Config/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will be using your camera for employee information";

@@ -86,17 +86,23 @@ extension EmployeesService {
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        guard let resumeData = param.resumeData else {
+        guard
+            let resumeURL = param.resumeLocalURL,
+            resumeURL.startAccessingSecurityScopedResource(),
+            let resumeData = try? Data(contentsOf: resumeURL)
+        else {
             return onError(AppError.error(reason: "No Resume found"))
         }
         
         let resumeRef = storage.reference()
-            .child("resumes/employee_resume_\(UUID().uuidString).pdf")
+            .child("resumes/\(resumeURL.lastPathComponent)")
         
         resumeRef.putData(resumeData) { meta, error in
             if let error {
                 return onError(error)
             }
+            
+            resumeURL.stopAccessingSecurityScopedResource()
             
             resumeRef.downloadURL { url, error in
                 if let error {
