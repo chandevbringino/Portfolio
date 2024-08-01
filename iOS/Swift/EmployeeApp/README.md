@@ -2,6 +2,10 @@
 
 An employee tracking app a company can use to track all their past and current employees' information.
 
+### Demo:
+
+* Upload demo here
+
 ### Architecture & Backend
 - Base Architecture: MVVM
 - Coordinator Pattern
@@ -10,7 +14,3 @@ An employee tracking app a company can use to track all their past and current e
 - Third Party Libraries and Frameworks via CocoaPods
 - Firebase (Authentication, Firestore, and Storage)
 - R.swift
-
-### Demo:
-
-// Upload demo here
