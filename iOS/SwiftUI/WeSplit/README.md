@@ -2,7 +2,7 @@
 
 An app that lets user input and compute bill. If user are with friends and the bill will be divided, this app would be very useful!
 
-Demo:
+### Demo:
 
 <img src="https://github.com/chandevbringino/Portfolio/blob/main/iOS/SwiftUI/WeSplit/Demo/WeSplitAppDemo.gif" width="250">
 
