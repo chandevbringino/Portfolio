@@ -13,10 +13,6 @@ class App {
     
     private(set) var config: AppConfigProtocol!
     
-    // MARK: - API
-    private(set) var userAPI: UserAPIProtocol!
-    private(set) var postsAPI: PostsAPIProtocol!
-    
     // MARK: - Firebase
     
     private(set) var auth: AuthServiceProtocol!
@@ -27,8 +23,6 @@ class App {
       launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) {
         config = AppConfig()
-        userAPI = UserAPI()
-        postsAPI = PostsAPI()
         auth = AuthService()
         employee = EmployeesService()
     }

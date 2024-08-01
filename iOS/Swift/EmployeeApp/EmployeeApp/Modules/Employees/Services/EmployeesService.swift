@@ -22,7 +22,7 @@ extension EmployeesService {
         onError: @escaping ErrorResult
     ) {
         db.collection(Constants.FirestoreColumns.employees)
-            .getDocuments { snapshot, error in
+            .addSnapshotListener { snapshot, error in
                 if let error {
                     return onError(error)
                 }

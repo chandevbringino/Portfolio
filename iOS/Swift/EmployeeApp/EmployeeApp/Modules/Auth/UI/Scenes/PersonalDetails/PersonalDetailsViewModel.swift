@@ -45,8 +45,7 @@ extension PersonalDetailsViewModel {
     }
     
     func dateText(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/d/yyyy"
+        let formatter = Constants.Formatters.birthdateFormatter
         return formatter.string(from: date)
     }
 }

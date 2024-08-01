@@ -39,12 +39,8 @@
 		6A223EC72C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EC62C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift */; };
 		6A223ECE2C4F878600AE37A6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223ECD2C4F878600AE37A6 /* UserModel.swift */; };
 		6A223ED12C4F882600AE37A6 /* UserParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223ED02C4F882600AE37A6 /* UserParams.swift */; };
-		6A223EE12C4F8FEF00AE37A6 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EE02C4F8FEF00AE37A6 /* UserAPI.swift */; };
-		6A223EE92C4F94F600AE37A6 /* UserAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EE82C4F94F600AE37A6 /* UserAPIProtocol.swift */; };
 		6A223EED2C4F967500AE37A6 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EEC2C4F967500AE37A6 /* APIClientProtocol.swift */; };
 		6A223EEF2C4FB7F900AE37A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EEE2C4FB7F900AE37A6 /* Constants.swift */; };
-		6A223EF42C4FBCE800AE37A6 /* PostsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EF32C4FBCE800AE37A6 /* PostsAPI.swift */; };
-		6A223EF62C4FBCF000AE37A6 /* PostsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EF52C4FBCF000AE37A6 /* PostsAPIProtocol.swift */; };
 		6A223EF92C4FBEEF00AE37A6 /* PostParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EF82C4FBEEF00AE37A6 /* PostParams.swift */; };
 		6A223EFC2C4FD86E00AE37A6 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A223EFB2C4FD86D00AE37A6 /* PostModel.swift */; };
 		6A2B1DBF2C5AAA4E0085A2E1 /* SelectPhotoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B1DBE2C5AAA4E0085A2E1 /* SelectPhotoSheet.swift */; };
@@ -236,12 +232,8 @@
 		6A223EC62C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		6A223ECD2C4F878600AE37A6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6A223ED02C4F882600AE37A6 /* UserParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParams.swift; sourceTree = "<group>"; };
-		6A223EE02C4F8FEF00AE37A6 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
-		6A223EE82C4F94F600AE37A6 /* UserAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIProtocol.swift; sourceTree = "<group>"; };
 		6A223EEC2C4F967500AE37A6 /* APIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		6A223EEE2C4FB7F900AE37A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6A223EF32C4FBCE800AE37A6 /* PostsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAPI.swift; sourceTree = "<group>"; };
-		6A223EF52C4FBCF000AE37A6 /* PostsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsAPIProtocol.swift; sourceTree = "<group>"; };
 		6A223EF82C4FBEEF00AE37A6 /* PostParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostParams.swift; sourceTree = "<group>"; };
 		6A223EFB2C4FD86D00AE37A6 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		6A2B1DBE2C5AAA4E0085A2E1 /* SelectPhotoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoSheet.swift; sourceTree = "<group>"; };
@@ -549,7 +541,6 @@
 			isa = PBXGroup;
 			children = (
 				6A223E872C4F6C4A00AE37A6 /* Models */,
-				6A223E882C4F6C5000AE37A6 /* Clients */,
 				6ACC61EB2C53BFAA003A2CC8 /* Services */,
 				6A223E6E2C4F4D7000AE37A6 /* UI */,
 			);
@@ -646,36 +637,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		6A223E882C4F6C5000AE37A6 /* Clients */ = {
-			isa = PBXGroup;
-			children = (
-				6A223E8A2C4F6C6800AE37A6 /* API */,
-			);
-			path = Clients;
-			sourceTree = "<group>";
-		};
-		6A223E8A2C4F6C6800AE37A6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				6A223E8F2C4F70AE00AE37A6 /* Auth */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		6A223E8F2C4F70AE00AE37A6 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				6A223EE02C4F8FEF00AE37A6 /* UserAPI.swift */,
-				6A223EE82C4F94F600AE37A6 /* UserAPIProtocol.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		6A223E9E2C4F79E300AE37A6 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
 				6A223E9F2C4F79F900AE37A6 /* Models */,
-				6A223EF02C4FBCCF00AE37A6 /* Clients */,
 				6A3A80092C561FA7009BA3F9 /* Services */,
 				6A223EA12C4F7A0800AE37A6 /* UI */,
 			);
@@ -753,31 +718,6 @@
 				6A223ED02C4F882600AE37A6 /* UserParams.swift */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		6A223EF02C4FBCCF00AE37A6 /* Clients */ = {
-			isa = PBXGroup;
-			children = (
-				6A223EF12C4FBCD800AE37A6 /* API */,
-			);
-			path = Clients;
-			sourceTree = "<group>";
-		};
-		6A223EF12C4FBCD800AE37A6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				6A223EF22C4FBCDF00AE37A6 /* Posts */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		6A223EF22C4FBCDF00AE37A6 /* Posts */ = {
-			isa = PBXGroup;
-			children = (
-				6A223EF32C4FBCE800AE37A6 /* PostsAPI.swift */,
-				6A223EF52C4FBCF000AE37A6 /* PostsAPIProtocol.swift */,
-			);
-			path = Posts;
 			sourceTree = "<group>";
 		};
 		6A223EF72C4FBEE600AE37A6 /* Requests */ = {
@@ -1818,7 +1758,6 @@
 				6A3A7F682C55FC3A009BA3F9 /* NavigationControllerThemable.swift in Sources */,
 				6A3A7FD92C560B3A009BA3F9 /* SnackbarInfoPresenter.swift in Sources */,
 				6A3A7FEC2C56115B009BA3F9 /* WKWebView+Utils.swift in Sources */,
-				6A223EE92C4F94F600AE37A6 /* UserAPIProtocol.swift in Sources */,
 				6A5BB1522C5B4BE300BC7E0C /* PDFViewerController.swift in Sources */,
 				6A3A7FE32C560B3A009BA3F9 /* SheetProtocol.swift in Sources */,
 				6A223EEF2C4FB7F900AE37A6 /* Constants.swift in Sources */,
@@ -1844,7 +1783,6 @@
 				6AA4AAF72C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift in Sources */,
 				6A3A7F432C55F917009BA3F9 /* NavRouter.swift in Sources */,
 				6A223EC72C4F852100AE37A6 /* EmployeeDetailsViewModelProtocol.swift in Sources */,
-				6A223EE12C4F8FEF00AE37A6 /* UserAPI.swift in Sources */,
 				6A3A7F692C55FC3A009BA3F9 /* UINavigationController+Themable.swift in Sources */,
 				6ACF66ED2C58C06E0094AAA5 /* EmployeeCollectionCellViewModelProtocol.swift in Sources */,
 				6ACF66EE2C58C06E0094AAA5 /* EmployeeCollectionCellViewModel.swift in Sources */,
@@ -1865,7 +1803,6 @@
 				6AA4CA082C54A7F500EAD80B /* GenericPickerView.swift in Sources */,
 				6A223E3A2C4F4B6C00AE37A6 /* AppDelegate.swift in Sources */,
 				6A3A7FD32C560B3A009BA3F9 /* DialogPresenterProtocol.swift in Sources */,
-				6A223EF42C4FBCE800AE37A6 /* PostsAPI.swift in Sources */,
 				6A3A800B2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift in Sources */,
 				6A3A7FEE2C5611D0009BA3F9 /* SVProgressHUD.swift in Sources */,
 				6A223E8E2C4F6F6700AE37A6 /* ViewController.swift in Sources */,
@@ -1912,7 +1849,6 @@
 				6A3A7FDA2C560B3A009BA3F9 /* InfoAction.swift in Sources */,
 				6A3A7F6B2C55FC3A009BA3F9 /* ProcessViewModelProtocol.swift in Sources */,
 				6A3A7FE02C560B3A009BA3F9 /* BlockUserSheet.swift in Sources */,
-				6A223EF62C4FBCF000AE37A6 /* PostsAPIProtocol.swift in Sources */,
 				6A3A800D2C561FE5009BA3F9 /* EmployeesService.swift in Sources */,
 				6A223ED12C4F882600AE37A6 /* UserParams.swift in Sources */,
 				6A3A7FD72C560B3A009BA3F9 /* DefaultSnackbarSuccessInfo.swift in Sources */,
