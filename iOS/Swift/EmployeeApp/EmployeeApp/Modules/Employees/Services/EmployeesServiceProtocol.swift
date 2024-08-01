@@ -12,4 +12,10 @@ protocol EmployeesServiceProtocol {
         onSuccess: @escaping SingleResult<[EmployeeModel]>,
         onError: @escaping ErrorResult
     )
+    
+    func createEmployee(
+        param: EmployeeParams,
+        onSuccess: @escaping VoidResult,
+        onError: @escaping ErrorResult
+    )
 }

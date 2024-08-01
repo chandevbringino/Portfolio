@@ -39,7 +39,14 @@ extension AddOrEditProfessionalDetailsViewModel {
             return onError(error)
         }
         
-        onCacheEmployee?(employeeParam)
+        params.email = employeeParam.email
+        params.phoneNumber = employeeParam.phoneNumber
+        params.role = employeeParam.role
+        params.startDate = employeeParam.startDate
+        params.endDate = employeeParam.endDate
+        params.reasonForLeaving = employeeParam.reasonForLeaving
+        
+        onCacheEmployee?(params)
         onSuccess()
     }
     

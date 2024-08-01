@@ -66,17 +66,15 @@ extension AddOrEditResumeAndSkillsViewModel {
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        let param = EmployeeParams(
-            technicalSkills: toBeSavedTechSkills,
-            personalSkills: toBeSavedPersonalSkills,
-            resumeData: resumeData
-        )
+        params.technicalSkills = toBeSavedTechSkills
+        params.personalSkills = toBeSavedPersonalSkills
+        params.resumeData = resumeData
         
-        if let error = validate(params: param) {
+        if let error = validate(params: params) {
             return onError(error)
         }
         
-        onCacheEmployee?(param)
+        onCacheEmployee?(params)
         onSuccess()
     }
     

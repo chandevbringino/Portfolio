@@ -51,7 +51,11 @@ extension EmployeeDetailsViewModel {
         let formatter = Constants.Formatters.birthdateFormatter
         return formatter.string(from: endDate)
     }
-    var reasonForLeaving: String { employee.reasonForLeaving ?? "N/A" }
+    var reasonForLeaving: String {
+        guard let reason =
+                employee.reasonForLeaving else { return "N/A" }
+        return reason.isEmpty ? "N/A" : reason
+    }
     
     var isCurrentEmployedHere: Bool { employee.isCurrentEmployedHere }
 }

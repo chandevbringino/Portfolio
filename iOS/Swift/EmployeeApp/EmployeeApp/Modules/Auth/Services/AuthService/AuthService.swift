@@ -77,6 +77,7 @@ extension AuthService {
                 return onError(AppError.dataNotFound)
             }
             
+            // TODO: - Improve conversion of params to model
             let userModel = UserModel(
                 id: user.uid,
                 email: user.email ?? "",

@@ -127,6 +127,7 @@
 		6A3A80082C561F66009BA3F9 /* EmployeesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A80072C561F66009BA3F9 /* EmployeesCoordinator.swift */; };
 		6A3A800B2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */; };
 		6A3A800D2C561FE5009BA3F9 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */; };
+		6A5BB14B2C5B343200BC7E0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A5BB14A2C5B343200BC7E0C /* GoogleService-Info.plist */; };
 		6AA4AAF62C59FCD2001C3613 /* AddOrEditEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */; };
 		6AA4AAF72C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */; };
 		6AA4AAF82C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */; };
@@ -155,7 +156,6 @@
 		6AA4CA0C2C54A8D000EAD80B /* GenericPickerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4CA0B2C54A8D000EAD80B /* GenericPickerViewModelProtocol.swift */; };
 		6AA4CA102C54AD8200EAD80B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA4CA0F2C54AD8200EAD80B /* NibLoadable.swift */; };
 		6AA685102C56553D00BBEBBD /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6850F2C56553D00BBEBBD /* SignUpCoordinator.swift */; };
-		6AB372FF2C53AB6200BF51EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */; };
 		6ACC61EA2C53BF54003A2CC8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC61E92C53BF54003A2CC8 /* APIClient.swift */; };
 		6ACC61ED2C53BFC2003A2CC8 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC61EC2C53BFC2003A2CC8 /* AuthServiceProtocol.swift */; };
 		6ACC61EF2C53BFC8003A2CC8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC61EE2C53BFC8003A2CC8 /* AuthService.swift */; };
@@ -320,6 +320,7 @@
 		6A3A80072C561F66009BA3F9 /* EmployeesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCoordinator.swift; sourceTree = "<group>"; };
 		6A3A800A2C561FB6009BA3F9 /* EmployeesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesServiceProtocol.swift; sourceTree = "<group>"; };
 		6A3A800C2C561FE5009BA3F9 /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
+		6A5BB14A2C5B343200BC7E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6AA4AAF12C59FCD2001C3613 /* AddOrEditEmployee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddOrEditEmployee.storyboard; sourceTree = "<group>"; };
 		6AA4AAF22C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsController.swift; sourceTree = "<group>"; };
 		6AA4AAF32C59FCD2001C3613 /* AddOrEditEmployeePersonalDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditEmployeePersonalDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -348,7 +349,6 @@
 		6AA4CA0B2C54A8D000EAD80B /* GenericPickerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPickerViewModelProtocol.swift; sourceTree = "<group>"; };
 		6AA4CA0F2C54AD8200EAD80B /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		6AA6850F2C56553D00BBEBBD /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
-		6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6ACC61E92C53BF54003A2CC8 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		6ACC61EC2C53BFC2003A2CC8 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		6ACC61EE2C53BFC8003A2CC8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -621,7 +621,7 @@
 		6A223E802C4F56B700AE37A6 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				6AB372FE2C53AB6200BF51EE /* GoogleService-Info.plist */,
+				6A5BB14A2C5B343200BC7E0C /* GoogleService-Info.plist */,
 				6A223E472C4F4B6D00AE37A6 /* Info.plist */,
 				6A223E902C4F72FE00AE37A6 /* AppConfig.swift */,
 				6A223E922C4F734000AE37A6 /* AppSecrets.swift */,
@@ -1593,6 +1593,7 @@
 				6A223EA52C4F7A2F00AE37A6 /* Employees.storyboard in Resources */,
 				6A3A7F9D2C56009F009BA3F9 /* ProximaNova-Semibold.ttf in Resources */,
 				6A223EC12C4F829300AE37A6 /* EmployeeDetails.storyboard in Resources */,
+				6A5BB14B2C5B343200BC7E0C /* GoogleService-Info.plist in Resources */,
 				6A3A7FA52C56009F009BA3F9 /* SFProText-Regular.otf in Resources */,
 				6A223E972C4F767600AE37A6 /* PersonalDetails.storyboard in Resources */,
 				6A223E432C4F4B6D00AE37A6 /* Assets.xcassets in Resources */,
@@ -1601,7 +1602,6 @@
 				6A3A7FA02C56009F009BA3F9 /* SFProDisplay-Medium.otf in Resources */,
 				6A3A7F9B2C56009F009BA3F9 /* ProximaNova-Regular.ttf in Resources */,
 				6A3A7FA62C56009F009BA3F9 /* SFProText-Semibold.otf in Resources */,
-				6AB372FF2C53AB6200BF51EE /* GoogleService-Info.plist in Resources */,
 				6A223E862C4F5D8200AE37A6 /* Localizable.stringsdict in Resources */,
 				6AA4AAF62C59FCD2001C3613 /* AddOrEditEmployee.storyboard in Resources */,
 				6ACF66EC2C58C06E0094AAA5 /* EmployeeCollectionCell.xib in Resources */,

@@ -62,36 +62,16 @@ private extension AddOrEditProfilePictureController {
 // MARK: - Methods
 
 private extension AddOrEditProfilePictureController {
+    // TODO: - Create generic image picker
     func presentCamera() {
-        guard let photoOutput = self.photoOutput else { return }
-                delay(0) {
-                
-                    var photoSettings = AVCapturePhotoSettings()
-
-
-                    if photoOutput.availablePhotoCodecTypes.contains(.hevc) {
-                        photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
-                    }
-                    
-                    let isFlashAvailable = self.deviceInput?.device.isFlashAvailable ?? false
-                    photoSettings.flashMode = isFlashAvailable ? .auto : .off
-                    photoSettings.isHighResolutionPhotoEnabled = true
-                    if let previewPhotoPixelFormatType = photoSettings.availablePreviewPhotoPixelFormatTypes.first {
-                        photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPhotoPixelFormatType]
-                    }
-                    photoSettings.photoQualityPrioritization = .balanced
-                    
-                    if let photoOutputVideoConnection = photoOutput.connection(with: .video) {
-                        if photoOutputVideoConnection.isVideoOrientationSupported,
-                            let videoOrientation = self.videoOrientationFor(self.deviceOrientation) {
-                            photoOutputVideoConnection.videoOrientation = videoOrientation
-                        }
-                    }
-                    
-                    photoOutput.capturePhoto(with: photoSettings, delegate: self)
-                }
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
     }
     
+    // TODO: - Create generic photo picker
     func presentPhotoPicker() {
         var config = PHPickerConfiguration(photoLibrary: .shared())
         
@@ -109,6 +89,13 @@ private extension AddOrEditProfilePictureController {
 // MARK: - Handlers
 
 private extension AddOrEditProfilePictureController {
+    func handleCreateEmployeeSuccess() -> VoidResult {
+        { [weak self] in
+            guard let self else { return }
+            self.dismissLoader()
+            self.onFinish?()
+        }
+    }
 }
 
 // MARK: - Actions
@@ -125,14 +112,31 @@ private extension AddOrEditProfilePictureController {
     
     @IBAction
     func finishButtonTapped() {
-        onFinish?()
+        showLoader()
+        viewModel.createEmployee(
+            onSuccess: handleCreateEmployeeSuccess(),
+            onError: handleError()
+        )
     }
 }
 
-// MARK: - AVCapturePhotoCaptureDelegate
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
 
-extension AddOrEditProfilePictureController: AVCapturePhotoCaptureDelegate {
-    
+extension AddOrEditProfilePictureController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
+        picker.dismiss(animated: true)
+        
+        if 
+            let image = info[.editedImage] as? UIImage,
+            let imageData = image.jpegData(compressionQuality: 1)
+        {
+            imageView.image = image
+            viewModel.setImage(data: imageData)
+        }
+    }
 }
 
 // MARK: - PHPickerViewControllerDelegate

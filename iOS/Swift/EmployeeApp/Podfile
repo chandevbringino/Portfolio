@@ -11,14 +11,17 @@ target 'EmployeeApp' do
   pod 'IQKeyboardManagerSwift', '~> 7.0.3'
   pod 'SVProgressHUD', '~> 2.3.1'
   pod 'SDWebImage', '~> 5.0'
-  pod 'FirebaseAuth', '~> 10.29.0'
-  pod 'FirebaseFirestore', '~> 10.29.0'
-  pod 'FirebaseAnalytics', '~> 10.28.0'
   pod 'lottie-ios', '~> 4.4.3'
   pod 'RealmSwift', '~> 10.52.0'
   pod 'PureLayout', '~> 3.1.9'
   pod 'TagListView', '~> 1.4.1'
   pod 'StorageManager', '~> 0.1.7'
+  
+  # Firebase
+  pod 'FirebaseAuth', '~> 10.29.0'
+  pod 'FirebaseFirestore', '~> 10.29.0'
+  pod 'FirebaseAnalytics', '~> 10.28.0'
+  pod 'FirebaseStorage', '~> 10.29.0'
   
   # Combine
   pod 'CombineCocoa', '~> 0.4.1'
@@ -43,4 +46,12 @@ target 'EmployeeApp' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+    end
+  end
 end

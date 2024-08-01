@@ -700,7 +700,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zhU-BX-nGK">
                                                                         <rect key="frame" x="0.0" y="17" width="293" height="43"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooq-0i-1Ur">
                                                                         <rect key="frame" x="0.0" y="59" width="293" height="1"/>
@@ -795,7 +795,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gwI-Gy-OZN">
                                                                         <rect key="frame" x="0.0" y="17" width="293" height="43"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIF-Jx-o2Q">
                                                                         <rect key="frame" x="0.0" y="59" width="293" height="1"/>
@@ -1142,14 +1142,6 @@
             <point key="canvasLocation" x="2284.7328244274809" y="-42.253521126760567"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="BFn-gW-pEO">
-            <size key="intrinsicContentSize" width="293" height="28"/>
-        </designable>
-        <designable name="PpL-lq-FAy">
-            <size key="intrinsicContentSize" width="293" height="28"/>
-        </designable>
-    </designables>
     <resources>
         <image name="ic-pencil" width="35" height="35"/>
         <image name="info-overlay-profpic" width="135" height="135"/>

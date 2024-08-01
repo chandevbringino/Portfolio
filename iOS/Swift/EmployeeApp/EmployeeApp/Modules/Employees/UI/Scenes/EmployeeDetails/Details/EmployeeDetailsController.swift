@@ -11,6 +11,7 @@ import SDWebImage
 class EmployeeDetailsController: ViewController {
     var viewModel: EmployeeDetailsViewModelProtocol!
     var onNavigateToSkills: SingleResult<IsTechnicalSkill>?
+    var onNavigateToPDFViewer: VoidResult?
     
     @IBOutlet private(set) var pictureImageView: UIImageView!
     @IBOutlet private(set) var fullnameLabel: UILabel!
@@ -22,6 +23,9 @@ class EmployeeDetailsController: ViewController {
     @IBOutlet private(set) var startDateLabel: UILabel!
     @IBOutlet private(set) var endDateLabel: UILabel!
     @IBOutlet private(set) var reasonForLeavingLabel: UILabel!
+    @IBOutlet private(set) var personalSkillsButton: UIButton!
+    @IBOutlet private(set) var techSkillsButton: UIButton!
+    @IBOutlet private(set) var resumeButton: UIButton!
 }
 
 // MARK: - Lifecycle
@@ -76,6 +80,11 @@ private extension EmployeeDetailsController {
     func showTechnicalSkills() {
         viewModel.cacheSkill(isTechnical: true)
         onNavigateToSkills?(true)
+    }
+    
+    @IBAction
+    func showResume() {
+        onNavigateToPDFViewer?()
     }
 }
 

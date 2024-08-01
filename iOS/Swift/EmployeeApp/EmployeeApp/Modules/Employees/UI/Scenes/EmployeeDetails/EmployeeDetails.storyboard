@@ -15,17 +15,17 @@
             <objects>
                 <viewController storyboardIdentifier="EmployeeDetailsController" id="Y6W-OH-hqX" customClass="EmployeeDetailsController" customModule="EmployeeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCI-9K-OIA">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="941"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-QQ-9EJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="721.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yxI-a8-jL6">
-                                                <rect key="frame" x="40" y="0.0" width="313" height="721.33333333333337"/>
+                                                <rect key="frame" x="40" y="0.0" width="313" height="803"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKe-rH-j71">
                                                         <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
@@ -302,7 +302,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9HN-lK-Xi4">
-                                                        <rect key="frame" x="0.0" y="518" width="313" height="173.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="518" width="313" height="255"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Skills:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGL-JM-HzJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="26.666666666666668"/>
@@ -363,8 +363,42 @@
                                                                     <action selector="showTechnicalSkills" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DtT-qB-ysZ"/>
                                                                 </connections>
                                                             </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcN-hC-kdK">
+                                                                <rect key="frame" x="0.0" y="143.33333333333337" width="313" height="20"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="OiJ-zv-iJD"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resume:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te2-jY-tTa">
+                                                                <rect key="frame" x="0.0" y="163.33333333333337" width="313" height="26.666666666666657"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="26.670000000000002" id="Csg-Lv-rV7"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwv-8H-t9g">
+                                                                <rect key="frame" x="0.0" y="190" width="313" height="5"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="ZnN-XT-sr0"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbf-vO-PRM">
+                                                                <rect key="frame" x="0.0" y="195" width="313" height="30"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Show Resume">
+                                                                    <color key="titleColor" name="Text Tertiary"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="showResume" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rdk-PL-gpP"/>
+                                                                    <action selector="showTechnicalSkills" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0CG-UO-fI7"/>
+                                                                </connections>
+                                                            </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-R1-KFF">
-                                                                <rect key="frame" x="0.0" y="143.33333333333337" width="313" height="30"/>
+                                                                <rect key="frame" x="0.0" y="225" width="313" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="f9z-7I-6Ln"/>
@@ -373,7 +407,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-zk-XQs">
-                                                        <rect key="frame" x="0.0" y="691.33333333333337" width="313" height="30"/>
+                                                        <rect key="frame" x="0.0" y="773" width="313" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="sZu-NN-vYG"/>
@@ -409,6 +443,7 @@
                             <constraint firstAttribute="bottom" secondItem="lCI-9K-OIA" secondAttribute="bottom" id="xEW-TV-H14"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="393" height="1000"/>
                     <connections>
                         <outlet property="birthdayLabel" destination="RHX-W1-QJe" id="lru-U3-T0g"/>
                         <outlet property="contactLabel" destination="sPV-ow-vEZ" id="r4b-md-c7f"/>
@@ -416,10 +451,13 @@
                         <outlet property="endDateLabel" destination="PE7-nW-L2O" id="fFu-ak-vHH"/>
                         <outlet property="fullnameLabel" destination="J7n-hp-HpN" id="3wz-dj-OtG"/>
                         <outlet property="genderLabel" destination="2CZ-SD-Ld5" id="e9i-s5-oIL"/>
+                        <outlet property="personalSkillsButton" destination="6AF-qF-EnF" id="GBg-5a-B0Z"/>
                         <outlet property="pictureImageView" destination="3VV-EA-bAV" id="bqq-us-Lde"/>
                         <outlet property="reasonForLeavingLabel" destination="xyA-XJ-UXG" id="Civ-p0-arH"/>
+                        <outlet property="resumeButton" destination="Tbf-vO-PRM" id="tLq-Uv-Qne"/>
                         <outlet property="roleLabel" destination="88f-qZ-U4V" id="RdP-wv-oZ8"/>
                         <outlet property="startDateLabel" destination="UaI-TA-GKz" id="5RR-Ea-F3h"/>
+                        <outlet property="techSkillsButton" destination="Tt1-mY-aMi" id="n1K-do-2OW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

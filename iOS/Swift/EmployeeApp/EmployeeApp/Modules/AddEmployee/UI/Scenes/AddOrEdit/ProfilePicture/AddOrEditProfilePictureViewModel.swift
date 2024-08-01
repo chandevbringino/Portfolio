@@ -11,7 +11,6 @@ import Foundation
 class AddOrEditProfilePictureViewModel: AddOrEditProfilePictureViewModelProtocol {
     private var params: EmployeeParams
     private var employee: EmployeeModel?
-    private var imageData: Data?
     
     private let service: EmployeesServiceProtocol
     
@@ -30,15 +29,31 @@ class AddOrEditProfilePictureViewModel: AddOrEditProfilePictureViewModelProtocol
 
 extension AddOrEditProfilePictureViewModel {
     func setImage(data: Data) {
-        imageData = data
+        params.imageData = data
     }
     
     func createEmployee(
-        employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
+        if let error = validate(params: params) {
+            return onError(error)
+        }
         
+        service.createEmployee(
+            param: params,
+            onSuccess: onSuccess,
+            onError: onError
+        )
+    }
+    
+    // TODO: - For improvement. Must be "unit" testable
+    func validate(params: EmployeeParams) -> Error? {
+        if params.imageData == nil {
+            return AppError.mustNotBeEmpty(fieldName: "Profile Picture")
+        }
+        
+        return nil
     }
 }
 

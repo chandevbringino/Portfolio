@@ -22,5 +22,5 @@ struct EmployeeParams {
     var technicalSkills: [String]?
     var personalSkills: [String]?
     var resumeData: Data?
-    var imageURL: String?
+    var imageData: Data?
 }
