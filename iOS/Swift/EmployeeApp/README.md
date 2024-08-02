@@ -2,10 +2,10 @@
 
 An employee tracking app a company can use to track all their past and current employees' information.
 
-### Demo:
-#### iPhone SE 2020: <br>
+### Demo
+#### iPhone SE 2020:
 https://drive.google.com/file/d/183nWA8cv1qUch_2-7jnteMFLObkJBAYA/view?usp=drive_link
-#### Simulator iPhone 15 Pro Max: <br>
+#### Simulator iPhone 15 Pro Max:
 https://drive.google.com/file/d/1xsH9LcTQ5N76xSqv7xrV1aEx1_d4fgIn/view?usp=drive_link
 
 ### Architecture
