@@ -4,13 +4,20 @@ An employee tracking app a company can use to track all their past and current e
 
 ### Demo:
 
-* Upload demo here
 
 ### Architecture & Backend
 - Base Architecture: MVVM
 - Coordinator Pattern
 - Standard Folder Structure
 - Service Classes, Helpers, View Components, UIKit Extensions, etc
-- Third Party Libraries and Frameworks via CocoaPods
-- Firebase (Authentication, Firestore, and Storage)
+
+### Libraries and Frameworks via Cocoapods
+- Firebase (Authentication, Firestore, Analytics and Storage)
 - R.swift
+- IQKeyboardManagerSwift
+- SDWebImage
+- lottie-ios
+- PureLayout
+- IOSSecuritySuite (For checking of Jailbroken Device)
+- MaterialComponents
+- SVProgressHUD
