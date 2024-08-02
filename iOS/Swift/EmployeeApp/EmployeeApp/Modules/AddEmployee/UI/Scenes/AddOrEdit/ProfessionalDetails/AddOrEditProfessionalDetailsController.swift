@@ -21,6 +21,7 @@ class AddOrEditProfessionalDetailsController: ViewController {
     @IBOutlet private(set) var endDateField: UITextField!
     @IBOutlet private(set) var reasonForLeavingField: UITextField!
     @IBOutlet private(set) var continueButton: UIButton!
+    @IBOutlet private(set) var checkButton: UIButton!
     
     private var selectedStartDate: Date?
     private var selectedEndDate: Date?
@@ -111,6 +112,21 @@ private extension AddOrEditProfessionalDetailsController {
             onSuccess: trigger(\.onContinue),
             onError: handleError()
         )
+    }
+    
+    @IBAction
+    func checkButtonTapped() {
+        viewModel.toggleIsCurrentEmployee()
+        
+        let image = viewModel.isCurrentEmployee ? R.image.checked() : R.image.unchecked()
+        
+        checkButton.setImage(image, for: .normal)
+        endDateField.isEnabled = !viewModel.isCurrentEmployee
+        
+        if viewModel.isCurrentEmployee {
+            endDateField.text = ""
+            selectedEndDate = nil
+        }
     }
     
     @objc

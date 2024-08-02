@@ -9,6 +9,7 @@ import Foundation
 
 protocol EmployeesViewModelProtocol {
     var employeesCount: Int { get }
+    var isListEmpty: Bool { get }
     
     func clearFilter()
     

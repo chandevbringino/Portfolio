@@ -578,9 +578,12 @@ struct _R {
     var textWhite: RswiftResources.ColorResource { .init(name: "Text White", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 11 images.
+  /// This `_R.image` struct is generated, and contains static references to 14 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `checked`.
+    var checked: RswiftResources.ImageResource { .init(name: "checked", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `close-black`.
     var closeBlack: RswiftResources.ImageResource { .init(name: "close-black", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -612,8 +615,14 @@ struct _R {
     /// Image `logo-1902`.
     var logo1902: RswiftResources.ImageResource { .init(name: "logo-1902", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `no-results`.
+    var noResults: RswiftResources.ImageResource { .init(name: "no-results", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `portfolio-48`.
     var portfolio48: RswiftResources.ImageResource { .init(name: "portfolio-48", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `unchecked`.
+    var unchecked: RswiftResources.ImageResource { .init(name: "unchecked", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -818,6 +827,7 @@ struct _R {
       func validate() throws {
         if UIKit.UIImage(named: "ic-pencil", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'ic-pencil' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
         if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "unchecked", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'unchecked' is used in storyboard 'AddOrEditEmployee', but couldn't be loaded.") }
         if addOrEditEmployeePersonalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditEmployeePersonalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditEmployeePersonalDetailsController'.") }
         if addOrEditProfessionalDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfessionalDetailsController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfessionalDetailsController'.") }
         if addOrEditProfilePictureController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'addOrEditProfilePictureController' could not be loaded from storyboard 'AddOrEditEmployee' as 'AddOrEditProfilePictureController'.") }
@@ -849,7 +859,6 @@ struct _R {
 
       func validate() throws {
         if UIKit.UIImage(named: "info-overlay-profpic", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'info-overlay-profpic' is used in storyboard 'EmployeeDetails', but couldn't be loaded.") }
-        if UIKit.UIColor(named: "Text Tertiary", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Text Tertiary' is used in storyboard 'EmployeeDetails', but couldn't be loaded.") }
         if employeeDetailsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'employeeDetailsController' could not be loaded from storyboard 'EmployeeDetails' as 'EmployeeDetailsController'.") }
         if skillsController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'skillsController' could not be loaded from storyboard 'EmployeeDetails' as 'SkillsController'.") }
       }
@@ -864,6 +873,7 @@ struct _R {
       var employeesController: RswiftResources.StoryboardViewControllerIdentifier<EmployeesController> { .init(identifier: "EmployeesController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
+        if UIKit.UIImage(named: "no-results", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'no-results' is used in storyboard 'Employees', but couldn't be loaded.") }
         if employeesController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'employeesController' could not be loaded from storyboard 'Employees' as 'EmployeesController'.") }
       }
     }

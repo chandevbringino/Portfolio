@@ -47,7 +47,7 @@ extension EmployeeDetailsViewModel {
         return formatter.string(from: employee.startDate)
     }
     var endDateText: String {
-        guard let endDate = employee.endDate else { return "" }
+        guard let endDate = employee.endDate else { return "N/A" }
         let formatter = Constants.Formatters.birthdateFormatter
         return formatter.string(from: endDate)
     }

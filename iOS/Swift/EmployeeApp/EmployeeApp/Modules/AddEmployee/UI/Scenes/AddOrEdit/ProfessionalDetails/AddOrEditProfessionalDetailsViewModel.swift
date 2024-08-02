@@ -14,6 +14,8 @@ class AddOrEditProfessionalDetailsViewModel: AddOrEditProfessionalDetailsViewMod
     private var params: EmployeeParams
     private var employee: EmployeeModel?
     
+    private var _isCurrentEmployee: Bool = false
+    
     private let service: EmployeesServiceProtocol
     
     init(
@@ -30,6 +32,10 @@ class AddOrEditProfessionalDetailsViewModel: AddOrEditProfessionalDetailsViewMod
 // MARK: - Methods
 
 extension AddOrEditProfessionalDetailsViewModel {
+    func toggleIsCurrentEmployee() {
+        _isCurrentEmployee.toggle()
+    }
+    
     func cacheEmployeeDetails(
         employeeParam: EmployeeParams,
         onSuccess: @escaping VoidResult,
@@ -60,7 +66,7 @@ extension AddOrEditProfessionalDetailsViewModel {
             return AppError.mustNotBeEmpty(fieldName: "Role")
         } else if params.startDate == nil {
             return AppError.mustNotBeEmpty(fieldName: "Start date")
-        } else if params.endDate == nil {
+        } else if !isCurrentEmployee && params.endDate == nil {
             return AppError.mustNotBeEmpty(fieldName: "End date")
         }
         
@@ -90,4 +96,6 @@ extension AddOrEditProfessionalDetailsViewModel {
         return formatter.string(from: endDate)
     }
     var reasonForLeaving: String { employee?.reasonForLeaving ?? "" }
+    
+    var isCurrentEmployee: Bool { _isCurrentEmployee }
 }

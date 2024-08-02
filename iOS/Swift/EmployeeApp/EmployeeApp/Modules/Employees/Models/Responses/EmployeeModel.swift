@@ -26,6 +26,7 @@ struct EmployeeModel: Codable {
     var personalSkills: [String]
     var technicalSkills: [String]
     var imageURL: String?
+    var createdAt: Date
     
     var fullName: String {
         guard let middleName else {
@@ -51,7 +52,8 @@ struct EmployeeModel: Codable {
         resume: String,
         personalSkills: [String],
         technicalSkills: [String],
-        imageURL: String?
+        imageURL: String?,
+        createdAt: Date
     ) {
         self.email = email
         self.firstName = firstName
@@ -69,6 +71,7 @@ struct EmployeeModel: Codable {
         self.personalSkills = personalSkills
         self.technicalSkills = technicalSkills
         self.imageURL = imageURL
+        self.createdAt = createdAt
     }
     
     
@@ -90,5 +93,6 @@ struct EmployeeModel: Codable {
         case personalSkills = "personal_skills"
         case technicalSkills = "technical_skills"
         case imageURL = "image_url"
+        case createdAt = "created_at"
     }
 }

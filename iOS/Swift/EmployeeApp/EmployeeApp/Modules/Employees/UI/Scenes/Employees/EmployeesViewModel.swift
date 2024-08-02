@@ -98,4 +98,6 @@ private extension EmployeesViewModel {
 
 extension EmployeesViewModel {
     var employeesCount: Int { employees.count }
+    
+    var isListEmpty: Bool { employees.isEmpty }
 }

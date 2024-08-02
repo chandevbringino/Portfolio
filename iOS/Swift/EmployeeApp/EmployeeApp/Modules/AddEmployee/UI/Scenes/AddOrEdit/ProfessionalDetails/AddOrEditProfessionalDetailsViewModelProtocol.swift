@@ -16,6 +16,10 @@ protocol AddOrEditProfessionalDetailsViewModelProtocol {
     var endDateText: String { get }
     var reasonForLeaving: String { get }
     
+    var isCurrentEmployee: Bool { get }
+    
+    func toggleIsCurrentEmployee()
+    
     func dateText(from date: Date) -> String
     
     func cacheEmployeeDetails(

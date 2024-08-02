@@ -36,8 +36,6 @@ extension EmployeeDetailsController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        refresh()
     }
 }
 
@@ -45,7 +43,28 @@ extension EmployeeDetailsController {
 
 private extension EmployeeDetailsController {
     func setup() {
+        setupImageView()
+        setupButton()
+        
+        refresh()
+    }
+    
+    func setupImageView() {
         pictureImageView.layer.cornerRadius = 70
+    }
+    
+    func setupButton() {
+        personalSkillsButton.layer.cornerRadius = 4
+        personalSkillsButton.layer.borderWidth = 1
+        personalSkillsButton.layer.borderColor = UIColor.darkGray.cgColor
+        
+        techSkillsButton.layer.cornerRadius = 4
+        techSkillsButton.layer.borderWidth = 1
+        techSkillsButton.layer.borderColor = UIColor.darkGray.cgColor
+        
+        resumeButton.layer.cornerRadius = 4
+        resumeButton.layer.borderWidth = 1
+        resumeButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 }
 
@@ -88,10 +107,6 @@ private extension EmployeeDetailsController {
     func showResume() {
         guard let url = viewModel.resumeURL else { return }
         onNavigateToPDFViewer?(url)
-//        appDocumentPresenter.presentResumePage(
-//            urlString: url.absoluteString,
-//            fromController: self
-//        )
     }
 }
 

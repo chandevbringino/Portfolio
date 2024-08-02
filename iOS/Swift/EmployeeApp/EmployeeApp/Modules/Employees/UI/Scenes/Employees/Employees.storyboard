@@ -38,6 +38,33 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-62-qWK">
+                                <rect key="frame" x="106.66666666666669" y="348.66666666666669" width="180" height="180.00000000000006"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-results" translatesAutoresizingMaskIntoConstraints="NO" id="De5-hB-Ma5">
+                                        <rect key="frame" x="25.999999999999986" y="10" width="128" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="FDL-YA-69P"/>
+                                            <constraint firstAttribute="height" constant="128" id="PnE-pk-mvs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfb-hj-rsy">
+                                        <rect key="frame" x="48.999999999999986" y="158" width="82.000000000000014" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Xfb-hj-rsy" firstAttribute="centerX" secondItem="Yc7-62-qWK" secondAttribute="centerX" id="D40-T2-sa4"/>
+                                    <constraint firstAttribute="width" constant="180" id="MRJ-o4-UXs"/>
+                                    <constraint firstItem="De5-hB-Ma5" firstAttribute="top" secondItem="Yc7-62-qWK" secondAttribute="top" constant="10" id="XtY-Dv-HuZ"/>
+                                    <constraint firstAttribute="height" constant="180" id="g3T-a9-w03"/>
+                                    <constraint firstItem="Xfb-hj-rsy" firstAttribute="top" secondItem="De5-hB-Ma5" secondAttribute="bottom" constant="20" id="kJI-9C-arZ"/>
+                                    <constraint firstItem="De5-hB-Ma5" firstAttribute="centerX" secondItem="Yc7-62-qWK" secondAttribute="centerX" id="yO5-Bo-eEt"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPg-Pg-Zy3">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,7 +108,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="o9B-qy-adT" secondAttribute="bottom" id="0lK-lt-fRc"/>
+                            <constraint firstItem="Yc7-62-qWK" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="A3i-Mn-1ac"/>
                             <constraint firstItem="o9B-qy-adT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Aye-T8-OMs"/>
+                            <constraint firstItem="Yc7-62-qWK" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="C32-iv-wYd"/>
                             <constraint firstAttribute="bottom" secondItem="xPg-Pg-Zy3" secondAttribute="bottom" id="GoK-L9-d7W"/>
                             <constraint firstItem="xPg-Pg-Zy3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JAe-NY-w7n"/>
                             <constraint firstItem="vHd-Pk-4bE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JbM-h4-0h6"/>
@@ -100,6 +129,7 @@
                         <outlet property="collectionView" destination="o9B-qy-adT" id="SvN-ay-boZ"/>
                         <outlet property="navDrawerBGView" destination="xPg-Pg-Zy3" id="42A-Tn-dVA"/>
                         <outlet property="navDrawerViewWidthConstraint" destination="sZ7-A0-XmT" id="QQr-Vs-fB1"/>
+                        <outlet property="noResultView" destination="Yc7-62-qWK" id="ZiA-hm-bOk"/>
                         <outlet property="searchBar" destination="w0m-b6-vnG" id="8hj-7S-nME"/>
                         <outlet property="signoutButtonWidthConst" destination="wkw-Dp-cGL" id="4yR-PV-iNh"/>
                     </connections>
@@ -110,6 +140,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="no-results" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

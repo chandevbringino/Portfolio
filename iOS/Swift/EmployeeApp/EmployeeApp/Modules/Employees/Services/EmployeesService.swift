@@ -22,6 +22,7 @@ extension EmployeesService {
         onError: @escaping ErrorResult
     ) {
         db.collection(Constants.FirestoreColumns.employees)
+            .order(by: "created_at", descending: true)
             .addSnapshotListener { snapshot, error in
                 if let error {
                     return onError(error)
@@ -144,7 +145,8 @@ extension EmployeesService {
             resume: resumeURL.absoluteString,
             personalSkills: param.personalSkills ?? [],
             technicalSkills: param.technicalSkills ?? [],
-            imageURL: imageURL.absoluteString
+            imageURL: imageURL.absoluteString, 
+            createdAt: Date()
         )
         
         do {

@@ -20,6 +20,7 @@ class EmployeesController: ViewController {
     @IBOutlet private(set) var navDrawerViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private(set) var signoutButtonWidthConst: NSLayoutConstraint!
     @IBOutlet private(set) var searchBar: UISearchBar!
+    @IBOutlet private(set) var noResultView: UIView!
     
     private var isNavDrawerOpen: Bool = false
 }
@@ -146,6 +147,7 @@ private extension EmployeesController {
     
     func openNavDrawer() {
         isNavDrawerOpen = true
+        searchBar.resignFirstResponder()
         
         UIView.animate(withDuration: 0.3) {
             let navDrawerWidth = UIScreen.main.bounds.width / 1.3
@@ -219,6 +221,7 @@ private extension EmployeesController {
         { [weak self] in
             guard let self else { return }
             self.dismissLoader()
+            self.noResultView.isHidden = !self.viewModel.isListEmpty
             self.collectionView.refreshControl?.endRefreshing()
             self.collectionView.reloadData()
         }
@@ -248,7 +251,12 @@ extension EmployeesController: UISearchBarDelegate {
             viewModel.clearFilter()
         }
         
+        noResultView.isHidden = !viewModel.isListEmpty
         collectionView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
