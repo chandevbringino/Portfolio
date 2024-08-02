@@ -2,6 +2,14 @@
 
 An employee tracking app a company can use to track all their past and current employees' record.
 
+### Features
+- Sign Up and Login
+- Add Employee - with upload Resume (only accepts PDF)
+- Employee List
+- Employee Details
+- Search
+- Display Resume - can display resume.pdf from local storage or database
+
 ### Demo
 #### iPhone SE 2020:
 https://drive.google.com/file/d/183nWA8cv1qUch_2-7jnteMFLObkJBAYA/view?usp=drive_link
