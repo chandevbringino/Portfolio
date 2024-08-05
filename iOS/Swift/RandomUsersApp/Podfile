@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RandomUsersApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RandomUsersApp
+  pod 'Alamofire', '~> 5.9.1'
+  pod 'Kingfisher', '~> 7.0'
+  pod 'R.swift', '~> 7.3.2'
+  pod 'SVProgressHUD', '~> 2.3.1'
+  pod 'RealmSwift', '~> 10.52.0'
+  
+  # ReactiveX
+  pod 'RxSwift', '6.7.1'
+  pod 'RxCocoa', '6.7.1'
+
+  target 'RandomUsersAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'RandomUsersAppUITests' do
+    # Pods for testing
+  end
+
+end

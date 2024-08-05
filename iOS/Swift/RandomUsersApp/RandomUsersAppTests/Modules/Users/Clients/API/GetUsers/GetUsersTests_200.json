@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Niilo",
+        "last": "Tikkanen"
+      },
+      "location": {
+        "street": {
+          "number": 5320,
+          "name": "Siilitie"
+        },
+        "city": "Ingå",
+        "state": "Tavastia Proper",
+        "country": "Finland",
+        "postcode": 64596,
+        "coordinates": {
+          "latitude": "-27.9785",
+          "longitude": "-142.0238"
+        },
+        "timezone": {
+          "offset": "+5:00",
+          "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+        }
+      },
+      "email": "niilo.tikkanen@example.com",
+      "login": {
+        "uuid": "aea8d2d9-5630-4c79-a478-05ae5118dcaa",
+        "username": "heavylion109",
+        "password": "cunts",
+        "salt": "uyndWCMN",
+        "md5": "36fc61314e6dc100bdaf215cf8371fa7",
+        "sha1": "14addbdd5943aef4343522a68e1634a03003f083",
+        "sha256": "8b20846eb25f1394eb791163486181551db347bf13804fb6bdc164c5ea93138d"
+      },
+      "dob": {
+        "date": "1965-10-12T15:17:31.965Z",
+        "age": 58
+      },
+      "registered": {
+        "date": "2015-02-02T03:09:54.747Z",
+        "age": 9
+      },
+      "phone": "04-115-876",
+      "cell": "046-976-12-88",
+      "id": {
+        "name": "HETU",
+        "value": "NaNNA135undefined"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/90.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/90.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/90.jpg"
+      },
+      "nat": "FI"
+    }
+  ],
+  "info": {
+    "seed": "b83729af24358783",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
