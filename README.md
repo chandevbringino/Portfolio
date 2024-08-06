@@ -12,7 +12,7 @@ I will indicate what's available for now below:
 1. [WeSplit](iOS/SwiftUI/WeSplit)
 2. [GuessTheFlag](iOS/SwiftUI/GuessTheFlag)
 
-## Sample of JSON Consumption with Swift 5
+## Sample of JSON Consumption
 1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
 
 
