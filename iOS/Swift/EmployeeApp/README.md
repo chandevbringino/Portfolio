@@ -16,11 +16,13 @@ https://drive.google.com/file/d/183nWA8cv1qUch_2-7jnteMFLObkJBAYA/view?usp=drive
 #### Simulator iPhone 15 Pro Max:
 https://drive.google.com/file/d/1xsH9LcTQ5N76xSqv7xrV1aEx1_d4fgIn/view?usp=drive_link
 
-### Architecture
+### Architecture & Pattern
 - Base Architecture: MVVM
 - Coordinator Pattern
 - Standard Folder Structure
 - Service Classes, Helpers, View Components, UIKit Extensions, etc
+- Singleton
+- Dependency Injection
 
 ### Database
 - Firestore
