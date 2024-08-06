@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIClient: APIClientProtocol {
     var baseUrl: String
@@ -13,4 +14,10 @@ class APIClient: APIClientProtocol {
     init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
+}
+
+// MARK: - Methods
+
+extension APIClient {
+    // Generic request
 }
