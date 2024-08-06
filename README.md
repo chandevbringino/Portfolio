@@ -1,4 +1,4 @@
-# iOS <img src="iOS/Assets/icons8-apple-100.png" width="30">
+# Apple <img src="iOS/Assets/icons8-apple-100.png" width="30">
 
 ### Apps with Swift & Storyboard
 1. [EmployeeApp](iOS/Swift/EmployeeApp)
