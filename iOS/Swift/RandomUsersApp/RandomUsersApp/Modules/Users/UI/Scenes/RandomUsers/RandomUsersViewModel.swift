@@ -9,33 +9,21 @@
 import Foundation
 
 class RandomUsersViewModel: RandomUsersViewModelProtocol {
-    private var isFetching: Bool = false
-    private var hasLoadedAll: Bool = false
-    private var page: Int = 0
+    private var paginator: DataPaginator<UserModel>
     
-    private var baseRandomUsers: [UserModel] = []
     private var randomUsers: [UserModel] = []
     
-    private let size: Int = 10
     private let service: RandomUserServiceProtocol
     private let networkService: NetworkMonitorServiceProtocol
     
     init(
         service: RandomUserServiceProtocol = App.shared.randomUser,
-        networkService: NetworkMonitorServiceProtocol = App.shared.networkMonitor
+        networkService: NetworkMonitorServiceProtocol = App.shared.networkMonitor,
+        paginator: DataPaginator<UserModel> = .init(defaultPageSize: Constants.defaultPageSize)
     ) {
         self.service = service
         self.networkService = networkService
-    }
-}
-
-// MARK: - Helpers
-
-private extension RandomUsersViewModel {
-    private func reset() {
-        isFetching = false
-        hasLoadedAll = false
-        page = 0
+        self.paginator = paginator
     }
 }
 
@@ -43,12 +31,12 @@ private extension RandomUsersViewModel {
 
 extension RandomUsersViewModel {
     func clearFilter() {
-        randomUsers = baseRandomUsers
+        randomUsers = paginator.models
     }
     
     func filterUsers(with text: String) {
         let lowerCasedText = text.lowercased()
-        let filteredUsers = baseRandomUsers.filter(
+        let filteredUsers = paginator.models.filter(
             { ($0.name.first.lowercased() + " " + $0.name.last.lowercased()).contains(lowerCasedText) })
         randomUsers = filteredUsers
     }
@@ -57,7 +45,7 @@ extension RandomUsersViewModel {
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        reset()
+        paginator.reset()
         
         guard networkService.isConnectedToInternet else {
             return fetchMoreUsers(
@@ -79,25 +67,18 @@ extension RandomUsersViewModel {
         onSuccess: @escaping VoidResult,
         onError: @escaping ErrorResult
     ) {
-        // TODO: - Improve pagination in future. Move logic to another class.
-        if isFetching || hasLoadedAll {
+        if paginator.isFetching || paginator.hasLoadedAll {
             return
         }
         
-        page += 1
-        isFetching = true
-        
-        let page = Page(
-            size: size,
-            page: page
-        )
+        paginator.recordFetchAndIncrementPage()
         
         service.fetchRandomUsers(
-            page: page,
-            onSuccess: handleFetchUsersSuccess(
-                thenExecute: onSuccess
+            page: paginator.page,
+            onSuccess: paginator.handleNewData(
+                thenExecute: handleFetchUsersSuccess(thenExecute: onSuccess)
             ),
-            onError: handleError(thenExecute: onError)
+            onError: paginator.handleError(thenExecute: onError)
         )
     }
     
@@ -128,34 +109,13 @@ private extension RandomUsersViewModel {
     
     func handleFetchUsersSuccess(
         thenExecute onCompletion: @escaping VoidResult
-    ) -> SingleResult<[UserModel]> {
-        { [weak self] users in
+    ) -> VoidResult {
+        { [weak self] in
             guard let self else { return }
             
-            if self.page == 1 {
-                self.baseRandomUsers = []
-            }
+            self.randomUsers = paginator.models
             
-            if users.count < self.size {
-                hasLoadedAll = true
-            }
-            
-            self.baseRandomUsers.append(contentsOf: users)
-            self.randomUsers = baseRandomUsers
-            
-            self.isFetching = false
             onCompletion()
-        }
-    }
-    
-    func handleError(
-        thenExecute onError: @escaping ErrorResult
-    ) -> ErrorResult {
-        { [weak self] error in
-            guard let self else { return }
-            self.isFetching = false
-            self.page = 0
-            onError(error)
         }
     }
 }

@@ -14,6 +14,7 @@ typealias hasReachMaxLimit = Bool
 
 struct Constants {
     static let maxLocalPage = 3
+    static let defaultPageSize: Int = 10
     
     static let birthdateFormatter: DateFormatter = {
         let formatter = DateFormatter()
