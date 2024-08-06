@@ -1,14 +1,17 @@
 # iOS
-## Apps with Swift & Storyboard
+<div style="margin-left: 30px;">
+### Apps with Swift & Storyboard
 1. [EmployeeApp](iOS/Swift/EmployeeApp)
 2. [RandomUsersApp](iOS/Swift/RandomUsersApp)
 
-## Apps with SwiftUI
+### Apps with SwiftUI
 1. [WeSplit](iOS/SwiftUI/WeSplit)
 2. [GuessTheFlag](iOS/SwiftUI/GuessTheFlag)
 
-## Sample of JSON Consumption
+### Sample of JSON Consumption
 1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
+
+</div>
 
 # Android
 
