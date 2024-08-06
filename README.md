@@ -1,17 +1,23 @@
-### This is my portfolio, showcasing my expertise in iOS and Android.
-
-So far, this repo has three iOS Applications. But more will be made with other platforms soon. 😄🤞<br>
-I will indicate what's available for now below:
-
 # iOS
-## Apps with Swift & Storyboard
-1. [EmployeeApp](https://github.com/chandevbringino/Portfolio/tree/main/iOS/Swift/EmployeeApp)
+
+### Apps with Swift & Storyboard
+1. [EmployeeApp](iOS/Swift/EmployeeApp)
 2. [RandomUsersApp](iOS/Swift/RandomUsersApp)
 
-## Apps with SwiftUI
-1. [WeSplit](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/WeSplit)
-2. [GuessTheFlag](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/GuessTheFlag)
+### Apps with SwiftUI
+1. [WeSplit](iOS/SwiftUI/WeSplit)
+2. [GuessTheFlag](iOS/SwiftUI/GuessTheFlag)
 
+### Sample of JSON Consumption
+1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
+
+# Android
+
+[Coming Soon]
+
+# Flutter
+
+[Coming Soon]
 
 <br>
 ‼️ NOTE ‼️<br>
