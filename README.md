@@ -5,12 +5,15 @@ I will indicate what's available for now below:
 
 # iOS
 ## Apps with Swift & Storyboard
-1. [EmployeeApp](https://github.com/chandevbringino/Portfolio/tree/main/iOS/Swift/EmployeeApp)
+1. [EmployeeApp](iOS/Swift/EmployeeApp)
 2. [RandomUsersApp](iOS/Swift/RandomUsersApp)
 
 ## Apps with SwiftUI
-1. [WeSplit](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/WeSplit)
-2. [GuessTheFlag](https://github.com/chandevbringino/Portfolio/tree/main/iOS/SwiftUI/GuessTheFlag)
+1. [WeSplit](iOS/SwiftUI/WeSplit)
+2. [GuessTheFlag](iOS/SwiftUI/GuessTheFlag)
+
+## Sample of JSON Consumption with Swift 5
+1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
 
 
 <br>
