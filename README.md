@@ -1,5 +1,5 @@
 # iOS
-<div style="margin-left: 30px;">
+
 ### Apps with Swift & Storyboard
 1. [EmployeeApp](iOS/Swift/EmployeeApp)
 2. [RandomUsersApp](iOS/Swift/RandomUsersApp)
@@ -10,8 +10,6 @@
 
 ### Sample of JSON Consumption
 1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
-
-</div>
 
 # Android
 
