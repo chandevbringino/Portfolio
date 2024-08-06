@@ -1,5 +1,3 @@
-### This is my portfolio, showcasing my expertise in iOS and Android.
-
 # iOS
 ## Apps with Swift & Storyboard
 1. [EmployeeApp](iOS/Swift/EmployeeApp)
