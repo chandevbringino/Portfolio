@@ -1,4 +1,4 @@
-# Employee App <img src="https://github.com/chandevbringino/Portfolio/blob/main/iOS/Icons/image-1024x1024.jpg" width="30">
+# Employee App <img src="iOS/Assets/image-1024x1024.jpg" width="30">
 
 An employee tracking app a company can use to track all their past and current employees' record.
 
@@ -9,6 +9,7 @@ An employee tracking app a company can use to track all their past and current e
 - Employee Details
 - Search
 - Display Resume - can display resume.pdf from local storage or database
+- Checking of Jailbroken device
 
 ### Demo
 #### iPhone SE 2020:
@@ -34,6 +35,6 @@ https://drive.google.com/file/d/1xsH9LcTQ5N76xSqv7xrV1aEx1_d4fgIn/view?usp=drive
 - SDWebImage
 - lottie-ios
 - PureLayout
-- IOSSecuritySuite (For checking of Jailbroken Device)
+- IOSSecuritySuite
 - MaterialComponents
 - SVProgressHUD
