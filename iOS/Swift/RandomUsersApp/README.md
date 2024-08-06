@@ -11,9 +11,11 @@ An app that contains a list of random users and can display the random user's in
 ### Demo
 https://drive.google.com/file/d/1c-fjsSdpGsFREqp7xI2uKWejm6o9FBVW/view?usp=drive_link
 
-### Architecture
+### Architecture & Pattern
 - Base Architecture: MVVM
 - Standard Folder Structure
+- Singleton
+- Dependency Injection
 - API Unit Tests with MockData
 - UITests
 
