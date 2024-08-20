@@ -8,7 +8,7 @@ An employee tracking app a company can use to track all their past and current e
 - Employee List
 - Employee Details
 - Search
-- Display Resume - can display resume.pdf from local storage or database
+- Display Resume - can display resume.pdf from local storage or remote database
 - Checking of Jailbroken device
 
 ### Demo
