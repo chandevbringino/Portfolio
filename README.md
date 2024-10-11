@@ -12,10 +12,6 @@
 ### Sample of JSON Consumption
 1. [JSON to Swift object with Alamofire](iOS/ConsumingJSONSample)
 
-# Android <img src="iOS/Assets/icons8-android-100.png" width="30">
-
-[Coming Soon]
-
 # Flutter <img src="iOS/Assets/icons8-flutter-100.png" width="30">
 
 [Coming Soon]
